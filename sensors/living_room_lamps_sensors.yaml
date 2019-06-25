@@ -1,0 +1,5 @@
+- platform: template
+  sensors:
+    living_room_accent_lamp_01_time:
+      friendly_name: "Living Room Accent Lamp 01 Time"
+      value_template: "{{ states.light.living_room_accent_lamp_01.attributes.Time }}"

@@ -6,15 +6,60 @@ default_config:
 # http:
 #   base_url: example.duckdns.org:8123
 
-# Sensors
-sensor:
-  # Weather prediction
-  - platform: yr
+# Track the sun
+sun:
 
 # Text to speech
 tts:
   - platform: google_translate
 
+# Enables support for tracking state changes over time
+history:
+
+recorder:
+  purge_interval: 1
+  purge_keep_days: 4
+
+mqtt:
+  broker: 192.168.1.107
+  port: 1883
+  client_id: homeassistant
+  keepalive: 60
+  birth_message:
+    topic: "tele/hass1/LWT"
+    payload: "Online"
+  will_message:
+    topic: "tele/hass1/LWT"
+    payload: "Offline"
+
 group: !include groups.yaml
-automation: !include automations.yaml
-script: !include scripts.yaml
+automation: !include_dir_merge_list automations
+script: !include_dir_merge_named scripts
+sensor: !include_dir_merge_list sensors
+binary_sensor: !include_dir_merge_list binary_sensors
+light: !include_dir_merge_list lights
+# switch: !include_dir_merge_list switches
+# shell_command: !include shell_commands.yaml
+# device_tracker: !include device_tracker.yaml
+# notify: !include notify.yaml
+# shell_command: !include shell_commands.yaml
+
+influxdb:
+  host: 192.168.1.107
+  port: 8086
+  database: hass
+  username: homeassistant
+  password: homeassistant
+  include:
+    domains:
+      - light
+      - fan
+      - sensor
+      - binary_sensor
+      - switch
+      - yr
+      - sun
+      - group
+      - device_tracker
+      - input_select
+      - input_text
