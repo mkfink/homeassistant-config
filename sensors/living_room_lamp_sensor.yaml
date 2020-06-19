@@ -1,0 +1,59 @@
+- platform: template
+  sensors:
+    living_room_lamp_time:
+      friendly_name: 'Living Room Lamp Time'
+      value_template: '{{ states.light.living_room_lamp.attributes.Time }}'
+    living_room_lamp_uptime:
+      friendly_name: 'Living Room Lamp Uptime'
+      value_template: '{{ states.light.living_room_lamp.attributes.Uptime }}'
+    living_room_lamp_vcc:
+      friendly_name: 'Living Room Lamp Vcc'
+      unit_of_measurement: 'V'
+      value_template: '{{ states.light.living_room_lamp.attributes.Vcc }}'
+    living_room_lamp_heap:
+      friendly_name: 'Living Room Lamp Heap'
+      value_template: '{{ states.light.living_room_lamp.attributes.Heap }}'
+    living_room_lamp_sleepmode:
+      friendly_name: 'Living Room Lamp SleepMode'
+      value_template: '{{ states.light.living_room_lamp.attributes.SleepMode }}'
+    living_room_lamp_sleep:
+      friendly_name: 'Living Room Lamp Sleep'
+      value_template: '{{ states.light.living_room_lamp.attributes.Sleep }}'
+    living_room_lamp_loadavg:
+      friendly_name: 'Living Room Lamp LoadAvg'
+      unit_of_measurement: '%'
+      value_template: '{{ states.light.living_room_lamp.attributes.LoadAvg }}'
+    living_room_lamp_wifi_ssid:
+      friendly_name: 'Living Room Lamp Wifi SSId'
+      value_template: '{{ states.light.living_room_lamp.attributes.Wifi.SSId }}'
+    living_room_lamp_wifi_ap:
+      friendly_name: 'Living Room Lamp Wifi AP'
+      value_template: >-
+        {% if states.light.living_room_lamp.attributes.Wifi.BSSId | string == '30:FD:38:D3:F6:73' %}
+          Kitchen AP
+        {% elif states.light.living_room_lamp.attributes.Wifi.BSSId | string == '30:FD:38:D3:FB:68' %}
+          Office AP
+        {% elif states.light.living_room_lamp.attributes.Wifi.BSSId | string == '30:FD:38:D3:FAFA' %}
+          Workout AP
+        {% else %}
+          {{ states.light.living_room_lamp.attributes.Wifi.BSSId }}
+        {% endif %}
+    living_room_lamp_wifi_bssid:
+      friendly_name: 'Living Room Lamp Wifi BSSId'
+      value_template: '{{ states.light.living_room_lamp.attributes.Wifi.BSSId }}'
+    living_room_lamp_wifi_channel:
+      friendly_name: 'Living Room Lamp Wifi Channel'
+      value_template: '{{ states.light.living_room_lamp.attributes.Wifi.Channel }}'
+    living_room_lamp_wifi_rssi:
+      friendly_name: 'Living Room Lamp Wifi RSSI'
+      unit_of_measurement: '%'
+      value_template: '{{ states.light.living_room_lamp.attributes.Wifi.RSSI }}'
+    living_room_lamp_wifi_linkcount:
+      friendly_name: 'Living Room Lamp Wifi Link Count'
+      value_template: '{{ states.light.living_room_lamp.attributes.Wifi.LinkCount }}'
+    living_room_lamp_wifi_downtime:
+      friendly_name: 'Living Room Lamp Wifi Downtime'
+      value_template: '{{ states.light.living_room_lamp.attributes.Wifi.Downtime }}'
+    living_room_lamp_power:
+      friendly_name: 'Living Room Lamp Power'
+      value_template: '{{ states.light.living_room_lamp.attributes.POWER }}'

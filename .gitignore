@@ -4,3 +4,6 @@ home-assistant.log
 .cloud/
 .storage/
 secrets.yaml
+*.token
+www
+tts

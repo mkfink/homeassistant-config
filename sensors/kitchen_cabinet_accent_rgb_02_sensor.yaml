@@ -1,0 +1,84 @@
+- platform: template
+  sensors:
+    kitchen_cabinet_accent_rgb_02_time:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Time'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Time }}'
+    kitchen_cabinet_accent_rgb_02_uptime:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Uptime'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Uptime }}'
+    kitchen_cabinet_accent_rgb_02_vcc:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Vcc'
+      unit_of_measurement: 'V'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Vcc }}'
+    kitchen_cabinet_accent_rgb_02_heap:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Heap'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Heap }}'
+    kitchen_cabinet_accent_rgb_02_sleepmode:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 SleepMode'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.SleepMode }}'
+    kitchen_cabinet_accent_rgb_02_sleep:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Sleep'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Sleep }}'
+    kitchen_cabinet_accent_rgb_02_loadavg:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 LoadAvg'
+      unit_of_measurement: '%'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.LoadAvg }}'
+    kitchen_cabinet_accent_rgb_02_power:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Power'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.POWER }}'
+    kitchen_cabinet_accent_rgb_02_dimmer:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Dimmer'
+      unit_of_measurement: '%'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Dimmer }}'
+    kitchen_cabinet_accent_rgb_02_color:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Color'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Color }}'
+    kitchen_cabinet_accent_rgb_02_hsb_color:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 HSB Color'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.HSBColor }}'
+    kitchen_cabinet_accent_rgb_02_color_channel:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Color Channel'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Channel }}'
+    kitchen_cabinet_accent_rgb_02_scheme:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Scheme'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Scheme }}'
+    kitchen_cabinet_accent_rgb_02_fade:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Fade'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Fade }}'
+    kitchen_cabinet_accent_rgb_02_speed:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Speed'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Speed }}'
+    kitchen_cabinet_accent_rgb_02_led_table:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 LED Table'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.LedTable }}'
+    kitchen_cabinet_accent_rgb_02_wifi_ssid:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Wifi SSId'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Wifi.SSId }}'
+    kitchen_cabinet_accent_rgb_02_wifi_ap:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Wifi AP'
+      value_template: >-
+        {% if states.light.kitchen_cabinet_accent_rgb_02.attributes.Wifi.BSSId | string == '30:FD:38:D3:F6:73' %}
+          Kitchen AP
+        {% elif states.light.kitchen_cabinet_accent_rgb_02.attributes.Wifi.BSSId | string == '30:FD:38:D3:FB:6F' %}
+          Office AP
+        {% elif states.light.kitchen_cabinet_accent_rgb_02.attributes.Wifi.BSSId | string == '30:FD:38:D3:FB:01' %}
+          Workout AP
+        {% else %}
+          {{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Wifi.BSSId }}
+        {% endif %}
+    kitchen_cabinet_accent_rgb_02_wifi_bssid:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Wifi BSSId'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Wifi.BSSId }}'
+    kitchen_cabinet_accent_rgb_02_wifi_channel:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Wifi Channel'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Wifi.Channel }}'
+    kitchen_cabinet_accent_rgb_02_wifi_rssi:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Wifi RSSI'
+      unit_of_measurement: '%'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Wifi.RSSI }}'
+    kitchen_cabinet_accent_rgb_02_wifi_linkcount:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Wifi Link Count'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Wifi.LinkCount }}'
+    kitchen_cabinet_accent_rgb_02_wifi_downtime:
+      friendly_name: 'Kitchen Cabinet Accent RGB 02 Wifi Downtime'
+      value_template: '{{ states.light.kitchen_cabinet_accent_rgb_02.attributes.Wifi.Downtime }}'

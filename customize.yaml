@@ -1,1 +1,247 @@
-person.mike_fink: {}
+sensor.living_room_accent_lamp_01_color:
+  friendly_name: Color
+sensor.living_room_accent_lamp_01_color_channel:
+  friendly_name: Color Channel
+sensor.living_room_accent_lamp_01_dimmer:
+  friendly_name: Dimmer
+sensor.living_room_accent_lamp_01_fade:
+  friendly_name: Fade
+sensor.living_room_accent_lamp_01_heap:
+  friendly_name: Heap
+sensor.living_room_accent_lamp_01_hsb_color:
+  friendly_name: Hsb Color
+sensor.living_room_accent_lamp_01_led_table:
+  friendly_name: Led Table
+sensor.living_room_accent_lamp_01_loadavg:
+  friendly_name: Loadavg
+sensor.living_room_accent_lamp_01_power:
+  friendly_name: Power
+sensor.living_room_accent_lamp_01_scheme:
+  friendly_name: Scheme
+sensor.living_room_accent_lamp_01_sleep:
+  friendly_name: Sleep
+sensor.living_room_accent_lamp_01_sleepmode:
+  friendly_name: Sleepmode
+sensor.living_room_accent_lamp_01_speed:
+  friendly_name: Speed
+sensor.living_room_accent_lamp_01_time:
+  friendly_name: Time
+sensor.living_room_accent_lamp_01_uptime:
+  friendly_name: Uptime
+sensor.living_room_accent_lamp_01_vcc:
+  friendly_name: Vcc
+sensor.living_room_accent_lamp_01_wifi_ap:
+  friendly_name: Wifi AP
+sensor.living_room_accent_lamp_01_wifi_bssid:
+  friendly_name: Wifi BSSID
+sensor.living_room_accent_lamp_01_wifi_channel:
+  friendly_name: Wifi Channel
+sensor.living_room_accent_lamp_01_wifi_downtime:
+  friendly_name: Wifi Downtime
+sensor.living_room_accent_lamp_01_wifi_linkcount:
+  friendly_name: Wifi Linkcount
+sensor.living_room_accent_lamp_01_wifi_rssi:
+  friendly_name: Wifi RSSI
+sensor.living_room_accent_lamp_01_wifi_ssid:
+  friendly_name: Wifi SSID
+sensor.living_room_accent_lamp_02_color:
+  friendly_name: Color
+sensor.living_room_accent_lamp_02_color_channel:
+  friendly_name: Color Channel
+sensor.living_room_accent_lamp_02_dimmer:
+  friendly_name: Dimmer
+sensor.living_room_accent_lamp_02_fade:
+  friendly_name: Fade
+sensor.living_room_accent_lamp_02_heap:
+  friendly_name: Heap
+sensor.living_room_accent_lamp_02_hsb_color:
+  friendly_name: Hsb Color
+sensor.living_room_accent_lamp_02_led_table:
+  friendly_name: Led Table
+sensor.living_room_accent_lamp_02_loadavg:
+  friendly_name: Loadavg
+sensor.living_room_accent_lamp_02_power:
+  friendly_name: Power
+sensor.living_room_accent_lamp_02_scheme:
+  friendly_name: Scheme
+sensor.living_room_accent_lamp_02_sleep:
+  friendly_name: Sleep
+sensor.living_room_accent_lamp_02_sleepmode:
+  friendly_name: Sleepmode
+sensor.living_room_accent_lamp_02_speed:
+  friendly_name: Speed
+sensor.living_room_accent_lamp_02_time:
+  friendly_name: Time
+sensor.living_room_accent_lamp_02_uptime:
+  friendly_name: Uptime
+sensor.living_room_accent_lamp_02_vcc:
+  friendly_name: Vcc
+sensor.living_room_accent_lamp_02_wifi_ap:
+  friendly_name: Wifi AP
+sensor.living_room_accent_lamp_02_wifi_bssid:
+  friendly_name: Wifi BSSID
+sensor.living_room_accent_lamp_02_wifi_channel:
+  friendly_name: Wifi Channel
+sensor.living_room_accent_lamp_02_wifi_downtime:
+  friendly_name: Wifi Downtime
+sensor.living_room_accent_lamp_02_wifi_linkcount:
+  friendly_name: Wifi Linkcount
+sensor.living_room_accent_lamp_02_wifi_rssi:
+  friendly_name: Wifi RSSI
+sensor.living_room_accent_lamp_02_wifi_ssid:
+  friendly_name: Wifi SSID
+sensor.kitchen_cabinet_accent_rgb_01_color:
+  friendly_name: Color
+sensor.kitchen_cabinet_accent_rgb_01_color_channel:
+  friendly_name: Color Channel
+sensor.kitchen_cabinet_accent_rgb_01_dimmer:
+  friendly_name: Dimmer
+sensor.kitchen_cabinet_accent_rgb_01_fade:
+  friendly_name: Fade
+sensor.kitchen_cabinet_accent_rgb_01_heap:
+  friendly_name: Heap
+sensor.kitchen_cabinet_accent_rgb_01_hsb_color:
+  friendly_name: Hsb Color
+sensor.kitchen_cabinet_accent_rgb_01_led_table:
+  friendly_name: Led Table
+sensor.kitchen_cabinet_accent_rgb_01_loadavg:
+  friendly_name: Loadavg
+sensor.kitchen_cabinet_accent_rgb_01_power:
+  friendly_name: Power
+sensor.kitchen_cabinet_accent_rgb_01_scheme:
+  friendly_name: Scheme
+sensor.kitchen_cabinet_accent_rgb_01_sleep:
+  friendly_name: Sleep
+sensor.kitchen_cabinet_accent_rgb_01_sleepmode:
+  friendly_name: Sleepmode
+sensor.kitchen_cabinet_accent_rgb_01_speed:
+  friendly_name: Speed
+sensor.kitchen_cabinet_accent_rgb_01_time:
+  friendly_name: Time
+sensor.kitchen_cabinet_accent_rgb_01_uptime:
+  friendly_name: Uptime
+sensor.kitchen_cabinet_accent_rgb_01_vcc:
+  friendly_name: Vcc
+sensor.kitchen_cabinet_accent_rgb_01_wifi_ap:
+  friendly_name: Wifi AP
+sensor.kitchen_cabinet_accent_rgb_01_wifi_bssid:
+  friendly_name: Wifi BSSID
+sensor.kitchen_cabinet_accent_rgb_01_wifi_channel:
+  friendly_name: Wifi Channel
+sensor.kitchen_cabinet_accent_rgb_01_wifi_downtime:
+  friendly_name: Wifi Downtime
+sensor.kitchen_cabinet_accent_rgb_01_wifi_linkcount:
+  friendly_name: Wifi Linkcount
+sensor.kitchen_cabinet_accent_rgb_01_wifi_rssi:
+  friendly_name: Wifi RSSI
+sensor.kitchen_cabinet_accent_rgb_01_wifi_ssid:
+  friendly_name: Wifi SSID
+sensor.kitchen_cabinet_accent_rgb_02_color:
+  friendly_name: Color
+sensor.kitchen_cabinet_accent_rgb_02_color_channel:
+  friendly_name: Color Channel
+sensor.kitchen_cabinet_accent_rgb_02_dimmer:
+  friendly_name: Dimmer
+sensor.kitchen_cabinet_accent_rgb_02_fade:
+  friendly_name: Fade
+sensor.kitchen_cabinet_accent_rgb_02_heap:
+  friendly_name: Heap
+sensor.kitchen_cabinet_accent_rgb_02_hsb_color:
+  friendly_name: Hsb Color
+sensor.kitchen_cabinet_accent_rgb_02_led_table:
+  friendly_name: Led Table
+sensor.kitchen_cabinet_accent_rgb_02_loadavg:
+  friendly_name: Loadavg
+sensor.kitchen_cabinet_accent_rgb_02_power:
+  friendly_name: Power
+sensor.kitchen_cabinet_accent_rgb_02_scheme:
+  friendly_name: Scheme
+sensor.kitchen_cabinet_accent_rgb_02_sleep:
+  friendly_name: Sleep
+sensor.kitchen_cabinet_accent_rgb_02_sleepmode:
+  friendly_name: Sleepmode
+sensor.kitchen_cabinet_accent_rgb_02_speed:
+  friendly_name: Speed
+sensor.kitchen_cabinet_accent_rgb_02_time:
+  friendly_name: Time
+sensor.kitchen_cabinet_accent_rgb_02_uptime:
+  friendly_name: Uptime
+sensor.kitchen_cabinet_accent_rgb_02_vcc:
+  friendly_name: Vcc
+sensor.kitchen_cabinet_accent_rgb_02_wifi_ap:
+  friendly_name: Wifi AP
+sensor.kitchen_cabinet_accent_rgb_02_wifi_bssid:
+  friendly_name: Wifi BSSID
+sensor.kitchen_cabinet_accent_rgb_02_wifi_channel:
+  friendly_name: Wifi Channel
+sensor.kitchen_cabinet_accent_rgb_02_wifi_downtime:
+  friendly_name: Wifi Downtime
+sensor.kitchen_cabinet_accent_rgb_02_wifi_linkcount:
+  friendly_name: Wifi Linkcount
+sensor.kitchen_cabinet_accent_rgb_02_wifi_rssi:
+  friendly_name: Wifi RSSI
+sensor.kitchen_cabinet_accent_rgb_02_wifi_ssid:
+  friendly_name: Wifi SSID
+sensor.google_wifi_uptime:
+  friendly_name: Uptime
+sensor.google_wifi_status:
+  friendly_name: Status
+sensor.google_wifi_current_version:
+  friendly_name: Current Version
+sensor.google_wifi_new_version:
+  friendly_name: New Version
+sensor.google_wifi_last_restart:
+  friendly_name: Last Restart
+sensor.google_wifi_local_ip:
+  friendly_name: Local IP
+switch.kitchen_lights:
+  friendly_name: Lights
+  icon: mdi:lightbulb
+switch.pantry_light:
+  icon: mdi:lightbulb
+switch.master_bedroom_lights:
+  friendly_name: Lights
+  icon: mdi:ceiling-light
+switch.master_bedroom_fan:
+  friendly_name: Fan
+  icon: mdi:fan
+switch.master_closet_lights:
+  friendly_name: Closet Lights
+  icon: mdi:track-light
+switch.front_porch_light:
+  icon: mdi:lightbulb
+light.living_room_lights:
+  friendly_name: Lights
+sensor.living_room_lamp_power:
+  friendly_name: Power
+sensor.living_room_lamp_time:
+  friendly_name: Time
+sensor.living_room_lamp_uptime:
+  friendly_name: Uptime
+sensor.living_room_lamp_vcc:
+  friendly_name: VCC
+sensor.living_room_lamp_heap:
+  friendly_name: Heap
+sensor.living_room_lamp_sleepmode:
+  friendly_name: Sleepmode
+sensor.living_room_lamp_sleep:
+  friendly_name: Sleep
+sensor.living_room_lamp_loadavg:
+  friendly_name: Loadavg
+sensor.living_room_lamp_wifi_ssid:
+  friendly_name: Wifi SSID
+sensor.living_room_lamp_wifi_ap:
+  friendly_name: WiFi AP
+sensor.living_room_lamp_wifi_bssid:
+  friendly_name: WiFi BSSID
+sensor.living_room_lamp_wifi_channel:
+  friendly_name: WiFi Channel
+sensor.living_room_lamp_wifi_rssi:
+  friendly_name: WiFi RSSI
+sensor.living_room_lamp_wifi_linkcount:
+  friendly_name: WiFi Linkcount
+sensor.living_room_lamp_wifi_downtime:
+  friendly_name: WiFi Downtime
+light.living_room_lamp:
+  friendly_name: Lamp
+  icon: mdi:floor-lamp

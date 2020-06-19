@@ -1,0 +1,42 @@
+bedtime_lights:
+  name: Lights to turn off at bedtime
+  entities:
+    - light.living_room_accent_lamp_01
+    - light.living_room_accent_lamp_02
+    - light.kitchen_cabinet_accent_rgb_01
+    - light.kitchen_cabinet_accent_rgb_02
+    - switch.dining_room_light
+    - switch.foyer_light
+    - switch.mud_room_light
+    - switch.upstairs_hall_light
+    - switch.front_porch_light
+    - switch.kitchen_lights
+    - switch.pantry_light
+    - switch.dog_room_lights
+    - switch.downstairs_hall_light
+    - switch.powder_room_light
+    - switch.powder_room_fan
+    - switch.master_bedroom_lights
+    - switch.master_bedroom_fan
+    - switch.master_closet_lights
+    - switch.master_bathroom_light
+    - switch.master_bathroom_showe
+    - switch.master_bathroom_fan
+    - switch.kitchen_sink_light
+    - switch.kitchen_undercabinet_lights
+    - light.living_room_lights
+    - light.living_room_lamp
+
+kitchen_cabinet_accent_lights:
+  name: Accent Lights
+  icon: mdi:led-on
+  entities:
+    - light.kitchen_cabinet_accent_rgb_01
+    - light.kitchen_cabinet_accent_rgb_02
+
+living_room_accent_lamps:
+  name: Accent Lamps
+  icon: mdi:floor-lamp
+  entities:
+    - light.living_room_accent_lamp_01
+    - light.living_room_accent_lamp_02

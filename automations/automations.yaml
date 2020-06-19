@@ -1,1 +1,54 @@
-[]
+- alias: Pantry light timer
+  trigger:
+    - platform: state
+      entity_id: switch.pantry_light
+      to: 'on'
+      for:
+        minutes: 10
+  action:
+    - service: switch.turn_off
+      entity_id: switch.pantry_light
+
+- alias: Closet light timer
+  trigger:
+    - platform: state
+      entity_id: switch.master_closet_lights
+      to: 'on'
+      for:
+        minutes: 10
+  action:
+    - service: switch.turn_off
+      entity_id: switch.master_closet_lights
+
+- alias: Master bathroom light timer
+  trigger:
+    - platform: state
+      entity_id: switch.master_bathroom_lights
+      to: 'on'
+      for:
+        minutes: 60
+  action:
+    - service: switch.turn_off
+      entity_id: switch.master_bathroom_lights
+
+- alias: Master bathroom shower light timer
+  trigger:
+    - platform: state
+      entity_id: switch.master_bathroom_shower_light
+      to: 'on'
+      for:
+        minutes: 60
+  action:
+    - service: switch.turn_off
+      entity_id: switch.master_bathroom_shower_light
+
+- alias: Master bathroom fan timer
+  trigger:
+    - platform: state
+      entity_id: switch.master_bathroom_fan
+      to: 'on'
+      for:
+        minutes: 60
+  action:
+    - service: switch.turn_off
+      entity_id: switch.master_bathroom_fan
