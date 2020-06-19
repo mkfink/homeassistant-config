@@ -1,4 +1,4 @@
-bedtime:
+leaving:
   sequence:
     - service: homeassistant.turn_off
       data:
@@ -6,6 +6,3 @@ bedtime:
     - service: media_player.turn_off
       data:
         entity_id: media_player.living_room_tv
-    - service: cover.close_cover
-      data:
-        entity_id: cover.garage_door
