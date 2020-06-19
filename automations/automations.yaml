@@ -15,7 +15,7 @@
       entity_id: switch.master_closet_lights
       to: 'on'
       for:
-        minutes: 10
+        minutes: 15
   action:
     - service: switch.turn_off
       entity_id: switch.master_closet_lights
@@ -26,7 +26,7 @@
       entity_id: switch.master_bathroom_lights
       to: 'on'
       for:
-        minutes: 60
+        minutes: 90
   action:
     - service: switch.turn_off
       entity_id: switch.master_bathroom_lights
@@ -34,13 +34,13 @@
 - alias: Master bathroom shower light timer
   trigger:
     - platform: state
-      entity_id: switch.master_bathroom_shower_light
+      entity_id: light.master_bathroom_shower_light
       to: 'on'
       for:
         minutes: 60
   action:
     - service: switch.turn_off
-      entity_id: switch.master_bathroom_shower_light
+      entity_id: light.master_bathroom_shower_light
 
 - alias: Master bathroom fan timer
   trigger:
@@ -50,5 +50,5 @@
       for:
         minutes: 60
   action:
-    - service: switch.turn_off
-      entity_id: switch.master_bathroom_fan
+    - service: light.turn_off
+      entity_id: light.master_bathroom_fan

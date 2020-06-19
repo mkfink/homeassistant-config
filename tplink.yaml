@@ -7,17 +7,31 @@ switch:
   - host: 192.168.1.17 # switch.mud_room_light
   - host: 192.168.1.19 # switch.downstairs_hall_light
   - host: 192.168.1.18 # switch.dog_room_lights
-  - host: 192.168.1.13 # switch.kitchen_lights
   - host: 192.168.1.22 # switch.pantry_light
   - host: 192.168.1.23 # switch.powder_room_fan
   - host: 192.168.1.21 # switch.powder_room_light
   - host: 192.168.1.37 # switch.master_bathroom_lights
-  - host: 192.168.1.36 # switch.master_bathroom_fan
-  - host: 192.168.1.35 # switch.master_bathroom_shower_light
+  - host: 192.168.1.45 # switch.master_bathroom_fan
   - host: 192.168.1.38 # switch.master_closet_lights
-  - host: 192.168.1.40 # switch.master_bedroom_fan
+  - host: 192.168.1.44 # switch.master_bedroom_fan
   - host: 192.168.1.39 # switch.master_bedroom_lights
-  - host: 192.168.1.26 # switch.kitchen_sink_lights
-  - host: 192.168.1.29 # switch.kitchen_undercabinet_lights
+  - host: 192.168.1.29 # switch.kitchen_under_cabinet_lights
+  - host: 192.168.1.33 # switch.laundry_room_light
+  - host: 192.168.1.34 # switch.basement_lights
+  - host: 192.168.1.42 # switch.basement_stairs_lights
+  - host: 192.168.1.32 # switch.driveway_lights
+  - host: 192.168.1.35 # switch.garage_lights
+  - host: 192.168.1.36 # switch.office_lights
+  - host: 192.168.1.26 # switch.workout_room_light
+  - host: 192.168.1.48 # switch.guest_bedroom_light
+  - host: 192.168.1.40 # switch.workout_room_fan
+  - host: 192.168.1.13 # switch.backyard_motion_sensor
+  - host: 192.168.1.8  # switch.guest_bathroom_light
+  - host: 192.168.1.50  # switch.guest_bathroom_fan
+  
 dimmer:
   - host: 192.168.1.31 # light.living_room_lights
+  - host: 192.168.1.24 # light.kitchen_sink_light
+  - host: 192.168.1.46 # light.master_bathroom_shower_light
+  - host: 192.168.1.43 # light.kitchen_ceiling_lights
+  - host: 192.168.1.237 # switch.dance_studio_light

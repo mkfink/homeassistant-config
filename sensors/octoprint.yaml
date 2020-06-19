@@ -1,0 +1,8 @@
+- platform: template
+  sensors:
+    vulcan_time_elapsed_friendly:
+      friendly_name: "Vulcan time elapsed"
+      value_template: "{{ states('sensor.vulcan_time_elapsed') | int | timestamp_custom('%H:%M:%S', 0) }}"
+    vulcan_time_remaining_friendly:
+      friendly_name: "Vulcan time remaining"
+      value_template: "{{ states('sensor.vulcan_time_remaining') | int | timestamp_custom('%H:%M:%S', 0) }}"

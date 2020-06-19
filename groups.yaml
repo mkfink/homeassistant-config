@@ -17,15 +17,24 @@ bedtime_lights:
     - switch.powder_room_light
     - switch.powder_room_fan
     - switch.master_bedroom_lights
-    - switch.master_bedroom_fan
     - switch.master_closet_lights
     - switch.master_bathroom_light
-    - switch.master_bathroom_showe
     - switch.master_bathroom_fan
-    - switch.kitchen_sink_light
-    - switch.kitchen_undercabinet_lights
+    - switch.kitchen_under_cabinet_lights
+    - switch.laundry_room_light
+    - switch.basement_lights
+    - switch.basement_stairs_lights
+    - switch.driveway_lights
+    - switch.garage_lights
+    - switch.office_lights
+    - light.dance_studio_light
     - light.living_room_lights
+    - light.kitchen_sink_light
+    - light.master_bathroom_shower_light
+    - light.kitchen_ceiling_lights
     - light.living_room_lamp
+    - switch.workout_room_light
+    - switch.guest_bedroom_light
 
 kitchen_cabinet_accent_lights:
   name: Accent Lights

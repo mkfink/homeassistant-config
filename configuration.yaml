@@ -17,8 +17,9 @@ tts:
 history:
 
 recorder:
-  purge_interval: 1
   purge_keep_days: 4
+
+api:
 
 mqtt:
   broker: 192.168.1.107
@@ -36,7 +37,7 @@ homeassistant:
   customize: !include customize.yaml
 
 lovelace:
-  mode: yaml
+  # mode: yaml
 
 cloud:
 
@@ -46,7 +47,7 @@ script: !include_dir_merge_named scripts
 sensor: !include_dir_merge_list sensors
 binary_sensor: !include_dir_merge_list binary_sensors
 light: !include_dir_merge_list lights
-# switch: !include_dir_merge_list switches
+switch: !include_dir_merge_list switches
 # shell_command: !include shell_commands.yaml
 # device_tracker: !include device_tracker.yaml
 # notify: !include notify.yaml
@@ -56,16 +57,27 @@ tplink: !include tplink.yaml
 
 wake_on_lan:
 
-media_player:
-  - platform: webostv
-    host: 192.168.1.202
-    name: Living Room TV
-    filename: webostv.conf
-    timeout: 5
-    turn_on_action:
-      service: wake_on_lan.send_magic_packet
-      data:
-        mac: "04:4E:AF:82:03:D8"
+# cover:
+#   - platform: myq
+#     username: !secret myq_user
+#     password: !secret myq_pass
+
+webostv:
+  host: 192.168.1.234
+  name: Living Room TV
+  turn_on_action:
+    service: wake_on_lan.send_magic_packet
+    data:
+      mac: "a8:23:fe:06:02:e7"
+  customize:
+    sources:
+      - HDMI 1
+      - HDMI 2
+      - HDMI 3
+      - Netflix
+      - Amazon Prime Video
+      - Hulu
+      - Youtube
 
 influxdb:
   host: 192.168.1.107
@@ -87,3 +99,10 @@ influxdb:
       - input_select
       - input_text
       - tplink
+
+octoprint:
+  host: vulcan.lan
+  api_key: E87E789808B4415CA3BD8E34BBDAC4FA
+  name: Vulcan
+  number_of_tools: 1
+  bed: True

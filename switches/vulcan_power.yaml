@@ -1,0 +1,10 @@
+- platform: mqtt
+  name: 'Vulcan Power'
+  state_topic: 'stat/vulcan/power/POWER'
+  command_topic: 'cmnd/vulcan/power/POWER'
+  json_attributes_topic: 'tele/vulcan/power/STATE'
+  availability_topic: 'tele/vulcan/power/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+  payload_on: 'ON'
+  payload_off: 'OFF'

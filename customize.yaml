@@ -195,18 +195,12 @@ sensor.google_wifi_last_restart:
 sensor.google_wifi_local_ip:
   friendly_name: Local IP
 switch.kitchen_lights:
-  friendly_name: Lights
   icon: mdi:lightbulb
 switch.pantry_light:
   icon: mdi:lightbulb
-switch.master_bedroom_lights:
-  friendly_name: Lights
-  icon: mdi:ceiling-light
 switch.master_bedroom_fan:
-  friendly_name: Fan
   icon: mdi:fan
 switch.master_closet_lights:
-  friendly_name: Closet Lights
   icon: mdi:track-light
 switch.front_porch_light:
   icon: mdi:lightbulb
@@ -242,6 +236,3 @@ sensor.living_room_lamp_wifi_linkcount:
   friendly_name: WiFi Linkcount
 sensor.living_room_lamp_wifi_downtime:
   friendly_name: WiFi Downtime
-light.living_room_lamp:
-  friendly_name: Lamp
-  icon: mdi:floor-lamp
