@@ -57,11 +57,6 @@ tplink: !include tplink.yaml
 
 wake_on_lan:
 
-# cover:
-#   - platform: myq
-#     username: !secret myq_user
-#     password: !secret myq_pass
-
 webostv:
   host: 192.168.1.234
   name: Living Room TV
