@@ -1,0 +1,18 @@
+{
+    "data": {
+        "items": [
+            {
+                "id": "765ac636909243d5b5334ed06ad7f156",
+                "type": "js",
+                "url": "/local/content-card-example.js"
+            },
+            {
+                "id": "a5df0e2415a44128bb6ffacaf0c4819a",
+                "type": "module",
+                "url": "/local/decluttering-card.js"
+            }
+        ]
+    },
+    "key": "lovelace_resources",
+    "version": 1
+}
