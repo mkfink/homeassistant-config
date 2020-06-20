@@ -1,0 +1,633 @@
+{
+    "data": {
+        "config": {
+            "decluttering_templates": {
+                "tasmota_basic": {
+                    "card": {
+                        "elements": [
+                            {
+                                "entity": "sensor.[[entity]]_time",
+                                "prefix": "Last updated: ",
+                                "style": {
+                                    "left": "10px",
+                                    "top": "0px",
+                                    "transform": "none"
+                                },
+                                "type": "state-label"
+                            },
+                            {
+                                "entity": "sensor.[[entity]]_uptime",
+                                "prefix": "Uptime: ",
+                                "style": {
+                                    "left": "10px",
+                                    "top": "24px",
+                                    "transform": "none"
+                                },
+                                "type": "state-label"
+                            },
+                            {
+                                "entity": "sensor.[[entity]]_power",
+                                "style": {
+                                    "right": "0px",
+                                    "top": "-16px",
+                                    "transform": "right"
+                                },
+                                "title": null,
+                                "type": "state-badge"
+                            },
+                            {
+                                "entity": "sensor.[[entity]]_wifi_ssid",
+                                "prefix": "WiFi: ",
+                                "style": {
+                                    "left": "10px",
+                                    "top": "48px",
+                                    "transform": "none"
+                                },
+                                "type": "state-label"
+                            },
+                            {
+                                "entity": "sensor.[[entity]]_wifi_ap",
+                                "style": {
+                                    "left": "120px",
+                                    "top": "48px",
+                                    "transform": "none"
+                                },
+                                "type": "state-label"
+                            },
+                            {
+                                "entity": "sensor.[[entity]]_wifi_rssi",
+                                "prefix": "RSSI: ",
+                                "style": {
+                                    "left": "10px",
+                                    "text-align": "left",
+                                    "top": "72px",
+                                    "transform": "none"
+                                },
+                                "type": "state-label"
+                            },
+                            {
+                                "entity": "sensor.[[entity]]_wifi_channel",
+                                "prefix": "Channel: ",
+                                "style": {
+                                    "left": "120px",
+                                    "top": "72px",
+                                    "transform": "none"
+                                },
+                                "type": "state-label"
+                            },
+                            {
+                                "entity": "sensor.[[entity]]_wifi_linkcount",
+                                "prefix": "Link count: ",
+                                "style": {
+                                    "left": "10px",
+                                    "text-align": "left",
+                                    "top": "96px",
+                                    "transform": "none"
+                                },
+                                "type": "state-label"
+                            },
+                            {
+                                "entity": "sensor.[[entity]]_wifi_downtime",
+                                "prefix": "Downtime: ",
+                                "style": {
+                                    "left": "120px",
+                                    "top": "96px",
+                                    "transform": "none"
+                                },
+                                "type": "state-label"
+                            },
+                            {
+                                "entity": "sensor.[[entity]]_vcc",
+                                "prefix": "VCC: ",
+                                "style": {
+                                    "left": "10px",
+                                    "text-align": "left",
+                                    "top": "120px",
+                                    "transform": "none"
+                                },
+                                "type": "state-label"
+                            },
+                            {
+                                "entity": "sensor.[[entity]]_loadavg",
+                                "prefix": "Load Avg: ",
+                                "style": {
+                                    "left": "120px",
+                                    "top": "120px",
+                                    "transform": "none"
+                                },
+                                "type": "state-label"
+                            }
+                        ],
+                        "image": "/local/Blank.jpg",
+                        "title": "[[title]]",
+                        "type": "picture-elements"
+                    }
+                }
+            },
+            "title": "Home",
+            "views": [
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "entity": "media_player.living_room_tv",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "icon": "mdi:power",
+                                    "name": "TV Power",
+                                    "show_icon": true,
+                                    "show_name": true,
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "media_player.toggle",
+                                        "service_data": {
+                                            "entity_id": "media_player.living_room_tv"
+                                        }
+                                    },
+                                    "type": "entity-button"
+                                },
+                                {
+                                    "entity": "media_player.living_room_tv",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "icon": "mdi:kodi",
+                                    "name": "HDMI 2",
+                                    "show_icon": true,
+                                    "show_name": true,
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "media_player.select_source",
+                                        "service_data": {
+                                            "entity_id": "media_player.living_room_tv",
+                                            "source": "HDMI 2"
+                                        }
+                                    },
+                                    "type": "entity-button"
+                                },
+                                {
+                                    "entity": "media_player.living_room_tv",
+                                    "hold_action": {
+                                        "action": "more-info"
+                                    },
+                                    "icon": "mdi:cast",
+                                    "name": "HDMI 3",
+                                    "show_icon": true,
+                                    "show_name": true,
+                                    "tap_action": {
+                                        "action": "call-service",
+                                        "service": "media_player.select_source",
+                                        "service_data": {
+                                            "entity_id": "media_player.living_room_tv",
+                                            "source": "HDMI 3"
+                                        }
+                                    },
+                                    "type": "entity-button"
+                                }
+                            ],
+                            "title": "Living Room TV",
+                            "type": "horizontal-stack"
+                        },
+                        {
+                            "entity": "media_player.living_room_tv",
+                            "type": "media-control"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.living_room_lights"
+                                },
+                                {
+                                    "entity": "light.living_room_lamp",
+                                    "icon": "mdi:floor-lamp",
+                                    "name": "Lamp"
+                                },
+                                {
+                                    "entity": "group.living_room_accent_lamps"
+                                }
+                            ],
+                            "show_header_toggle": true,
+                            "theme": "Backend-selected",
+                            "title": "Living Room",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.kitchen_ceiling_lights",
+                                    "name": "Ceiling Lights"
+                                },
+                                {
+                                    "entity": "light.kitchen_sink_light",
+                                    "name": "Sink Light"
+                                },
+                                {
+                                    "entity": "switch.kitchen_under_cabinet_lights"
+                                },
+                                {
+                                    "entity": "switch.dining_room_light",
+                                    "icon": "mdi:lightbulb"
+                                },
+                                {
+                                    "entity": "switch.pantry_light",
+                                    "icon": "mdi:lightbulb"
+                                },
+                                {
+                                    "entity": "group.kitchen_cabinet_accent_lights"
+                                }
+                            ],
+                            "title": "Kitchen",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.foyer_light",
+                                    "icon": "mdi:lightbulb"
+                                },
+                                {
+                                    "entity": "switch.laundry_room_light",
+                                    "icon": "mdi:lightbulb"
+                                },
+                                {
+                                    "entity": "switch.mud_room_light",
+                                    "icon": "mdi:lightbulb"
+                                },
+                                {
+                                    "entity": "switch.dog_room_lights",
+                                    "icon": "mdi:lightbulb"
+                                },
+                                {
+                                    "entity": "switch.downstairs_hall_light",
+                                    "icon": "mdi:lightbulb"
+                                }
+                            ],
+                            "title": "Hall",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.office_lights",
+                                    "icon": "mdi:lightbulb"
+                                }
+                            ],
+                            "title": "Office",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.powder_room_light",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Light"
+                                },
+                                {
+                                    "entity": "switch.powder_room_fan",
+                                    "icon": "mdi:fan",
+                                    "name": "Fan"
+                                }
+                            ],
+                            "title": "Powder Room",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.basement_stairs_lights",
+                                    "icon": "mdi:lightbulb"
+                                },
+                                {
+                                    "entity": "switch.basement_lights",
+                                    "icon": "mdi:lightbulb"
+                                }
+                            ],
+                            "title": "Basement",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.vulcan_current_state"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_job_percentage"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_time_elapsed_friendly"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_time_remaining_friendly"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_actual_bed_temp"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_target_bed_temp"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_actual_tool0_temp"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_target_tool0_temp"
+                                },
+                                {
+                                    "entity": "binary_sensor.vulcan_printing_error"
+                                },
+                                {
+                                    "entity": "switch.vulcan_power"
+                                }
+                            ],
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:home-floor-1",
+                    "path": "default_view",
+                    "title": ""
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.master_bedroom_lights",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Bedroom Lights"
+                                },
+                                {
+                                    "entity": "switch.master_bedroom_fan",
+                                    "name": "Bedroom Fan"
+                                },
+                                {
+                                    "entity": "switch.master_closet_lights",
+                                    "name": "Closet Lights"
+                                },
+                                {
+                                    "entity": "switch.master_bathroom_lights",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Bathroom Lights"
+                                },
+                                {
+                                    "entity": "light.master_bathroom_shower_light",
+                                    "name": "Shower Light"
+                                },
+                                {
+                                    "entity": "switch.master_bathroom_fan",
+                                    "icon": "mdi:fan",
+                                    "name": "Bathroom Fan"
+                                }
+                            ],
+                            "title": "Master Suite",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.foyer_light",
+                                    "icon": "mdi:lightbulb"
+                                },
+                                {
+                                    "entity": "switch.upstairs_hall_light",
+                                    "icon": "mdi:lightbulb"
+                                }
+                            ],
+                            "title": "Hall",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.workout_room_light",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Light"
+                                },
+                                {
+                                    "entity": "switch.workout_room_fan",
+                                    "icon": "mdi:fan",
+                                    "name": "Fan"
+                                }
+                            ],
+                            "title": "Workout Room",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.dance_studio_light"
+                                }
+                            ],
+                            "title": "Dance Studio",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.guest_bedroom_light",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Light"
+                                }
+                            ],
+                            "title": "Guest Bedroom",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.guest_bathroom_light",
+                                    "icon": "mdi:lightbulb"
+                                },
+                                {
+                                    "entity": "switch.guest_bathroom_fan",
+                                    "icon": "mdi:fan"
+                                }
+                            ],
+                            "title": "Guest Bathroom",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:home-floor-2"
+                },
+                {
+                    "badges": [],
+                    "cards": [
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "cover.garage_door"
+                                        },
+                                        {
+                                            "entity": "switch.garage_lights",
+                                            "icon": "mdi:lightbulb"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "Garage",
+                                    "type": "entities"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "switch.front_porch_light",
+                                            "icon": "mdi:lightbulb"
+                                        },
+                                        {
+                                            "entity": "switch.driveway_lights",
+                                            "icon": "mdi:lightbulb"
+                                        },
+                                        {
+                                            "entity": "switch.backyard_motion_sensor",
+                                            "icon": "mdi:lightbulb"
+                                        }
+                                    ],
+                                    "show_header_toggle": false,
+                                    "title": "Outside",
+                                    "type": "entities"
+                                }
+                            ],
+                            "type": "vertical-stack"
+                        }
+                    ],
+                    "icon": "mdi:garage"
+                },
+                {
+                    "badges": [
+                        {
+                            "entity": "sensor.current_energy_usage"
+                        }
+                    ],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "group.bedtime_lights",
+                                    "name": "Any Lights"
+                                },
+                                {
+                                    "entity": "cover.garage_door"
+                                }
+                            ],
+                            "title": "Ready for bed?",
+                            "type": "glance"
+                        },
+                        {
+                            "entity": "script.bedtime",
+                            "icon": "mdi:hotel",
+                            "name": "Bedtime - Turn everything off",
+                            "tap_action": {
+                                "action": "call-service",
+                                "service": "script.turn_on",
+                                "service_data": {
+                                    "entity_id": "script.bedtime"
+                                }
+                            },
+                            "type": "entity-button"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.google_wifi_uptime"
+                                },
+                                {
+                                    "entity": "sensor.google_wifi_status"
+                                },
+                                {
+                                    "entity": "sensor.google_wifi_current_version"
+                                },
+                                {
+                                    "entity": "sensor.google_wifi_new_version"
+                                },
+                                {
+                                    "entity": "sensor.google_wifi_last_restart"
+                                },
+                                {
+                                    "entity": "sensor.google_wifi_local_ip"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "show_icon": true,
+                            "show_name": true,
+                            "show_state": true,
+                            "title": "Google Wifi",
+                            "type": "entities"
+                        }
+                    ],
+                    "icon": "mdi:settings",
+                    "title": "Settings"
+                },
+                {
+                    "cards": [
+                        {
+                            "template": "tasmota_basic",
+                            "type": "custom:decluttering-card",
+                            "variables": [
+                                {
+                                    "title": "Living Room Lamp"
+                                },
+                                {
+                                    "entity": "living_room_lamp"
+                                }
+                            ]
+                        },
+                        {
+                            "template": "tasmota_basic",
+                            "type": "custom:decluttering-card",
+                            "variables": [
+                                {
+                                    "title": "Living Room Accent Lamp 01"
+                                },
+                                {
+                                    "entity": "living_room_accent_lamp_01"
+                                }
+                            ]
+                        },
+                        {
+                            "template": "tasmota_basic",
+                            "type": "custom:decluttering-card",
+                            "variables": [
+                                {
+                                    "title": "Living Room Accent Lamp 02"
+                                },
+                                {
+                                    "entity": "living_room_accent_lamp_02"
+                                }
+                            ]
+                        },
+                        {
+                            "template": "tasmota_basic",
+                            "type": "custom:decluttering-card",
+                            "variables": [
+                                {
+                                    "title": "Kitchen Cabinet Accent 01"
+                                },
+                                {
+                                    "entity": "kitchen_cabinet_accent_rgb_01"
+                                }
+                            ]
+                        },
+                        {
+                            "template": "tasmota_basic",
+                            "type": "custom:decluttering-card",
+                            "variables": [
+                                {
+                                    "title": "Kitchen Cabinet Accent 02"
+                                },
+                                {
+                                    "entity": "kitchen_cabinet_accent_rgb_02"
+                                }
+                            ]
+                        }
+                    ],
+                    "title": "Test"
+                }
+            ]
+        }
+    },
+    "key": "lovelace",
+    "version": 1
+}
