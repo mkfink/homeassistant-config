@@ -1,5 +1,5 @@
 - platform: github
-  access_token: e2f864973b9655d2a0e97e869e1fbe10ba7b10f9
+  access_token: !secret github_token
   repositories:
     - path: 'i3detroit/Automatic-IoT-module-programming'
     - path: 'i3detroit/homeassistant-config'
