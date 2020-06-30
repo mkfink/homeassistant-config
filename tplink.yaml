@@ -12,7 +12,6 @@ switch:
   - host: 192.168.1.21 # switch.powder_room_light
   - host: 192.168.1.22 # switch.pantry_light
   - host: 192.168.1.23 # switch.powder_room_fan
-  - host: 192.168.1.26 # switch.workout_room_light
   - host: 192.168.1.29 # switch.kitchen_under_cabinet_lights
   - host: 192.168.1.32 # switch.driveway_lights
   - host: 192.168.1.33 # switch.laundry_room_light
@@ -28,6 +27,7 @@ switch:
   - host: 192.168.1.45 # switch.master_bathroom_fan
   - host: 192.168.1.48 # switch.guest_bedroom_light
   - host: 192.168.1.50  # switch.guest_bathroom_fan
+  - host: 192.168.1.51 # switch.workout_room_light
   
 dimmer:
   - host: 192.168.1.24 # light.kitchen_sink_light
