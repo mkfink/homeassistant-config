@@ -307,41 +307,6 @@
                             ],
                             "title": "Basement",
                             "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "sensor.vulcan_current_state"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_job_percentage"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_time_elapsed_friendly"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_time_remaining_friendly"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_actual_bed_temp"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_target_bed_temp"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_actual_tool0_temp"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_target_tool0_temp"
-                                },
-                                {
-                                    "entity": "binary_sensor.vulcan_printing_error"
-                                },
-                                {
-                                    "entity": "switch.vulcan_power"
-                                }
-                            ],
-                            "type": "entities"
                         }
                     ],
                     "icon": "mdi:home-floor-1",
@@ -483,6 +448,9 @@
                                         {
                                             "entity": "switch.backyard_motion_sensor",
                                             "icon": "mdi:lightbulb"
+                                        },
+                                        {
+                                            "entity": "light.patio_lights"
                                         }
                                     ],
                                     "show_header_toggle": false,
@@ -554,6 +522,41 @@
                             "show_name": true,
                             "show_state": true,
                             "title": "Google Wifi",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.vulcan_current_state"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_job_percentage"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_time_elapsed_friendly"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_time_remaining_friendly"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_actual_bed_temp"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_target_bed_temp"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_actual_tool0_temp"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_target_tool0_temp"
+                                },
+                                {
+                                    "entity": "binary_sensor.vulcan_printing_error"
+                                },
+                                {
+                                    "entity": "switch.vulcan_power"
+                                }
+                            ],
                             "type": "entities"
                         }
                     ],
