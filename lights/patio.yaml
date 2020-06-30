@@ -1,0 +1,10 @@
+- platform: mqtt
+  name: 'Patio Lights'
+  state_topic: 'stat/backyard/patio/lights/POWER'
+  command_topic: 'cmnd/backyard/patio/lights/POWER'
+  json_attributes_topic: 'tele/backyard/patio/lights/STATE'
+  availability_topic: 'tele/backyard/patio/lights/LWT'
+  payload_available: 'Online'
+  payload_not_available: 'Offline'
+  payload_on: 'ON'
+  payload_off: 'OFF'
