@@ -48,12 +48,11 @@ sensor: !include_dir_merge_list sensors
 binary_sensor: !include_dir_merge_list binary_sensors
 light: !include_dir_merge_list lights
 switch: !include_dir_merge_list switches
+fan: !include_dir_merge_list fans
 # shell_command: !include shell_commands.yaml
 # device_tracker: !include device_tracker.yaml
 # notify: !include notify.yaml
 # shell_command: !include shell_commands.yaml
-
-tplink: !include tplink.yaml
 
 wake_on_lan:
 
@@ -69,6 +68,7 @@ webostv:
       - HDMI 1
       - HDMI 2
       - HDMI 3
+      - Chromecast
       - Netflix
       - Amazon Prime Video
       - Hulu

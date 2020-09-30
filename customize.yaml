@@ -236,3 +236,7 @@ sensor.living_room_lamp_wifi_linkcount:
   friendly_name: WiFi Linkcount
 sensor.living_room_lamp_wifi_downtime:
   friendly_name: WiFi Downtime
+fan.living_room_fan_remote_fan:
+  assumed_state: true
+light.living_room_fan_remote_light:
+  assumed_state: true

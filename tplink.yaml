@@ -4,9 +4,9 @@ switch:
   - host: 192.168.1.8  # switch.guest_bathroom_light
   - host: 192.168.1.11 # switch.upstairs_hall_light
   - host: 192.168.1.13 # switch.backyard_motion_sensor
-  - host: 192.168.1.15 # switch.front_porch_light
-  - host: 192.168.1.16 # switch.foyer_light
-  - host: 192.168.1.17 # switch.mud_room_light
+  # - host: 192.168.1.15 # switch.front_porch_light
+  # - host: 192.168.1.16 # switch.foyer_light
+  # - host: 192.168.1.17 # switch.mud_room_light
   - host: 192.168.1.18 # switch.dog_room_lights
   - host: 192.168.1.19 # switch.downstairs_hall_light
   - host: 192.168.1.21 # switch.powder_room_light
@@ -17,7 +17,7 @@ switch:
   - host: 192.168.1.33 # switch.laundry_room_light
   - host: 192.168.1.34 # switch.basement_lights
   - host: 192.168.1.35 # switch.garage_lights
-  - host: 192.168.1.36 # switch.office_lights
+  # - host: 192.168.1.36 # switch.office_lights
   - host: 192.168.1.37 # switch.master_bathroom_lights
   - host: 192.168.1.38 # switch.master_closet_lights
   - host: 192.168.1.39 # switch.master_bedroom_lights

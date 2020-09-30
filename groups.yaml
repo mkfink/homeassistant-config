@@ -1,48 +1,43 @@
 bedtime_lights:
-  name: Lights to turn off at bedtime
+  name: Things to turn off at bedtime
   entities:
+    - light.basement_lightswitch
+    - light.basement_stairs_top_lightswitch
+    - light.bathroom_lightswitch
+    - light.bathroom_shower_lightswitch
+    - light.bedroom_lightswitch
+    - light.closet_lightswitch
+    - light.dance_studio_lightswitch
+    - light.dining_room_lightswitch
+    - light.dog_room_north_lightswitch
+    - light.driveway_lightswitch
+    - light.first_floor_hall_lightswitch
+    - light.foyer_downstairs_lightswitch
+    - light.front_porch_lightswitch
+    - light.garage_lightswitch
+    - light.guest_bathroom_lightswitch
+    - light.guest_bedroom_lightswitch
+    - light.gym_lightswitch
+    - light.kitchen_cabinet_lightswitch
+    - light.kitchen_lightswitch
+    - light.kitchen_sink_lightswitch
+    - light.laundry_lightswitch
     - light.living_room_accent_lamp_01
     - light.living_room_accent_lamp_02
-    - light.kitchen_cabinet_accent_rgb_01
-    - light.kitchen_cabinet_accent_rgb_02
-    - switch.dining_room_light
-    - switch.foyer_light
-    - switch.mud_room_light
-    - switch.upstairs_hall_light
-    - switch.front_porch_light
-    - switch.kitchen_lights
-    - switch.pantry_light
-    - switch.dog_room_lights
-    - switch.downstairs_hall_light
-    - switch.powder_room_light
-    - switch.powder_room_fan
-    - switch.master_bedroom_lights
-    - switch.master_closet_lights
-    - switch.master_bathroom_light
-    - switch.master_bathroom_fan
-    - switch.kitchen_under_cabinet_lights
-    - switch.laundry_room_light
-    - switch.basement_lights
-    - switch.basement_stairs_lights
-    - switch.driveway_lights
-    - switch.garage_lights
-    - switch.office_lights
-    - light.dance_studio_light
-    - light.living_room_lights
-    - light.kitchen_sink_light
-    - light.master_bathroom_shower_light
-    - light.kitchen_ceiling_lights
     - light.living_room_lamp
-    - switch.workout_room_light
-    - switch.guest_bedroom_light
-
-kitchen_cabinet_accent_lights:
-  name: Accent Lights
-  icon: mdi:led-on
-  entities:
-    - light.kitchen_cabinet_accent_rgb_01
-    - light.kitchen_cabinet_accent_rgb_02
-
+    - light.living_room_lightswitch
+    - light.mud_room_east_lightswitch
+    - light.office_lightswitch
+    - light.pantry_lightswitch
+    - light.patio_lights
+    - light.powder_room_lightswitch
+    - light.upstairs_hall_east_lightswitch
+    - light.wled_2
+    - light.wled_3
+    - switch.powder_room_fan
+    - switch.bathroom_fan
+    - switch.guest_bathroom_fan_switch
+    - light.workbench_lights
 living_room_accent_lamps:
   name: Accent Lamps
   icon: mdi:floor-lamp

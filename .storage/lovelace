@@ -182,7 +182,7 @@
                                         "service": "media_player.select_source",
                                         "service_data": {
                                             "entity_id": "media_player.living_room_tv",
-                                            "source": "HDMI 3"
+                                            "source": "Chromecast"
                                         }
                                     },
                                     "type": "entity-button"
@@ -198,7 +198,8 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.living_room_lights"
+                                    "entity": "light.living_room_lightswitch",
+                                    "name": "Lights"
                                 },
                                 {
                                     "entity": "light.living_room_lamp",
@@ -207,6 +208,14 @@
                                 },
                                 {
                                     "entity": "group.living_room_accent_lamps"
+                                },
+                                {
+                                    "entity": "fan.living_room_fan_remote_fan",
+                                    "name": "Ceiling Fan"
+                                },
+                                {
+                                    "entity": "light.living_room_fan_remote_light",
+                                    "name": "Ceiling Fan Light"
                                 }
                             ],
                             "show_header_toggle": true,
@@ -217,26 +226,29 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.kitchen_ceiling_lights",
+                                    "entity": "light.kitchen_lightswitch",
                                     "name": "Ceiling Lights"
                                 },
                                 {
-                                    "entity": "light.kitchen_sink_light",
+                                    "entity": "light.kitchen_sink_lightswitch",
                                     "name": "Sink Light"
                                 },
                                 {
-                                    "entity": "switch.kitchen_under_cabinet_lights"
+                                    "entity": "light.kitchen_cabinet_lightswitch",
+                                    "name": "Under cabinet Lights"
                                 },
                                 {
-                                    "entity": "switch.dining_room_light",
-                                    "icon": "mdi:lightbulb"
+                                    "entity": "light.dining_room_lightswitch",
+                                    "name": "Dining Room Light"
                                 },
                                 {
-                                    "entity": "switch.pantry_light",
-                                    "icon": "mdi:lightbulb"
+                                    "entity": "light.pantry_lightswitch",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Pantry Light"
                                 },
                                 {
-                                    "entity": "group.kitchen_cabinet_accent_lights"
+                                    "entity": "light.wled_2",
+                                    "name": "Cabinet Accent Lights"
                                 }
                             ],
                             "title": "Kitchen",
@@ -245,24 +257,29 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "switch.foyer_light",
-                                    "icon": "mdi:lightbulb"
+                                    "entity": "light.foyer_downstairs_lightswitch",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Foyer Light"
                                 },
                                 {
-                                    "entity": "switch.laundry_room_light",
-                                    "icon": "mdi:lightbulb"
+                                    "entity": "light.laundry_lightswitch",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Laundry Light"
                                 },
                                 {
-                                    "entity": "switch.mud_room_light",
-                                    "icon": "mdi:lightbulb"
+                                    "entity": "light.mud_room_east_lightswitch",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Mud Room Lights"
                                 },
                                 {
-                                    "entity": "switch.dog_room_lights",
-                                    "icon": "mdi:lightbulb"
+                                    "entity": "light.dog_room_north_lightswitch",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Dog Room Lights"
                                 },
                                 {
-                                    "entity": "switch.downstairs_hall_light",
-                                    "icon": "mdi:lightbulb"
+                                    "entity": "light.first_floor_hall_lightswitch",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Downstairs Hall Light"
                                 }
                             ],
                             "title": "Hall",
@@ -271,8 +288,7 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "switch.office_lights",
-                                    "icon": "mdi:lightbulb"
+                                    "entity": "light.office_lightswitch"
                                 }
                             ],
                             "title": "Office",
@@ -281,14 +297,14 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "switch.powder_room_light",
+                                    "entity": "light.powder_room_lightswitch",
                                     "icon": "mdi:lightbulb",
                                     "name": "Light"
                                 },
                                 {
                                     "entity": "switch.powder_room_fan",
                                     "icon": "mdi:fan",
-                                    "name": "Fan"
+                                    "name": "Exhaust Fan"
                                 }
                             ],
                             "title": "Powder Room",
@@ -297,12 +313,17 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "switch.basement_stairs_lights",
-                                    "icon": "mdi:lightbulb"
+                                    "entity": "light.basement_stairs_top_lightswitch",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Stairs Light"
                                 },
                                 {
-                                    "entity": "switch.basement_lights",
-                                    "icon": "mdi:lightbulb"
+                                    "entity": "light.basement_lightswitch",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Basement Light"
+                                },
+                                {
+                                    "entity": "light.workbench_lights"
                                 }
                             ],
                             "title": "Basement",
@@ -317,47 +338,93 @@
                     "badges": [],
                     "cards": [
                         {
-                            "entities": [
+                            "cards": [
                                 {
-                                    "entity": "switch.master_bedroom_lights",
-                                    "icon": "mdi:lightbulb",
-                                    "name": "Bedroom Lights"
+                                    "entities": [
+                                        {
+                                            "entity": "light.bedroom_lightswitch",
+                                            "icon": "mdi:lightbulb",
+                                            "name": "Lights"
+                                        },
+                                        {
+                                            "entity": "switch.bedroom_fan",
+                                            "icon": "mdi:fan",
+                                            "name": "Ceiling Fan"
+                                        },
+                                        {
+                                            "entity": "light.closet_lightswitch",
+                                            "name": "Closet Lights"
+                                        }
+                                    ],
+                                    "title": "Bedroom",
+                                    "type": "entities"
                                 },
                                 {
-                                    "entity": "switch.master_bedroom_fan",
-                                    "name": "Bedroom Fan"
-                                },
-                                {
-                                    "entity": "switch.master_closet_lights",
-                                    "name": "Closet Lights"
-                                },
-                                {
-                                    "entity": "switch.master_bathroom_lights",
-                                    "icon": "mdi:lightbulb",
-                                    "name": "Bathroom Lights"
-                                },
-                                {
-                                    "entity": "light.master_bathroom_shower_light",
-                                    "name": "Shower Light"
-                                },
-                                {
-                                    "entity": "switch.master_bathroom_fan",
-                                    "icon": "mdi:fan",
-                                    "name": "Bathroom Fan"
+                                    "entities": [
+                                        {
+                                            "entity": "light.bathroom_lightswitch",
+                                            "icon": "mdi:lightbulb",
+                                            "name": "Lights"
+                                        },
+                                        {
+                                            "entity": "light.bathroom_shower_lightswitch",
+                                            "name": "Shower Light"
+                                        },
+                                        {
+                                            "entity": "switch.bathroom_fan",
+                                            "icon": "mdi:fan",
+                                            "name": "Exhaust Fan"
+                                        }
+                                    ],
+                                    "title": "Bathroom",
+                                    "type": "entities"
                                 }
                             ],
-                            "title": "Master Suite",
-                            "type": "entities"
+                            "type": "vertical-stack"
+                        },
+                        {
+                            "cards": [
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "light.guest_bedroom_lightswitch",
+                                            "icon": "mdi:lightbulb",
+                                            "name": "Light"
+                                        }
+                                    ],
+                                    "title": "Guest Bedroom",
+                                    "type": "entities"
+                                },
+                                {
+                                    "entities": [
+                                        {
+                                            "entity": "light.guest_bathroom_lightswitch",
+                                            "icon": "mdi:lightbulb",
+                                            "name": "Lights"
+                                        },
+                                        {
+                                            "entity": "switch.guest_bathroom_fan_switch",
+                                            "icon": "mdi:fan",
+                                            "name": "Exhaust Fan"
+                                        }
+                                    ],
+                                    "title": "Guest Bathroom",
+                                    "type": "entities"
+                                }
+                            ],
+                            "type": "vertical-stack"
                         },
                         {
                             "entities": [
                                 {
-                                    "entity": "switch.foyer_light",
-                                    "icon": "mdi:lightbulb"
+                                    "entity": "light.foyer_downstairs_lightswitch",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Foyer Light"
                                 },
                                 {
-                                    "entity": "switch.upstairs_hall_light",
-                                    "icon": "mdi:lightbulb"
+                                    "entity": "light.upstairs_hall_east_lightswitch",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Upstairs Hall Light"
                                 }
                             ],
                             "title": "Hall",
@@ -366,51 +433,27 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "switch.workout_room_light",
+                                    "entity": "light.gym_lightswitch",
                                     "icon": "mdi:lightbulb",
                                     "name": "Light"
                                 },
                                 {
-                                    "entity": "switch.workout_room_fan",
+                                    "entity": "switch.gym_ceiling_fan_switch",
                                     "icon": "mdi:fan",
-                                    "name": "Fan"
+                                    "name": "Ceiling Fan"
                                 }
                             ],
-                            "title": "Workout Room",
+                            "title": "Gym",
                             "type": "entities"
                         },
                         {
                             "entities": [
                                 {
-                                    "entity": "light.dance_studio_light"
+                                    "entity": "light.dance_studio_lightswitch",
+                                    "name": "Light"
                                 }
                             ],
                             "title": "Dance Studio",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.guest_bedroom_light",
-                                    "icon": "mdi:lightbulb",
-                                    "name": "Light"
-                                }
-                            ],
-                            "title": "Guest Bedroom",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.guest_bathroom_light",
-                                    "icon": "mdi:lightbulb"
-                                },
-                                {
-                                    "entity": "switch.guest_bathroom_fan",
-                                    "icon": "mdi:fan"
-                                }
-                            ],
-                            "title": "Guest Bathroom",
                             "type": "entities"
                         }
                     ],
@@ -424,37 +467,44 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "cover.garage_door"
+                                            "entity": "light.front_porch_lightswitch",
+                                            "icon": "mdi:lightbulb",
+                                            "name": "Front Porch Light"
                                         },
                                         {
-                                            "entity": "switch.garage_lights",
-                                            "icon": "mdi:lightbulb"
+                                            "entity": "light.driveway_lightswitch",
+                                            "icon": "mdi:lightbulb",
+                                            "name": "Driveway Lights"
+                                        },
+                                        {
+                                            "entity": "light.backyard_lightswitch",
+                                            "icon": "mdi:lightbulb",
+                                            "name": "Backyard Motion Sensor"
+                                        },
+                                        {
+                                            "entity": "light.patio_lights"
+                                        },
+                                        {
+                                            "entity": "light.wled"
                                         }
                                     ],
                                     "show_header_toggle": false,
-                                    "title": "Garage",
+                                    "title": "Outside",
                                     "type": "entities"
                                 },
                                 {
                                     "entities": [
                                         {
-                                            "entity": "switch.front_porch_light",
-                                            "icon": "mdi:lightbulb"
+                                            "entity": "cover.garage_door"
                                         },
                                         {
-                                            "entity": "switch.driveway_lights",
-                                            "icon": "mdi:lightbulb"
-                                        },
-                                        {
-                                            "entity": "switch.backyard_motion_sensor",
-                                            "icon": "mdi:lightbulb"
-                                        },
-                                        {
-                                            "entity": "light.patio_lights"
+                                            "entity": "light.garage_lightswitch",
+                                            "icon": "mdi:lightbulb",
+                                            "name": "Lights"
                                         }
                                     ],
                                     "show_header_toggle": false,
-                                    "title": "Outside",
+                                    "title": "Garage",
                                     "type": "entities"
                                 }
                             ],
@@ -495,6 +545,33 @@
                                 }
                             },
                             "type": "entity-button"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "sensor.sensor_cluster_001_temperature",
+                                    "name": "Temperature",
+                                    "unit_of_measurement": "\u00b0F"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_001_humidity",
+                                    "name": "Humidity"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_001_pressure_kpa",
+                                    "name": "Pressure"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_001_lux",
+                                    "name": "Light Level"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_001_vcc",
+                                    "name": "VCC"
+                                }
+                            ],
+                            "title": "Sensor Cluster 001",
+                            "type": "entities"
                         },
                         {
                             "entities": [
@@ -552,9 +629,6 @@
                                 },
                                 {
                                     "entity": "binary_sensor.vulcan_printing_error"
-                                },
-                                {
-                                    "entity": "switch.vulcan_power"
                                 }
                             ],
                             "type": "entities"
@@ -562,71 +636,6 @@
                     ],
                     "icon": "mdi:settings",
                     "title": "Settings"
-                },
-                {
-                    "cards": [
-                        {
-                            "template": "tasmota_basic",
-                            "type": "custom:decluttering-card",
-                            "variables": [
-                                {
-                                    "title": "Living Room Lamp"
-                                },
-                                {
-                                    "entity": "living_room_lamp"
-                                }
-                            ]
-                        },
-                        {
-                            "template": "tasmota_basic",
-                            "type": "custom:decluttering-card",
-                            "variables": [
-                                {
-                                    "title": "Living Room Accent Lamp 01"
-                                },
-                                {
-                                    "entity": "living_room_accent_lamp_01"
-                                }
-                            ]
-                        },
-                        {
-                            "template": "tasmota_basic",
-                            "type": "custom:decluttering-card",
-                            "variables": [
-                                {
-                                    "title": "Living Room Accent Lamp 02"
-                                },
-                                {
-                                    "entity": "living_room_accent_lamp_02"
-                                }
-                            ]
-                        },
-                        {
-                            "template": "tasmota_basic",
-                            "type": "custom:decluttering-card",
-                            "variables": [
-                                {
-                                    "title": "Kitchen Cabinet Accent 01"
-                                },
-                                {
-                                    "entity": "kitchen_cabinet_accent_rgb_01"
-                                }
-                            ]
-                        },
-                        {
-                            "template": "tasmota_basic",
-                            "type": "custom:decluttering-card",
-                            "variables": [
-                                {
-                                    "title": "Kitchen Cabinet Accent 02"
-                                },
-                                {
-                                    "entity": "kitchen_cabinet_accent_rgb_02"
-                                }
-                            ]
-                        }
-                    ],
-                    "title": "Test"
                 }
             ]
         }

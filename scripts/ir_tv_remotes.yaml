@@ -1,0 +1,17 @@
+turn_off_tvs:
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: 'cmnd/gym/ir-remote/irsend'
+        payload: '{"Protocol":"NEC","Bits":32,"Data":0x20DFA35C}'
+    # - service: mqtt.publish
+    #   data:
+    #     topic: 'cmnd/dance-studio/ir-remote/irsend'
+    #     payload: '{"Protocol":"NEC","Bits":32,"Data":0x20DFA35C}'
+
+turn_on_gym_tv:
+  sequence:
+    - service: mqtt.publish
+      data:
+        topic: 'cmnd/gym/ir-remote/irsend'
+        payload: '{"Protocol":"NEC","Bits":32,"Data":0x20DF23DC}'
