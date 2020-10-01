@@ -1,48 +1,48 @@
 - alias: Pantry light timer
   trigger:
     - platform: state
-      entity_id: switch.pantry_light
+      entity_id: light.pantry_lightswitch
       to: 'on'
       for:
         minutes: 10
   action:
-    - service: switch.turn_off
-      entity_id: switch.pantry_light
+    - service: light.turn_off
+      entity_id: light.pantry_lightswitch
 
 - alias: Closet light timer
   trigger:
     - platform: state
-      entity_id: switch.master_closet_lights
+      entity_id: light.closet_lightswitch
       to: 'on'
       for:
         minutes: 15
   action:
-    - service: switch.turn_off
-      entity_id: switch.master_closet_lights
+    - service: light.turn_off
+      entity_id: light.closet_lightswitch
 
-- alias: Master bathroom light timer
+- alias: Bathroom light timer
   trigger:
     - platform: state
-      entity_id: switch.master_bathroom_lights
+      entity_id: light.bathroom_lightswitch
       to: 'on'
       for:
         minutes: 90
   action:
-    - service: switch.turn_off
-      entity_id: switch.master_bathroom_lights
+    - service: light.turn_off
+      entity_id: light.bathroom_lightswitch
 
-- alias: Master bathroom shower light timer
+- alias: Bathroom shower light timer
   trigger:
     - platform: state
-      entity_id: light.master_bathroom_shower_light
+      entity_id: light.bathroom_shower_lightswitch
       to: 'on'
       for:
         minutes: 60
   action:
-    - service: switch.turn_off
-      entity_id: light.master_bathroom_shower_light
+    - service: light.turn_off
+      entity_id: light.bathroom_shower_lightswitch
 
-- alias: Master bathroom fan timer
+- alias: Bathroom fan timer
   trigger:
     - platform: state
       entity_id: switch.master_bathroom_fan
@@ -50,5 +50,32 @@
       for:
         minutes: 60
   action:
-    - service: light.turn_off
-      entity_id: light.master_bathroom_fan
+    - service: switch.turn_off
+      entity_id: switch.bathroom_fan
+
+- alias: Work Bench Lights Auto On/Off
+  description: 'Switch workbench lights with basement lights'
+  trigger:
+    - platform: state
+      entity_id: light.basement_lightswitch
+  action:
+    - service_template: >
+        {% if trigger.to_state.state == 'on' %}
+          light.turn_on
+        {% else %}
+          light.turn_off
+        {% endif %}
+      entity_id: light.workbench_lights
+  mode: single
+
+# - alias: Kodi turn on
+#   trigger:
+#   - platform: device
+#     device_id: e273c89c033011eb96bd238b24b4b6bb
+#     domain: kodi
+#     entity_id: media_player.living_room_kodi
+#     type: turn_on
+#   action:
+#   - service: light.turn_on
+#     entity_id: light.dining_room_lightswitch
+#   mode: single

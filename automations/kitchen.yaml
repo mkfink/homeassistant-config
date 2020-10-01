@@ -1,37 +1,36 @@
-- alias: Kitchen Task Lights Button On
+- alias: Kitchen Task Lights Button
+  description: 'Switch kitchen task lghts with remote button'
   trigger:
-    platform: mqtt
-    topic: 'stat/kitchen/alt-switch/pressed'
-  condition:
-    condition: or
-    conditions:
-      - condition: state
-        entity_id: light.kitchen_sink_lightswitch
-        state: 'off'
-      - condition: state
-        entity_id: light.kitchen_cabinet_lightswitch
-        state: 'off'
+  - platform: mqtt
+    topic: stat/kitchen/alt-switch/pressed
   action:
-    - service: light.turn_on
-      entity_id:
-        - light.kitchen_sink_lightswitch
-        - light.kitchen_cabinet_lightswitch
-
-- alias: Kitchen Task Lights Button Off
-  trigger:
-    platform: mqtt
-    topic: 'stat/kitchen/alt-switch/pressed'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: light.kitchen_sink_lightswitch
-        state: 'on'
-      - condition: state
-        entity_id: light.kitchen_cabinet_lightswitch
-        state: 'on'
-  action:
-    - service: light.turn_off
-      entity_id:
-        - light.kitchen_sink_lightswitch
-        - light.kitchen_cabinet_lightswitch
+  - choose:
+    - conditions:
+      - condition: or
+        conditions:
+        - condition: state
+          entity_id: light.kitchen_sink_lightswitch
+          state: 'off'
+        - condition: state
+          entity_id: light.kitchen_cabinet_lightswitch
+          state: 'off'
+      sequence:
+      - service: light.turn_on
+        entity_id: 
+          - light.kitchen_sink_lightswitch
+          - light.kitchen_cabinet_lightswitch
+    - conditions:
+      - condition: or
+        conditions:
+        - condition: state
+          entity_id: light.kitchen_sink_lightswitch
+          state: 'on'
+        - condition: state
+          entity_id: light.kitchen_cabinet_lightswitch
+          state: 'on'
+      sequence:
+      - service: light.turn_off
+        entity_id: 
+          - light.kitchen_sink_lightswitch
+          - light.kitchen_cabinet_lightswitch
+  mode: single
