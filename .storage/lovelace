@@ -1,4 +1,6 @@
 {
+    "version": 1,
+    "key": "lovelace",
     "data": {
         "config": {
             "decluttering_templates": {
@@ -257,6 +259,15 @@
                         {
                             "entities": [
                                 {
+                                    "entity": "light.office_lightswitch"
+                                }
+                            ],
+                            "title": "Office",
+                            "type": "entities"
+                        },
+                        {
+                            "entities": [
+                                {
                                     "entity": "light.foyer_downstairs_lightswitch",
                                     "icon": "mdi:lightbulb",
                                     "name": "Foyer Light"
@@ -283,15 +294,6 @@
                                 }
                             ],
                             "title": "Hall",
-                            "type": "entities"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "light.office_lightswitch"
-                                }
-                            ],
-                            "title": "Office",
                             "type": "entities"
                         },
                         {
@@ -328,6 +330,10 @@
                             ],
                             "title": "Basement",
                             "type": "entities"
+                        },
+                        {
+                            "type": "media-control",
+                            "entity": "media_player.living_room_kodi"
                         }
                     ],
                     "icon": "mdi:home-floor-1",
@@ -514,6 +520,8 @@
                     "icon": "mdi:garage"
                 },
                 {
+                    "title": "Settings",
+                    "icon": "mdi:cog",
                     "badges": [
                         {
                             "entity": "sensor.current_energy_usage"
@@ -535,7 +543,6 @@
                         },
                         {
                             "entity": "script.bedtime",
-                            "icon": "mdi:hotel",
                             "name": "Bedtime - Turn everything off",
                             "tap_action": {
                                 "action": "call-service",
@@ -544,7 +551,8 @@
                                     "entity_id": "script.bedtime"
                                 }
                             },
-                            "type": "entity-button"
+                            "type": "entity-button",
+                            "icon": "mdi:bed"
                         },
                         {
                             "entities": [
@@ -633,13 +641,9 @@
                             ],
                             "type": "entities"
                         }
-                    ],
-                    "icon": "mdi:settings",
-                    "title": "Settings"
+                    ]
                 }
             ]
         }
-    },
-    "key": "lovelace",
-    "version": 1
+    }
 }
