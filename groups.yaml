@@ -32,12 +32,14 @@ bedtime_lights:
     - light.patio_lights
     - light.powder_room_lightswitch
     - light.upstairs_hall_east_lightswitch
-    - light.wled_2
-    - light.wled_3
+    - light.patio_wled
+    - light.kitchen_wled
     - switch.powder_room_fan
     - switch.bathroom_fan
     - switch.guest_bathroom_fan_switch
     - light.workbench_lights
+    - light.bedroom_lamp
+    - light.salt_lamp
 living_room_accent_lamps:
   name: Accent Lamps
   icon: mdi:floor-lamp

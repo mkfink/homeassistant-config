@@ -22,10 +22,6 @@ recorder:
 api:
 
 mqtt:
-  broker: 192.168.1.107
-  port: 1883
-  client_id: homeassistant
-  keepalive: 60
   birth_message:
     topic: "tele/sirius/hass/LWT"
     payload: "Online"

@@ -249,7 +249,7 @@
                                     "name": "Pantry Light"
                                 },
                                 {
-                                    "entity": "light.wled_2",
+                                    "entity": "light.kitchen_wled",
                                     "name": "Cabinet Accent Lights"
                                 }
                             ],
@@ -360,6 +360,13 @@
                                         {
                                             "entity": "light.closet_lightswitch",
                                             "name": "Closet Lights"
+                                        },
+                                        {
+                                            "entity": "light.salt_lamp"
+                                        },
+                                        {
+                                            "entity": "light.bedroom_lamp",
+                                            "name": "Nightstand Lamp"
                                         }
                                     ],
                                     "title": "Bedroom",
@@ -469,52 +476,54 @@
                     "badges": [],
                     "cards": [
                         {
-                            "cards": [
+                            "title": "Back",
+                            "type": "entities",
+                            "entities": [
                                 {
-                                    "entities": [
-                                        {
-                                            "entity": "light.front_porch_lightswitch",
-                                            "icon": "mdi:lightbulb",
-                                            "name": "Front Porch Light"
-                                        },
-                                        {
-                                            "entity": "light.driveway_lightswitch",
-                                            "icon": "mdi:lightbulb",
-                                            "name": "Driveway Lights"
-                                        },
-                                        {
-                                            "entity": "light.backyard_lightswitch",
-                                            "icon": "mdi:lightbulb",
-                                            "name": "Backyard Motion Sensor"
-                                        },
-                                        {
-                                            "entity": "light.patio_lights"
-                                        },
-                                        {
-                                            "entity": "light.wled"
-                                        }
-                                    ],
-                                    "show_header_toggle": false,
-                                    "title": "Outside",
-                                    "type": "entities"
+                                    "entity": "light.backyard_lightswitch",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Backyard Motion Sensor"
                                 },
                                 {
-                                    "entities": [
-                                        {
-                                            "entity": "cover.garage_door"
-                                        },
-                                        {
-                                            "entity": "light.garage_lightswitch",
-                                            "icon": "mdi:lightbulb",
-                                            "name": "Lights"
-                                        }
-                                    ],
-                                    "show_header_toggle": false,
-                                    "title": "Garage",
-                                    "type": "entities"
+                                    "entity": "light.patio_lights"
+                                },
+                                {
+                                    "entity": "light.patio_wled"
                                 }
                             ],
-                            "type": "vertical-stack"
+                            "show_header_toggle": false
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "cover.garage_door"
+                                },
+                                {
+                                    "entity": "light.garage_lightswitch",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Lights"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Garage",
+                            "type": "entities"
+                        },
+                        {
+                            "title": "Front",
+                            "entities": [
+                                {
+                                    "entity": "light.front_porch_lightswitch",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Front Porch Light"
+                                },
+                                {
+                                    "entity": "light.driveway_lightswitch",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Driveway Lights"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "type": "entities"
                         }
                     ],
                     "icon": "mdi:garage"
