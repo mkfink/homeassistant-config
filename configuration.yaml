@@ -12,7 +12,7 @@ sun:
 # Text to speech
 tts:
   - platform: google_translate
-    base_url: hrrp://192.168.1.107:8123
+    base_url: http://192.168.1.107:8123
 # Enables support for tracking state changes over time
 history:
 
