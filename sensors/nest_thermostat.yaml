@@ -1,0 +1,51 @@
+- platform: template
+  sensors:
+    living_room_ambient_temp:
+      friendly_name: 'HVAC Ambient Temperature'
+      value_template: '{{ states.climate.living_room.attributes.current_temperature }}'
+      unit_of_measurement: '°F'
+    living_room_target_temp:
+      friendly_name: 'HVAC Target Temp'
+      value_template: '{{ states.climate.living_room.attributes.temperature }}'
+      unit_of_measurement: '°F'
+    living_room_target_temp_low:
+      friendly_name: 'HVAC Target Temp Low'
+      value_template: '{{ states.climate.living_room.attributes.target_temp_low }}'
+      unit_of_measurement: '°F'
+    living_room_target_temp_high:
+      friendly_name: 'HVAC Target Temp High'
+      value_template: '{{ states.climate.living_room.attributes.target_temp_high }}'
+      unit_of_measurement: '°F'
+    living_room_fan_mode:
+      friendly_name: 'HVAC Fan Mode'
+      value_template: '{{ states.climate.living_room.attributes.fan_mode }}'
+    living_room_hvac_active_state:
+      friendly_name: 'HVAC Active State'
+      value_template: '{{ states.climate.living_room.attributes.hvac_action }}'
+    living_room_hvac_preset:
+      friendly_name: 'HVAC Preset'
+      value_template: '{{ states.climate.living_room.attributes.hvac_preset }}'
+    living_room_hvac_heating:
+      friendly_name: 'HVAC Heating State'
+      value_template: >-
+        {% if state_attr('climate.living_room', 'hvac_action') == 'heating' %}
+          1
+        {% else %}
+          0
+        {% endif %}
+    living_room_hvac_cooling:
+      friendly_name: 'HVAC Cooling State'
+      value_template: >-
+        {% if state_attr('climate.living_room', 'hvac_action') == 'cooling' %}
+          1
+        {% else %}
+          0
+        {% endif %}
+    living_room_hvac_off:
+      friendly_name: 'HVAC Off State'
+      value_template: >-
+        {% if state_attr('climate.living_room', 'hvac_action') == 'off' %}
+          1
+        {% else %}
+          0
+        {% endif %}

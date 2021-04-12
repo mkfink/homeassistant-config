@@ -13,7 +13,3 @@
   payload_not_available: 'Offline'
   payload_on: 'ON'
   payload_off: 'OFF'
-  brightness_scale: 100
-  brightness_command_topic: 'cmnd/dance-studio/lightswitch/Dimmer'
-  brightness_state_topic: 'stat/dance-studio/lightswitch/RESULT'
-  brightness_value_template: '{{value_json.Dimmer}}'

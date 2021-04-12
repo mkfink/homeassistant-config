@@ -129,6 +129,9 @@
             "title": "Home",
             "views": [
                 {
+                    "icon": "mdi:home-floor-1",
+                    "path": "default_view",
+                    "title": "First Floor",
                     "badges": [],
                     "cards": [
                         {
@@ -260,10 +263,19 @@
                             "entities": [
                                 {
                                     "entity": "light.office_lightswitch"
+                                },
+                                {
+                                    "entity": "light.blue_desk_lamp",
+                                    "icon": "mdi:desk-lamp"
+                                },
+                                {
+                                    "entity": "light.vulcan_lamp",
+                                    "icon": "mdi:lamp"
                                 }
                             ],
                             "title": "Office",
-                            "type": "entities"
+                            "type": "entities",
+                            "show_header_toggle": true
                         },
                         {
                             "entities": [
@@ -297,6 +309,10 @@
                             "type": "entities"
                         },
                         {
+                            "type": "media-control",
+                            "entity": "media_player.living_room_kodi"
+                        },
+                        {
                             "entities": [
                                 {
                                     "entity": "light.powder_room_lightswitch",
@@ -306,39 +322,18 @@
                                 {
                                     "entity": "switch.powder_room_fan",
                                     "icon": "mdi:fan",
-                                    "name": "Exhaust Fan"
+                                    "name": "Exhaust Fan",
+                                    "state_color": true
                                 }
                             ],
                             "title": "Powder Room",
                             "type": "entities"
                         },
                         {
-                            "entities": [
-                                {
-                                    "entity": "light.basement_stairs_top_lightswitch",
-                                    "icon": "mdi:lightbulb",
-                                    "name": "Stairs Light"
-                                },
-                                {
-                                    "entity": "light.basement_lightswitch",
-                                    "icon": "mdi:lightbulb",
-                                    "name": "Basement Light"
-                                },
-                                {
-                                    "entity": "light.workbench_lights"
-                                }
-                            ],
-                            "title": "Basement",
-                            "type": "entities"
-                        },
-                        {
-                            "type": "media-control",
-                            "entity": "media_player.living_room_kodi"
+                            "type": "thermostat",
+                            "entity": "climate.living_room"
                         }
-                    ],
-                    "icon": "mdi:home-floor-1",
-                    "path": "default_view",
-                    "title": ""
+                    ]
                 },
                 {
                     "badges": [],
@@ -355,18 +350,26 @@
                                         {
                                             "entity": "switch.bedroom_fan",
                                             "icon": "mdi:fan",
-                                            "name": "Ceiling Fan"
+                                            "name": "Ceiling Fan",
+                                            "state_color": true
                                         },
                                         {
                                             "entity": "light.closet_lightswitch",
                                             "name": "Closet Lights"
                                         },
                                         {
-                                            "entity": "light.salt_lamp"
+                                            "entity": "light.salt_lamp",
+                                            "icon": "mdi:lamp"
                                         },
                                         {
                                             "entity": "light.bedroom_lamp",
-                                            "name": "Nightstand Lamp"
+                                            "name": "Nightstand Lamp",
+                                            "icon": "mdi:lamp"
+                                        },
+                                        {
+                                            "entity": "light.bedroom_corner_lamp",
+                                            "name": "Corner Lamp",
+                                            "icon": "mdi:lamp"
                                         }
                                     ],
                                     "title": "Bedroom",
@@ -386,7 +389,8 @@
                                         {
                                             "entity": "switch.bathroom_fan",
                                             "icon": "mdi:fan",
-                                            "name": "Exhaust Fan"
+                                            "name": "Exhaust Fan",
+                                            "state_color": true
                                         }
                                     ],
                                     "title": "Bathroom",
@@ -403,6 +407,11 @@
                                             "entity": "light.guest_bedroom_lightswitch",
                                             "icon": "mdi:lightbulb",
                                             "name": "Light"
+                                        },
+                                        {
+                                            "entity": "light.guest_bedroom_lamp",
+                                            "name": "Lamp",
+                                            "icon": "mdi:lamp"
                                         }
                                     ],
                                     "title": "Guest Bedroom",
@@ -418,7 +427,8 @@
                                         {
                                             "entity": "switch.guest_bathroom_fan_switch",
                                             "icon": "mdi:fan",
-                                            "name": "Exhaust Fan"
+                                            "name": "Exhaust Fan",
+                                            "state_color": true
                                         }
                                     ],
                                     "title": "Guest Bathroom",
@@ -453,7 +463,8 @@
                                 {
                                     "entity": "switch.gym_ceiling_fan_switch",
                                     "icon": "mdi:fan",
-                                    "name": "Ceiling Fan"
+                                    "name": "Ceiling Fan",
+                                    "state_color": true
                                 }
                             ],
                             "title": "Gym",
@@ -464,6 +475,11 @@
                                 {
                                     "entity": "light.dance_studio_lightswitch",
                                     "name": "Light"
+                                },
+                                {
+                                    "entity": "light.dance_studio_spotlights",
+                                    "name": "Spotlights",
+                                    "icon": "mdi:spotlight"
                                 }
                             ],
                             "title": "Dance Studio",
@@ -473,6 +489,8 @@
                     "icon": "mdi:home-floor-2"
                 },
                 {
+                    "icon": "mdi:garage",
+                    "title": "Outside",
                     "badges": [],
                     "cards": [
                         {
@@ -485,10 +503,15 @@
                                     "name": "Backyard Motion Sensor"
                                 },
                                 {
-                                    "entity": "light.patio_lights"
+                                    "entity": "light.patio_lights",
+                                    "name": "Christmas Lights",
+                                    "icon": "mdi:string-lights",
+                                    "state_color": true
                                 },
                                 {
-                                    "entity": "light.patio_wled"
+                                    "entity": "light.patio_wled",
+                                    "icon": "mdi:string-lights",
+                                    "name": "Patio RGB LEDs"
                                 }
                             ],
                             "show_header_toggle": false
@@ -520,13 +543,371 @@
                                     "entity": "light.driveway_lightswitch",
                                     "icon": "mdi:lightbulb",
                                     "name": "Driveway Lights"
+                                },
+                                {
+                                    "entity": "switch.front_christmas_lights",
+                                    "name": "Christmas Lights",
+                                    "icon": "mdi:string-lights",
+                                    "state_color": true
                                 }
                             ],
                             "show_header_toggle": false,
                             "type": "entities"
                         }
-                    ],
-                    "icon": "mdi:garage"
+                    ]
+                },
+                {
+                    "icon": "mdi:home-floor-b",
+                    "title": "Basement",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.basement_stairs_top_lightswitch",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Stairs Light"
+                                },
+                                {
+                                    "entity": "light.basement_lightswitch",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Basement Light"
+                                },
+                                {
+                                    "entity": "light.workbench_lights"
+                                },
+                                {
+                                    "entity": "light.basement_light_001",
+                                    "name": "Light 001"
+                                },
+                                {
+                                    "entity": "light.basement_light_002",
+                                    "name": "Light 002"
+                                },
+                                {
+                                    "entity": "light.basement_light_003",
+                                    "name": "Light 003"
+                                },
+                                {
+                                    "entity": "light.basement_light_004",
+                                    "name": "Light 004"
+                                },
+                                {
+                                    "entity": "light.basement_light_005",
+                                    "name": "Light 005"
+                                },
+                                {
+                                    "entity": "light.basement_light_006"
+                                },
+                                {
+                                    "entity": "light.basement_light_007"
+                                }
+                            ],
+                            "title": "Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "type": "entities",
+                            "state_color": true,
+                            "entities": [
+                                {
+                                    "entity": "switch.shop_vac",
+                                    "icon": "mdi:weather-hurricane"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "icon": "mdi:mushroom",
+                    "title": "Mushrooms",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.sensor_cluster_grow_bme280_temperature",
+                                    "name": "Temperature"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_grow_bme280_humidity",
+                                    "icon": "mdi:water-percent",
+                                    "name": "Humidity"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_grow_lux",
+                                    "icon": "mdi:weather-sunny",
+                                    "name": "Light Level"
+                                },
+                                {
+                                    "type": "weblink",
+                                    "name": "Mushroom dashboard in Grafana",
+                                    "url": "http://sirius.lan:3000/d/Jq2FaMggk/mushrooms?orgId=1",
+                                    "icon": "mdi:mushroom"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "state_color": true,
+                            "title": "Greenhouse"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.sensor_cluster_001_temperature",
+                                    "name": "Temperature"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_001_humidity",
+                                    "icon": "mdi:water-percent",
+                                    "name": "Humidity"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_001_lux",
+                                    "icon": "mdi:weather-sunny",
+                                    "name": "Light Level"
+                                },
+                                {
+                                    "type": "weblink",
+                                    "name": "Mushroom dashboard in Grafana",
+                                    "url": "http://sirius.lan:3000/d/Jq2FaMggk/mushrooms?orgId=1",
+                                    "icon": "mdi:mushroom"
+                                }
+                            ],
+                            "title": "Tub 1",
+                            "show_header_toggle": false,
+                            "state_color": true
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.sensor_cluster_004_temperature",
+                                    "name": "Temperature"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_004_humidity",
+                                    "icon": "mdi:water-percent",
+                                    "name": "Humidity"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_004_lux",
+                                    "icon": "mdi:weather-sunny",
+                                    "name": "Light Level"
+                                },
+                                {
+                                    "type": "weblink",
+                                    "name": "Mushroom dashboard in Grafana",
+                                    "url": "http://sirius.lan:3000/d/Jq2FaMggk/mushrooms?orgId=1",
+                                    "icon": "mdi:mushroom"
+                                }
+                            ],
+                            "title": "Tub 2",
+                            "show_header_toggle": false,
+                            "state_color": true
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.sensor_cluster_003_temperature",
+                                    "name": "Temperature"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_003_humidity",
+                                    "icon": "mdi:water-percent",
+                                    "name": "Humidity"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_003_lux",
+                                    "icon": "mdi:weather-sunny",
+                                    "name": "Light Level"
+                                },
+                                {
+                                    "type": "weblink",
+                                    "name": "Mushroom dashboard in Grafana",
+                                    "url": "http://sirius.lan:3000/d/Jq2FaMggk/mushrooms?orgId=1",
+                                    "icon": "mdi:mushroom"
+                                }
+                            ],
+                            "title": "Tub 3",
+                            "show_header_toggle": false,
+                            "state_color": true
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.sensor_cluster_grow_bme280_temperature",
+                                    "name": "Temperautre"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_grow_bme280_humidity",
+                                    "name": "Humidity"
+                                }
+                            ],
+                            "refresh_interval": 0,
+                            "hours_to_show": 6,
+                            "title": "Greenhouse"
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.sensor_cluster_001_temperature",
+                                    "name": "Temperautre"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_001_humidity",
+                                    "name": "Humidity"
+                                }
+                            ],
+                            "refresh_interval": 0,
+                            "title": "Tub 1",
+                            "hours_to_show": 6
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.sensor_cluster_001_temperature",
+                                    "name": "Tub 1"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_003_temperature",
+                                    "name": "Tub 2"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_004_temperature",
+                                    "name": "Tub 3"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_002_temperature",
+                                    "name": "Room"
+                                }
+                            ],
+                            "hours_to_show": 24,
+                            "refresh_interval": 0,
+                            "title": "Temperature"
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.sensor_cluster_001_humidity",
+                                    "name": "Tub 1"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_003_humidity",
+                                    "name": "Tub 2"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_004_humidity",
+                                    "name": "Tub 3"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_002_humidity",
+                                    "name": "Room"
+                                }
+                            ],
+                            "hours_to_show": 24,
+                            "refresh_interval": 0,
+                            "title": "Humidity"
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.sensor_cluster_001_lux",
+                                    "name": "Tub 1"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_002_lux",
+                                    "name": "Room"
+                                }
+                            ],
+                            "refresh_interval": 0,
+                            "title": "Light",
+                            "hours_to_show": 24
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.sensor_cluster_003_temperature",
+                                    "name": "Temperautre"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_003_humidity",
+                                    "name": "Humidity"
+                                }
+                            ],
+                            "refresh_interval": 0,
+                            "title": "Tub 2",
+                            "hours_to_show": 6
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.sensor_cluster_004_temperature",
+                                    "name": "Temperautre"
+                                },
+                                {
+                                    "entity": "sensor.sensor_cluster_004_humidity",
+                                    "name": "Humidity"
+                                }
+                            ],
+                            "refresh_interval": 0,
+                            "title": "Tub 3",
+                            "hours_to_show": 6
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.greenhouse_fan_power"
+                                }
+                            ],
+                            "hours_to_show": 24,
+                            "refresh_interval": 0,
+                            "title": "Greenhouse Fan"
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.greenhouse_mister_power"
+                                }
+                            ],
+                            "hours_to_show": 24,
+                            "refresh_interval": 0,
+                            "title": "Greenhouse Mister"
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.grow_fan_power"
+                                }
+                            ],
+                            "hours_to_show": 24,
+                            "refresh_interval": 0,
+                            "title": "Tub Fans"
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "switch.stir_plate"
+                                }
+                            ],
+                            "hours_to_show": 24,
+                            "refresh_interval": 0,
+                            "title": "Stir Plate"
+                        }
+                    ]
                 },
                 {
                     "title": "Settings",
@@ -534,6 +915,9 @@
                     "badges": [
                         {
                             "entity": "sensor.current_energy_usage"
+                        },
+                        {
+                            "entity": "sensor.raspberry_pi_temperature"
                         }
                     ],
                     "cards": [
@@ -566,89 +950,144 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "sensor.sensor_cluster_001_temperature",
-                                    "name": "Temperature",
-                                    "unit_of_measurement": "\u00b0F"
+                                    "entity": "light.vulcan_lamp",
+                                    "name": "Light"
                                 },
                                 {
-                                    "entity": "sensor.sensor_cluster_001_humidity",
-                                    "name": "Humidity"
+                                    "entity": "sensor.vulcan_current_state",
+                                    "name": "State"
                                 },
                                 {
-                                    "entity": "sensor.sensor_cluster_001_pressure_kpa",
-                                    "name": "Pressure"
+                                    "entity": "sensor.vulcan_job_percentage",
+                                    "name": "Job Percentage"
                                 },
                                 {
-                                    "entity": "sensor.sensor_cluster_001_lux",
-                                    "name": "Light Level"
+                                    "entity": "sensor.vulcan_time_elapsed_friendly",
+                                    "name": "Time Elapsed"
                                 },
                                 {
-                                    "entity": "sensor.sensor_cluster_001_vcc",
-                                    "name": "VCC"
+                                    "entity": "sensor.vulcan_time_remaining_friendly",
+                                    "name": "Time Remaining"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_actual_bed_temp",
+                                    "name": "Bed Temp"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_target_bed_temp",
+                                    "name": "Bed Target"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_actual_tool0_temp",
+                                    "name": "Extruder Temp"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_target_tool0_temp",
+                                    "name": "Extruder Target"
+                                },
+                                {
+                                    "entity": "binary_sensor.vulcan_printing_error",
+                                    "name": "Printing Error?"
+                                },
+                                {
+                                    "entity": "binary_sensor.vulcan_printing"
                                 }
                             ],
-                            "title": "Sensor Cluster 001",
-                            "type": "entities"
+                            "type": "entities",
+                            "title": "Vulcan"
                         },
                         {
+                            "type": "entities",
                             "entities": [
                                 {
+                                    "entity": "sensor.google_wifi_local_ip"
+                                },
+                                {
                                     "entity": "sensor.google_wifi_uptime"
-                                },
-                                {
-                                    "entity": "sensor.google_wifi_status"
-                                },
-                                {
-                                    "entity": "sensor.google_wifi_current_version"
-                                },
-                                {
-                                    "entity": "sensor.google_wifi_new_version"
                                 },
                                 {
                                     "entity": "sensor.google_wifi_last_restart"
                                 },
                                 {
-                                    "entity": "sensor.google_wifi_local_ip"
+                                    "entity": "sensor.google_wifi_status"
+                                },
+                                {
+                                    "entity": "sensor.google_wifi_new_version"
+                                },
+                                {
+                                    "entity": "sensor.google_wifi_current_version"
                                 }
                             ],
-                            "show_header_toggle": false,
-                            "show_icon": true,
-                            "show_name": true,
-                            "show_state": true,
-                            "title": "Google Wifi",
-                            "type": "entities"
+                            "title": "Google Wifi"
                         },
                         {
+                            "type": "history-graph",
                             "entities": [
                                 {
-                                    "entity": "sensor.vulcan_current_state"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_job_percentage"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_time_elapsed_friendly"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_time_remaining_friendly"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_actual_bed_temp"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_target_bed_temp"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_actual_tool0_temp"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_target_tool0_temp"
-                                },
-                                {
-                                    "entity": "binary_sensor.vulcan_printing_error"
+                                    "entity": "sensor.mike_pc_power_draw"
                                 }
                             ],
-                            "type": "entities"
+                            "hours_to_show": 24,
+                            "refresh_interval": 0
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.odin_intel_core_i7_9700k_load_cpu_total"
+                                },
+                                {
+                                    "entity": "sensor.odin_intel_core_i7_9700k_powers_cpu_package"
+                                },
+                                {
+                                    "entity": "sensor.odin_intel_core_i7_9700k_temperatures_cpu_package"
+                                },
+                                {
+                                    "entity": "sensor.odin_nvidia_geforce_rtx_3090_load_gpu_core"
+                                },
+                                {
+                                    "entity": "sensor.odin_nvidia_geforce_rtx_3090_temperatures_gpu_core"
+                                },
+                                {
+                                    "entity": "sensor.odin_nvidia_geforce_rtx_3090_fans_gpu"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.living_room_temperature"
+                                },
+                                {
+                                    "entity": "sensor.living_room_hvac_active_state"
+                                }
+                            ],
+                            "hours_to_show": 24,
+                            "refresh_interval": 0
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.washing_machine_current"
+                                },
+                                {
+                                    "entity": "sensor.washing_machine_power_draw"
+                                },
+                                {
+                                    "entity": "sensor.washing_machine_running"
+                                },
+                                {
+                                    "entity": "sensor.dryer_current"
+                                },
+                                {
+                                    "entity": "sensor.dryer_power_draw"
+                                },
+                                {
+                                    "entity": "sensor.dryer_running"
+                                }
+                            ]
                         }
                     ]
                 }

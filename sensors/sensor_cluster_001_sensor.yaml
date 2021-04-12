@@ -112,7 +112,3 @@
       friendly_name: "Sensor Cluster 001 Pressure"
       unit_of_measurement: 'kPa'
       value_template: "{{ states('sensor.sensor_cluster_001_pressure') | multiply(1/10) | round(1) }}"
-    sensor_cluster_001_temperature_f:
-      friendly_name: "Sensor Cluster 001 Temperature"
-      unit_of_measurement: '°F'
-      value_template: "{{ ((float(states('sensor.sensor_cluster_001_temperature')) * 9 / 5 )  +  32) | round(1) }}"

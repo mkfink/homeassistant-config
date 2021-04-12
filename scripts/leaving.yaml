@@ -1,8 +1,0 @@
-leaving:
-  sequence:
-    - service: homeassistant.turn_off
-      data:
-        entity_id: group.bedtime_lights
-    - service: media_player.turn_off
-      data:
-        entity_id: media_player.living_room_tv

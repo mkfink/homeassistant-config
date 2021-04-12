@@ -1,0 +1,13 @@
+.- alias: Vulcan Printing Done
+  description: Notification when 3D printer finishes
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.vulcan_printing
+    from: Printing
+    to: Operational
+  action:
+  - service: notify.mobile_app_pixel_3_xl
+    data:
+      title: Vulcan has finished printing.
+      message: Vulcan has finished printing after an elapsed time of {{states('sensor.vulcan_time_elapsed_friendly')}}
+  mode: single

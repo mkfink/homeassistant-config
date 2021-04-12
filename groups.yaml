@@ -40,6 +40,10 @@ bedtime_lights:
     - light.workbench_lights
     - light.bedroom_lamp
     - light.salt_lamp
+    - light.blue_desk_lamp
+    - light.bedroom_corner_lamp
+    - light.guest_bedroom_lamp
+
 living_room_accent_lamps:
   name: Accent Lamps
   icon: mdi:floor-lamp

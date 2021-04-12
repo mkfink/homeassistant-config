@@ -240,3 +240,4 @@ fan.living_room_fan_remote_fan:
   assumed_state: true
 light.living_room_fan_remote_light:
   assumed_state: true
+sensor.sensor_cluster_002_temperature: {}
