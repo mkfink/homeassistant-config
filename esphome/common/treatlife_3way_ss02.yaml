@@ -1,3 +1,4 @@
+# THIS CONFIG IS AN UNTESTED WORK IN PROGRESS
 esphome:
   name: $device_name
   platform: ESP8266
