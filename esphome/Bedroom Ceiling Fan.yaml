@@ -1,0 +1,9 @@
+<<: !include common/wifi.yaml
+<<: !include common/treatlife_ss01s.yaml
+<<: !include common/esp_home_components.yaml
+
+substitutions:
+  device_name: "bedroom_ceiling_fan"
+  pretty_name: "Bedroom Ceiling Fan"
+  switch_ui_name: "Bedroom Ceiling Fan"
+  icon: "mdi:fan"

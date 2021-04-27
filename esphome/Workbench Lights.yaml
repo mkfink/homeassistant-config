@@ -1,0 +1,9 @@
+<<: !include common/wifi.yaml
+<<: !include common/sonoff_basic.yaml
+<<: !include common/esp_home_components.yaml
+
+substitutions:
+  device_name: "workbench_lights"
+  pretty_name: "Workbench Lights"
+  ui_name: "Workbench Lights"
+  icon: "mdi:lghtbulb"

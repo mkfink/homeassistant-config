@@ -1,0 +1,9 @@
+<<: !include common/wifi.yaml
+<<: !include common/treatlife_ss01s.yaml
+<<: !include common/esp_home_components.yaml
+
+substitutions:
+  device_name: "laundry_lightswitch"
+  pretty_name: "Laundry Lightswitch"
+  switch_ui_name: "Laundry Light"
+  icon: "mdi:lghtbulb"

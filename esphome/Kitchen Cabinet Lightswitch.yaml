@@ -1,0 +1,9 @@
+<<: !include common/wifi.yaml
+<<: !include common/treatlife_ss01s.yaml
+<<: !include common/esp_home_components.yaml
+
+substitutions:
+  device_name: "kitchen_cabinet_lightswitch"
+  pretty_name: "Kitchen Cabinet Lightswitch"
+  switch_ui_name: "Kitchen Cabinet Light"
+  icon: "mdi:lghtbulb"

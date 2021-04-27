@@ -1,0 +1,9 @@
+<<: !include common/wifi.yaml
+<<: !include common/sonoff_basic.yaml
+<<: !include common/esp_home_components.yaml
+
+substitutions:
+  device_name: "basement_light_007"
+  pretty_name: "Basement Light 007"
+  ui_name: "Basement Light 007"
+  icon: "mdi:lghtbulb"

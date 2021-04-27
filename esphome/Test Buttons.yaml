@@ -1,0 +1,15 @@
+<<: !include common/wifi.yaml
+<<: !include common/d1_mini.yaml
+<<: !include common/esp_home_components.yaml
+
+substitutions:
+  device_name: "test_buttons"
+  pretty_name: "Test Buttons"
+
+binary_sensor:
+  - platform: gpio
+    pin:
+      number: D5
+      mode: INPUT_PULLUP
+      inverted: True
+    name: "${pretty_name} B1"

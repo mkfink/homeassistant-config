@@ -228,3 +228,27 @@
       title: Dryer is done
       message: Dryer is done
   mode: single
+
+- id: '1761284125831'
+  alias: Work Bench Lights Auto On/Off
+  description: 'Switch workbench lights with basement lights'
+  trigger:
+    - platform: state
+      entity_id: light.basement_lightswitch
+  action:
+    - service_template: >
+        {% if trigger.to_state.state == 'on' and trigger.from_state.state == 'off' %}
+          light.turn_on
+        {% elif trigger.to_state.state == 'off' and trigger.from_state.state == 'on' %}
+          light.turn_off
+        {% endif %}
+      entity_id: 
+        - light.workbench_lights
+        - light.basement_light_001
+        - light.basement_light_002
+        - light.basement_light_003
+        - light.basement_light_004
+        - light.basement_light_005
+        - light.basement_light_006
+        - light.basement_light_007
+  mode: single

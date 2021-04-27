@@ -3,129 +3,6 @@
     "key": "lovelace",
     "data": {
         "config": {
-            "decluttering_templates": {
-                "tasmota_basic": {
-                    "card": {
-                        "elements": [
-                            {
-                                "entity": "sensor.[[entity]]_time",
-                                "prefix": "Last updated: ",
-                                "style": {
-                                    "left": "10px",
-                                    "top": "0px",
-                                    "transform": "none"
-                                },
-                                "type": "state-label"
-                            },
-                            {
-                                "entity": "sensor.[[entity]]_uptime",
-                                "prefix": "Uptime: ",
-                                "style": {
-                                    "left": "10px",
-                                    "top": "24px",
-                                    "transform": "none"
-                                },
-                                "type": "state-label"
-                            },
-                            {
-                                "entity": "sensor.[[entity]]_power",
-                                "style": {
-                                    "right": "0px",
-                                    "top": "-16px",
-                                    "transform": "right"
-                                },
-                                "title": null,
-                                "type": "state-badge"
-                            },
-                            {
-                                "entity": "sensor.[[entity]]_wifi_ssid",
-                                "prefix": "WiFi: ",
-                                "style": {
-                                    "left": "10px",
-                                    "top": "48px",
-                                    "transform": "none"
-                                },
-                                "type": "state-label"
-                            },
-                            {
-                                "entity": "sensor.[[entity]]_wifi_ap",
-                                "style": {
-                                    "left": "120px",
-                                    "top": "48px",
-                                    "transform": "none"
-                                },
-                                "type": "state-label"
-                            },
-                            {
-                                "entity": "sensor.[[entity]]_wifi_rssi",
-                                "prefix": "RSSI: ",
-                                "style": {
-                                    "left": "10px",
-                                    "text-align": "left",
-                                    "top": "72px",
-                                    "transform": "none"
-                                },
-                                "type": "state-label"
-                            },
-                            {
-                                "entity": "sensor.[[entity]]_wifi_channel",
-                                "prefix": "Channel: ",
-                                "style": {
-                                    "left": "120px",
-                                    "top": "72px",
-                                    "transform": "none"
-                                },
-                                "type": "state-label"
-                            },
-                            {
-                                "entity": "sensor.[[entity]]_wifi_linkcount",
-                                "prefix": "Link count: ",
-                                "style": {
-                                    "left": "10px",
-                                    "text-align": "left",
-                                    "top": "96px",
-                                    "transform": "none"
-                                },
-                                "type": "state-label"
-                            },
-                            {
-                                "entity": "sensor.[[entity]]_wifi_downtime",
-                                "prefix": "Downtime: ",
-                                "style": {
-                                    "left": "120px",
-                                    "top": "96px",
-                                    "transform": "none"
-                                },
-                                "type": "state-label"
-                            },
-                            {
-                                "entity": "sensor.[[entity]]_vcc",
-                                "prefix": "VCC: ",
-                                "style": {
-                                    "left": "10px",
-                                    "text-align": "left",
-                                    "top": "120px",
-                                    "transform": "none"
-                                },
-                                "type": "state-label"
-                            },
-                            {
-                                "entity": "sensor.[[entity]]_loadavg",
-                                "prefix": "Load Avg: ",
-                                "style": {
-                                    "left": "120px",
-                                    "top": "120px",
-                                    "transform": "none"
-                                },
-                                "type": "state-label"
-                            }
-                        ],
-                        "image": "/local/Blank.jpg",
-                        "title": "[[title]]",
-                        "type": "picture-elements"
-                    }
-                }
-            },
             "title": "Home",
             "views": [
                 {
@@ -262,15 +139,19 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.office_lightswitch"
+                                    "entity": "switch.office_light",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Light",
+                                    "state_color": true
                                 },
                                 {
-                                    "entity": "light.blue_desk_lamp",
-                                    "icon": "mdi:desk-lamp"
+                                    "entity": "switch.blue_desk_lamp",
+                                    "icon": "mdi:desk-lamp",
+                                    "state_color": true
                                 },
                                 {
                                     "entity": "light.vulcan_lamp",
-                                    "icon": "mdi:lamp"
+                                    "icon": "mdi:desk-lamp"
                                 }
                             ],
                             "title": "Office",

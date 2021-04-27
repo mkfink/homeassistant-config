@@ -1,0 +1,9 @@
+<<: !include common/wifi.yaml
+<<: !include common/treatlife_ss01s.yaml
+<<: !include common/esp_home_components.yaml
+
+substitutions:
+  device_name: "bedroom_lightswitch"
+  pretty_name: "Bedroom Lightswitch"
+  switch_ui_name: "Bedroom Light"
+  icon: "mdi:lghtbulb"

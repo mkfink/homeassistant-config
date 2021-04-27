@@ -1,0 +1,9 @@
+<<: !include common/wifi.yaml
+<<: !include common/treatlife_ss01s.yaml
+<<: !include common/esp_home_components.yaml
+
+substitutions:
+  device_name: "dining_room_lightswitch"
+  pretty_name: "dining room lightswitch"
+  switch_ui_name: "dining room"
+  icon: "mdi:lghtbulb"

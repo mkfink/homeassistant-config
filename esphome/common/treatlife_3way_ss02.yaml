@@ -1,0 +1,59 @@
+esphome:
+  name: $device_name
+  platform: ESP8266
+  board: esp01_1m
+
+status_led:
+  pin:
+    number: 5
+    inverted: True
+
+binary_sensor:
+  - name: "${pretty_name} Button"
+    platform: gpio
+    pin:
+      number: 13
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - if:
+          condition:
+            switch.is_on: power_state
+          then:
+            switch.turn_off: relay_1
+      - if: 
+          condition:
+            switch.is_off: power_state
+          then:
+            switch.turn_on: relay_1
+
+  - name: "${pretty_name} Sensor"
+    platform: gpio
+    pin:
+      number: 14
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      then:
+        - switch.toggle: power_state
+
+switch:
+  - name: "${pretty_name} Power State"
+    id: power_state
+    platform: gpio
+    pin:
+      number: 4
+      inverted: False
+
+  - name: "${switch_ui_name}"
+    id: relay_1
+    icon: "${icon}"
+    platform: gpio
+    pin:
+      number: 12
+      inverted: True
+    restore_mode: RESTORE_DEFAULT_OFF
+    on_turn_on:
+      - switch.turn_on: power_led
+    on_turn_off:
+      - switch.turn_off: power_led

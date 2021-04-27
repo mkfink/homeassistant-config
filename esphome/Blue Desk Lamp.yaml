@@ -1,0 +1,9 @@
+<<: !include common/wifi.yaml
+<<: !include common/sonoff_basic.yaml
+<<: !include common/esp_home_components.yaml
+
+substitutions:
+  device_name: "blue_desk_lamp"
+  pretty_name: "Blue Desk Lamp"
+  ui_name: "Blue Desk Lamp"
+  icon: "mdi:desk-lamp"

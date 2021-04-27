@@ -1,0 +1,9 @@
+<<: !include common/wifi.yaml
+<<: !include common/treatlife_ss01s.yaml
+<<: !include common/esp_home_components.yaml
+
+substitutions:
+  device_name: "bathroom_fan"
+  pretty_name: "Bathroom Fan"
+  switch_ui_name: "Bathroom Fan"
+  icon: "mdi:fan"
