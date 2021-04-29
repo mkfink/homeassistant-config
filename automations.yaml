@@ -228,27 +228,59 @@
       title: Dryer is done
       message: Dryer is done
   mode: single
-
 - id: '1761284125831'
   alias: Work Bench Lights Auto On/Off
-  description: 'Switch workbench lights with basement lights'
+  description: Switch workbench lights with basement lights
   trigger:
-    - platform: state
-      entity_id: light.basement_lightswitch
+  - platform: state
+    entity_id: light.basement_lightswitch
   action:
-    - service_template: >
-        {% if trigger.to_state.state == 'on' and trigger.from_state.state == 'off' %}
-          light.turn_on
-        {% elif trigger.to_state.state == 'off' and trigger.from_state.state == 'on' %}
-          light.turn_off
-        {% endif %}
-      entity_id: 
-        - light.workbench_lights
-        - light.basement_light_001
-        - light.basement_light_002
-        - light.basement_light_003
-        - light.basement_light_004
-        - light.basement_light_005
-        - light.basement_light_006
-        - light.basement_light_007
+  - service_template: "{% if trigger.to_state.state == 'on' and trigger.from_state.state\
+      \ == 'off' %}\n  light.turn_on\n{% elif trigger.to_state.state == 'off' and\
+      \ trigger.from_state.state == 'on' %}\n  light.turn_off\n{% endif %}\n"
+    entity_id:
+    - light.workbench_lights
+    - light.basement_light_001
+    - light.basement_light_002
+    - light.basement_light_003
+    - light.basement_light_004
+    - light.basement_light_005
+    - light.basement_light_006
+    - light.basement_light_007
+  mode: single
+- id: '1619665115071'
+  alias: Office Light Long Press
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.office_lightswitch_button
+    from: 'off'
+    to: 'on'
+    for: '0:00:00.4'
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: device
+        type: is_on
+        device_id: b7bde0b989a2b902e4a6f6cc65d71ab8
+        entity_id: switch.office_light
+        domain: switch
+      sequence:
+      - type: turn_on
+        device_id: 3d499e898d453aa4e993adf5b46bd955
+        entity_id: switch.blue_desk_lamp
+        domain: switch
+    - conditions:
+      - condition: device
+        type: is_off
+        device_id: b7bde0b989a2b902e4a6f6cc65d71ab8
+        entity_id: switch.office_light
+        domain: switch
+      sequence:
+      - type: turn_off
+        device_id: 3d499e898d453aa4e993adf5b46bd955
+        entity_id: switch.blue_desk_lamp
+        domain: switch
+    default: []
   mode: single
