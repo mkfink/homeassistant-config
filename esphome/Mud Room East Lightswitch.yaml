@@ -1,0 +1,9 @@
+<<: !include common/wifi.yaml
+<<: !include common/treatlife_3way_ss02.yaml
+<<: !include common/esp_home_components.yaml
+
+substitutions:
+  device_name: "mud_room_east_lightswitch"
+  pretty_name: "Mud Room East Lightswitch"
+  ui_name: "Mud Room Light"
+  icon: "mdi:lghtbulb"
