@@ -171,7 +171,7 @@
                                     "name": "Laundry Light"
                                 },
                                 {
-                                    "entity": "light.mud_room_east_lightswitch",
+                                    "entity": "switch.mud_room_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Mud Room Lights"
                                 },
