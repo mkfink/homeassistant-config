@@ -1,5 +1,5 @@
 <<: !include common/wifi.yaml
-<<: !include common/treatlife_ss01s.yaml
+<<: !include common/treatlife_ss01s_fan.yaml
 <<: !include common/esp_home_components.yaml
 
 substitutions:

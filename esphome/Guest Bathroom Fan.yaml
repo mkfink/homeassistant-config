@@ -3,7 +3,7 @@
 <<: !include common/esp_home_components.yaml
 
 substitutions:
-  device_name: "gym_ceiling_fan"
-  pretty_name: "Gym Ceiling Fan"
-  switch_ui_name: "Gym Ceiling Fan"
+  device_name: "guest bathroom_fan"
+  pretty_name: "Guest Bathroom Exhaust Fan"
+  switch_ui_name: "Guest Bathroom Exhaust Fan"
   icon: "mdi:fan"

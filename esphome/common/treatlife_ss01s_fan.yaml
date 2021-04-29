@@ -17,7 +17,7 @@ binary_sensor:
       inverted: True
     on_press:
       then:
-        - switch.toggle: relay_1
+        - light.toggle: light_1
 
 switch:
   - name: "${pretty_name} LED"
@@ -26,14 +26,33 @@ switch:
     pin:
       number: 4
       inverted: False
+    internal: True
 
-  - name: "${switch_ui_name}"
-    id: relay_1
-    icon: "${icon}"
-    platform: gpio
+  # - name: "${switch_ui_name}"
+  #   id: relay_1
+  #   icon: "${icon}"
+  #   platform: gpio
+  #   pin:
+  #     number: 12
+  #     inverted: False
+  #   restore_mode: RESTORE_DEFAULT_OFF
+  #   on_turn_on:
+  #     - switch.turn_on: power_led
+  #   on_turn_off:
+  #     - switch.turn_off: power_led
+
+output:
+  - platform: gpio
     pin:
       number: 12
       inverted: False
+    id: relay_1
+
+light:
+  - platform: binary
+    name: "${switch_ui_name}"
+    id: light_1
+    output: relay_1
     restore_mode: RESTORE_DEFAULT_OFF
     on_turn_on:
       - switch.turn_on: power_led
