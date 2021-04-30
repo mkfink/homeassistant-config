@@ -5,5 +5,5 @@
 substitutions:
   device_name: "bathroom_fan"
   pretty_name: "Bathroom Fan"
-  switch_ui_name: "Bathroom Exhaust Fan"
+  ui_name: "Bathroom Exhaust Fan"
   icon: "mdi:fan"

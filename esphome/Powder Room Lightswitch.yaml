@@ -5,5 +5,5 @@
 substitutions:
   device_name: "powder_room_lightswitch"
   pretty_name: "Powder Room Lightswitch"
-  switch_ui_name: "Powder Room Light"
+  ui_name: "Powder Room Light"
   icon: "mdi:lghtbulb"

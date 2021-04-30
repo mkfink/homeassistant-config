@@ -5,5 +5,5 @@
 substitutions:
   device_name: "first_floor_hall_lightswitch"
   pretty_name: "First Floor Hall Lightswitch"
-  switch_ui_name: "First Floor Hall Light"
+  ui_name: "First Floor Hall Light"
   icon: "mdi:lghtbulb"

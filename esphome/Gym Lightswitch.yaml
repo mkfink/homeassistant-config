@@ -5,5 +5,5 @@
 substitutions:
   device_name: "gym_lightswitch"
   pretty_name: "Gym Lightswitch"
-  switch_ui_name: "Gym Light"
+  ui_name: "Gym Light"
   icon: "mdi:lghtbulb"

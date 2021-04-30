@@ -5,5 +5,5 @@
 substitutions:
   device_name: "powder_room_fan"
   pretty_name: "Powder Room Fan"
-  switch_ui_name: "Powder Room Fan"
+  ui_name: "Powder Room Fan"
   icon: "mdi:fan"

@@ -5,5 +5,5 @@
 substitutions:
   device_name: "dance_studio_lightswitch"
   pretty_name: "Dance Studio Lightswitch"
-  switch_ui_name: "Dance Studio Light"
+  ui_name: "Dance Studio Light"
   icon: "mdi:lghtbulb"

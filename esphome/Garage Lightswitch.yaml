@@ -5,5 +5,5 @@
 substitutions:
   device_name: "garage_lightswitch"
   pretty_name: "Garage Lightswitch"
-  switch_ui_name: "Garage Light"
+  ui_name: "Garage Light"
   icon: "mdi:lghtbulb"

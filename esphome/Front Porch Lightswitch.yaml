@@ -5,5 +5,5 @@
 substitutions:
   device_name: "front_porch_lightswitch"
   pretty_name: "Front Porch Lightswitch"
-  switch_ui_name: "Front Porch Light"
+  ui_name: "Front Porch Light"
   icon: "mdi:lghtbulb"

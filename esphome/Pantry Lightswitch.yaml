@@ -5,5 +5,5 @@
 substitutions:
   device_name: "pantry_lightswitch"
   pretty_name: "Pantry Lightswitch"
-  switch_ui_name: "Pantry Light"
+  ui_name: "Pantry Light"
   icon: "mdi:lghtbulb"

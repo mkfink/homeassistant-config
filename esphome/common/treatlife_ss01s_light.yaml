@@ -50,7 +50,7 @@ output:
 
 light:
   - platform: binary
-    name: "${switch_ui_name}"
+    name: "${ui_name}"
     id: light_1
     output: relay_1
     restore_mode: RESTORE_DEFAULT_OFF
