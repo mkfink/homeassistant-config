@@ -253,10 +253,10 @@
   description: ''
   trigger:
   - platform: state
-    entity_id: binary_sensor.office_lightswitch_button
     from: 'off'
     to: 'on'
     for: '0:00:00.4'
+    entity_id: binary_sensor.office_lightswitch_button
   condition: []
   action:
   - choose:
@@ -264,8 +264,8 @@
       - condition: device
         type: is_on
         device_id: b7bde0b989a2b902e4a6f6cc65d71ab8
-        entity_id: switch.office_light
-        domain: switch
+        entity_id: light.office_light
+        domain: light
       sequence:
       - type: turn_on
         device_id: 3d499e898d453aa4e993adf5b46bd955
@@ -275,8 +275,8 @@
       - condition: device
         type: is_off
         device_id: b7bde0b989a2b902e4a6f6cc65d71ab8
-        entity_id: switch.office_light
-        domain: switch
+        entity_id: light.office_light
+        domain: light
       sequence:
       - type: turn_off
         device_id: 3d499e898d453aa4e993adf5b46bd955
