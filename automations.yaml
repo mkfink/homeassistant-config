@@ -321,3 +321,109 @@
     entity_id: switch.office_hvac_booster
     domain: switch
   mode: single
+- id: '1619838168234'
+  alias: Vulcan Printing Done
+  description: Notification when 3D printer finishes
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.vulcan_printing
+    from: Printing
+    to: Operational
+  action:
+  - service: notify.mobile_app_pixel_3_xl
+    data:
+      title: Vulcan has finished printing.
+      message: Vulcan has finished printing after an elapsed time of {{states('sensor.vulcan_time_elapsed_friendly')}}
+  mode: single
+- id: '1619831689512'
+  alias: Kitchen Task Lights Button
+  description: 'Switch kitchen task lghts with remote button'
+  trigger:
+  - platform: mqtt
+    topic: stat/kitchen/alt-switch/pressed
+  action:
+  - choose:
+    - conditions:
+      - condition: or
+        conditions:
+        - condition: state
+          entity_id: light.kitchen_sink_lightswitch
+          state: 'off'
+        - condition: state
+          entity_id: light.kitchen_cabinet_lightswitch
+          state: 'off'
+      sequence:
+      - service: light.turn_on
+        entity_id: 
+          - light.kitchen_sink_lightswitch
+          - light.kitchen_cabinet_lightswitch
+    - conditions:
+      - condition: or
+        conditions:
+        - condition: state
+          entity_id: light.kitchen_sink_lightswitch
+          state: 'on'
+        - condition: state
+          entity_id: light.kitchen_cabinet_lightswitch
+          state: 'on'
+      sequence:
+      - service: light.turn_off
+        entity_id: 
+          - light.kitchen_sink_lightswitch
+          - light.kitchen_cabinet_lightswitch
+  mode: single
+- id: '1619831682485'
+  alias: Pantry light timer
+  trigger:
+    - platform: state
+      entity_id: light.pantry_lightswitch
+      to: 'on'
+      for:
+        minutes: 10
+  action:
+    - service: light.turn_off
+      entity_id: light.pantry_lightswitch
+- id: '1619831695314'
+  alias: Closet light timer
+  trigger:
+    - platform: state
+      entity_id: light.closet_lightswitch
+      to: 'on'
+      for:
+        minutes: 15
+  action:
+    - service: light.turn_off
+      entity_id: light.closet_lightswitch
+- id: '1619831632648'
+  alias: Bathroom light timer
+  trigger:
+    - platform: state
+      entity_id: light.bathroom_lightswitch
+      to: 'on'
+      for:
+        minutes: 90
+  action:
+    - service: light.turn_off
+      entity_id: light.bathroom_lightswitch
+- id: '1619831685297'
+  alias: Bathroom shower light timer
+  trigger:
+    - platform: state
+      entity_id: light.bathroom_shower_lightswitch
+      to: 'on'
+      for:
+        minutes: 60
+  action:
+    - service: light.turn_off
+      entity_id: light.bathroom_shower_lightswitch
+- id: '1619831641257'
+  alias: Bathroom fan timer
+  trigger:
+    - platform: state
+      entity_id: switch.master_bathroom_fan
+      to: 'on'
+      for:
+        minutes: 60
+  action:
+    - service: switch.turn_off
+      entity_id: switch.bathroom_fan
