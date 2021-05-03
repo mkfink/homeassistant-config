@@ -1,3 +1,14 @@
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_pass
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "${pretty_name} Address"
+    ssid:
+      name: "${pretty_name} Connected SSID"
+    bssid:
+      name: "${pretty_name} Connected BSSID"
+    mac_address:
+      name: "${pretty_name} Mac Wifi Address"
