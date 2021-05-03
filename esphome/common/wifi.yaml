@@ -12,3 +12,11 @@ text_sensor:
       name: "${pretty_name} Connected BSSID"
     mac_address:
       name: "${pretty_name} Mac Wifi Address"
+
+sensor:
+  - platform: uptime
+    name: "${pretty_name} Uptime"
+
+  - platform: wifi_signal
+    name: "${pretty_name} WiFi Signal Strength"
+    update_interval: 60s
