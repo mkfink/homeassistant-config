@@ -1,6 +1,4 @@
-<<: !include common/wifi.yaml
 <<: !include common/sonoff_s31_switch.yaml
-<<: !include common/esp_home_components.yaml
 
 substitutions:
   device_name: "office_hvac_booster"

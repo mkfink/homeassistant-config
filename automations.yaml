@@ -284,3 +284,40 @@
         domain: switch
     default: []
   mode: single
+- id: '1619838054001'
+  alias: Office HVAC Booster On
+  description: Turn on the office HVAC booster fan when the Nest reports HVAC is on
+  trigger:
+  - platform: state
+    entity_id: climate.living_room
+    attribute: hvac_action
+    from: 'off'
+    to: heating
+  - platform: state
+    entity_id: climate.living_room
+    attribute: hvac_action
+    from: 'off'
+    to: cooling
+  condition: []
+  action:
+  - type: turn_on
+    device_id: cd1546f4ef60961315c7c545bf9eb757
+    entity_id: switch.office_hvac_booster
+    domain: switch
+  mode: single
+- id: '1619838104737'
+  alias: Office HVAC Booster Off
+  description: Turn off the office HVAC booster fan when the Nest reports HVAC is
+    off
+  trigger:
+  - platform: state
+    entity_id: climate.living_room
+    attribute: hvac_action
+    to: 'off'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: cd1546f4ef60961315c7c545bf9eb757
+    entity_id: switch.office_hvac_booster
+    domain: switch
+  mode: single

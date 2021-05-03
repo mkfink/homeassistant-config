@@ -139,7 +139,7 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "switch.office_light",
+                                    "entity": "light.office_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Light",
                                     "state_color": true
@@ -379,13 +379,13 @@
                             "type": "entities",
                             "entities": [
                                 {
-                                    "entity": "light.backyard_lightswitch",
+                                    "entity": "light.backyard_motion_sensor",
                                     "icon": "mdi:lightbulb",
                                     "name": "Backyard Motion Sensor"
                                 },
                                 {
                                     "entity": "light.patio_lights",
-                                    "name": "Christmas Lights",
+                                    "name": "Patio Lights",
                                     "icon": "mdi:string-lights",
                                     "state_color": true
                                 },
@@ -424,12 +424,6 @@
                                     "entity": "light.driveway_lightswitch",
                                     "icon": "mdi:lightbulb",
                                     "name": "Driveway Lights"
-                                },
-                                {
-                                    "entity": "switch.front_christmas_lights",
-                                    "name": "Christmas Lights",
-                                    "icon": "mdi:string-lights",
-                                    "state_color": true
                                 }
                             ],
                             "show_header_toggle": false,
@@ -969,6 +963,10 @@
                                     "entity": "sensor.dryer_running"
                                 }
                             ]
+                        },
+                        {
+                            "type": "entity",
+                            "entity": "switch.office_hvac_booster"
                         }
                     ]
                 }

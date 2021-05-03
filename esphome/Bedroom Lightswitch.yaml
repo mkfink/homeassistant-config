@@ -1,6 +1,4 @@
-<<: !include common/wifi.yaml
 <<: !include common/treatlife_ss01s_light.yaml
-<<: !include common/esp_home_components.yaml
 
 substitutions:
   device_name: "bedroom_lightswitch"

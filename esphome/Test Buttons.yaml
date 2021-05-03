@@ -1,6 +1,4 @@
-<<: !include common/wifi.yaml
 <<: !include common/d1_mini.yaml
-<<: !include common/esp_home_components.yaml
 
 substitutions:
   device_name: "test_buttons"

@@ -8,3 +8,4 @@ secrets.yaml
 www
 tts
 esphome/common/secrets.yaml
+esphome/.vscode

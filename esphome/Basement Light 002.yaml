@@ -1,6 +1,4 @@
-<<: !include common/wifi.yaml
 <<: !include common/sonoff_basic_light.yaml
-<<: !include common/esp_home_components.yaml
 
 substitutions:
   device_name: "basement_light_002"
