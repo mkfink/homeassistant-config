@@ -1,0 +1,7 @@
+<<: !include common/treatlife_ds01_dimmer.yaml
+
+substitutions:
+  device_name: "kitchen_under_cabinet_lightswitch"
+  pretty_name: "Kitchen Under Cabinet Lights"
+  ui_name: "Kitchen Under Cabinet Lights"
+  icon: "mdi:lghtbulb"

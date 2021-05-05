@@ -18,7 +18,7 @@ bedtime_lights:
     - light.guest_bathroom_lightswitch
     - light.guest_bedroom_lightswitch
     - light.gym_lightswitch
-    - light.kitchen_cabinet_lightswitch
+    - light.kitchen_under_cabinet_lights_dimmer
     - light.kitchen_lightswitch
     - light.kitchen_sink_lightswitch
     - light.laundry_lightswitch
@@ -26,8 +26,8 @@ bedtime_lights:
     - light.living_room_accent_lamp_02
     - light.living_room_lamp
     - light.living_room_lightswitch
-    - light.mud_room_east_lightswitch
-    - light.office_lightswitch
+    - switch.mud_room_light
+    - light.office_light
     - light.pantry_lightswitch
     - light.patio_lights
     - light.powder_room_lightswitch
@@ -40,7 +40,7 @@ bedtime_lights:
     - light.workbench_lights
     - light.bedroom_lamp
     - light.salt_lamp
-    - light.blue_desk_lamp
+    - switch.blue_desk_lamp
     - light.bedroom_corner_lamp
     - light.guest_bedroom_lamp
     - light.dance_studio_spotlights

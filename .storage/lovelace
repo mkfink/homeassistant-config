@@ -116,8 +116,8 @@
                                     "name": "Sink Light"
                                 },
                                 {
-                                    "entity": "light.kitchen_cabinet_lightswitch",
-                                    "name": "Under cabinet Lights"
+                                    "entity": "light.kitchen_under_cabinet_lights_dimmer",
+                                    "name": "Under Cabinet Lights"
                                 },
                                 {
                                     "entity": "light.dining_room_lightswitch",

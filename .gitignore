@@ -1,4 +1,4 @@
-home-assistant_v2.db
+home-assistant_v2.db*
 home-assistant.log
 .cloud/
 .storage/
@@ -10,3 +10,4 @@ tts
 esphome/common/secrets.yaml
 esphome/.vscode
 blueprints/
+.vscode

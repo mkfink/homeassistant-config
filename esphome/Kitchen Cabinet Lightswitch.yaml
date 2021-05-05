@@ -1,7 +1,0 @@
-<<: !include common/treatlife_ss01s_light.yaml
-
-substitutions:
-  device_name: "kitchen_cabinet_lightswitch"
-  pretty_name: "Kitchen Cabinet Lightswitch"
-  ui_name: "Kitchen Cabinet Light"
-  icon: "mdi:lghtbulb"
