@@ -337,7 +337,7 @@
   mode: single
 - id: '1619831689512'
   alias: Kitchen Task Lights Button
-  description: 'Switch kitchen task lghts with remote button'
+  description: Switch kitchen task lghts with remote button
   trigger:
   - platform: mqtt
     topic: stat/kitchen/alt-switch/pressed
@@ -350,13 +350,13 @@
           entity_id: light.kitchen_sink_lightswitch
           state: 'off'
         - condition: state
-          entity_id: light.kitchen_cabinet_lightswitch
+          entity_id: light.kitchen_under_cabinet_lights_dimmer
           state: 'off'
       sequence:
       - service: light.turn_on
-        entity_id: 
-          - light.kitchen_sink_lightswitch
-          - light.kitchen_cabinet_lightswitch
+        entity_id:
+        - light.kitchen_sink_lightswitch
+        - light.kitchen_under_cabinet_lights_dimmer
     - conditions:
       - condition: or
         conditions:
@@ -364,66 +364,81 @@
           entity_id: light.kitchen_sink_lightswitch
           state: 'on'
         - condition: state
-          entity_id: light.kitchen_cabinet_lightswitch
+          entity_id: light.kitchen_under_cabinet_lights_dimmer
           state: 'on'
       sequence:
       - service: light.turn_off
-        entity_id: 
-          - light.kitchen_sink_lightswitch
-          - light.kitchen_cabinet_lightswitch
+        entity_id:
+        - light.kitchen_sink_lightswitch
+        - light.kitchen_under_cabinet_lights_dimmer
   mode: single
 - id: '1619831682485'
   alias: Pantry light timer
   trigger:
-    - platform: state
-      entity_id: light.pantry_lightswitch
-      to: 'on'
-      for:
-        minutes: 10
+  - platform: state
+    entity_id: light.pantry_lightswitch
+    to: 'on'
+    for:
+      minutes: 10
   action:
-    - service: light.turn_off
-      entity_id: light.pantry_lightswitch
+  - service: light.turn_off
+    entity_id: light.pantry_lightswitch
 - id: '1619831695314'
   alias: Closet light timer
   trigger:
-    - platform: state
-      entity_id: light.closet_lightswitch
-      to: 'on'
-      for:
-        minutes: 15
+  - platform: state
+    entity_id: light.closet_lightswitch
+    to: 'on'
+    for:
+      minutes: 15
   action:
-    - service: light.turn_off
-      entity_id: light.closet_lightswitch
+  - service: light.turn_off
+    entity_id: light.closet_lightswitch
 - id: '1619831632648'
   alias: Bathroom light timer
   trigger:
-    - platform: state
-      entity_id: light.bathroom_lightswitch
-      to: 'on'
-      for:
-        minutes: 90
+  - platform: state
+    entity_id: light.bathroom_lightswitch
+    to: 'on'
+    for:
+      minutes: 90
   action:
-    - service: light.turn_off
-      entity_id: light.bathroom_lightswitch
+  - service: light.turn_off
+    entity_id: light.bathroom_lightswitch
 - id: '1619831685297'
   alias: Bathroom shower light timer
   trigger:
-    - platform: state
-      entity_id: light.bathroom_shower_lightswitch
-      to: 'on'
-      for:
-        minutes: 60
+  - platform: state
+    entity_id: light.bathroom_shower_lightswitch
+    to: 'on'
+    for:
+      minutes: 60
   action:
-    - service: light.turn_off
-      entity_id: light.bathroom_shower_lightswitch
+  - service: light.turn_off
+    entity_id: light.bathroom_shower_lightswitch
 - id: '1619831641257'
   alias: Bathroom fan timer
   trigger:
-    - platform: state
-      entity_id: switch.master_bathroom_fan
-      to: 'on'
-      for:
-        minutes: 60
+  - platform: state
+    entity_id: switch.master_bathroom_fan
+    to: 'on'
+    for:
+      minutes: 60
   action:
-    - service: switch.turn_off
-      entity_id: switch.bathroom_fan
+  - service: switch.turn_off
+    entity_id: switch.bathroom_fan
+- id: '1620189066928'
+  alias: Garage door failed to close notification
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: cover.garage_door
+    from: Closing
+    to: Open
+  condition: []
+  action:
+  - service: notify.mobile_app_pixel_3_xl
+    data:
+      title: Garage door alert
+      message: Looks like the garage door failed to close
+  mode: single
