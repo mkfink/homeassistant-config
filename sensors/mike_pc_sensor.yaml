@@ -17,9 +17,6 @@
         {% else %}
           {{ state_attr('switch.mike_pc', 'Wifi')['BSSId'] }}
         {% endif %}
-    mike_pc_power:
-      friendly_name: 'Mike PC Power'
-      value_template: '{{ states.switch.mike_pc.attributes.POWER }}'
 
 - platform: mqtt
   name: 'Mike PC Total Start Time'
