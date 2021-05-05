@@ -124,7 +124,7 @@
                                     "name": "Dining Room Light"
                                 },
                                 {
-                                    "entity": "light.pantry_lightswitch",
+                                    "entity": "light.pantry_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Pantry Light"
                                 },
@@ -444,7 +444,7 @@
                                     "name": "Stairs Light"
                                 },
                                 {
-                                    "entity": "light.basement_lightswitch",
+                                    "entity": "light.basement_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Basement Light"
                                 },
@@ -472,10 +472,12 @@
                                     "name": "Light 005"
                                 },
                                 {
-                                    "entity": "light.basement_light_006"
+                                    "entity": "light.basement_light_006",
+                                    "name": "Light 006"
                                 },
                                 {
-                                    "entity": "light.basement_light_007"
+                                    "entity": "light.basement_light_007",
+                                    "name": "Light 007"
                                 }
                             ],
                             "title": "Lights",

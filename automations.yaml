@@ -233,7 +233,7 @@
   description: Switch workbench lights with basement lights
   trigger:
   - platform: state
-    entity_id: light.basement_lightswitch
+    entity_id: light.basement_light
   action:
   - service_template: "{% if trigger.to_state.state == 'on' and trigger.from_state.state\
       \ == 'off' %}\n  light.turn_on\n{% elif trigger.to_state.state == 'off' and\
@@ -376,13 +376,13 @@
   alias: Pantry light timer
   trigger:
   - platform: state
-    entity_id: light.pantry_lightswitch
+    entity_id: light.pantry_light
     to: 'on'
     for:
       minutes: 10
   action:
   - service: light.turn_off
-    entity_id: light.pantry_lightswitch
+    entity_id: light.pantry_light
 - id: '1619831695314'
   alias: Closet light timer
   trigger:

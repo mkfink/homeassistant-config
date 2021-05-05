@@ -1,4 +1,4 @@
-<<: !include common/sonoff_basic.yaml
+<<: !include common/sonoff_basic_light.yaml
 
 substitutions:
   device_name: "workbench_lights"
