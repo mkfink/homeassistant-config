@@ -1,10 +1,6 @@
 <<: !include wifi.yaml
 <<: !include esp_home_components.yaml
-
-esphome:
-  name: $device_name
-  platform: ESP8266
-  board: esp01_1m
+<<: !include board_esp01_1m.yaml
 
 status_led:
   pin:
