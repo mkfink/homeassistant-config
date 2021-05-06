@@ -27,7 +27,7 @@ switch:
       inverted: False
     internal: True
 
-  - name: "${switch_ui_name}"
+  - name: "${ui_name}"
     id: relay_1
     icon: "${icon}"
     platform: gpio
