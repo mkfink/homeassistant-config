@@ -120,7 +120,7 @@
                                     "name": "Under Cabinet Lights"
                                 },
                                 {
-                                    "entity": "light.dining_room_lightswitch",
+                                    "entity": "light.dining_room_light",
                                     "name": "Dining Room Light"
                                 },
                                 {
@@ -166,7 +166,7 @@
                                     "name": "Foyer Light"
                                 },
                                 {
-                                    "entity": "light.laundry_lightswitch",
+                                    "entity": "light.laundry_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Laundry Light"
                                 },
@@ -181,7 +181,7 @@
                                     "name": "Dog Room Lights"
                                 },
                                 {
-                                    "entity": "light.first_floor_hall_lightswitch",
+                                    "entity": "light.first_floor_hall_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Downstairs Hall Light"
                                 }
@@ -196,7 +196,7 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.powder_room_lightswitch",
+                                    "entity": "light.powder_room_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Light"
                                 },
@@ -403,7 +403,7 @@
                                     "entity": "cover.garage_door"
                                 },
                                 {
-                                    "entity": "light.garage_lightswitch",
+                                    "entity": "light.garage_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Lights"
                                 }
@@ -416,12 +416,12 @@
                             "title": "Front",
                             "entities": [
                                 {
-                                    "entity": "light.front_porch_lightswitch",
+                                    "entity": "light.front_porch_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Front Porch Light"
                                 },
                                 {
-                                    "entity": "light.driveway_lightswitch",
+                                    "entity": "light.driveway_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Driveway Lights"
                                 }
