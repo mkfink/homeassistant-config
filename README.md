@@ -34,11 +34,8 @@ Here are notable changes to add-on settings. For the rest, the default settings 
 I like to have a specific bash/tmux environment set up. Each time this add-on is started most of the directory structure including the home directory is reset. `/config` and `/data` are persistent, so we can use `/data` to store things like `.bashrc` and `.tmux.conf` and a start-up script to properly apply them.
 * Put your ssh key in `/data/.ssh`
 * Clone .dotfiles repo into /data
-<br>
-`cd /data`
-<br>
-`git clone -b home-assistant-os https://github.com/mkfink/.dotfiles.git`
-
+  * `cd /data`
+  * `git clone -b home-assistant-os https://github.com/mkfink/.dotfiles.git`
 * Add-on config yaml:
 ```
 ssh:
