@@ -69,7 +69,7 @@ topic readwrite #
 user DVES_USER
 topic readwrite #
 ```
-In the latter file, line 1 enables read/write access to anonymous users. Lines 2 and 3 give read/write access to the default Tasmota MQTT username. In my experience, simply enabling anonymous users with the first like causes the broker to reject any named users. At the moment this is not addressed in the add-on documentation.
+In the latter file, line 1 enables read/write access to anonymous users. Lines 2 and 3 give read/write access to the default Tasmota MQTT username. In my experience, simply enabling anonymous users with the first line causes the broker to reject any named users. At the moment this is not addressed in the add-on documentation.
 
 ## VS Code
 * The Home Assistant add-on requires a long-lived access token (from your user's page in Home Assistant) and the URL of your Home Assistant install (i.e. `http://hassio.local:8123`)
