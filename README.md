@@ -62,8 +62,8 @@ logins:
     password: DVES_PASS
 ```
 Then we must create two files:
-`/share/mosquitto/acl.conf` with contents `acl_file /share/mosquitto/accesscontrollist`
-`/share/mosquitto/accesscontrollist` with contents:
+* `/share/mosquitto/acl.conf` with contents `acl_file /share/mosquitto/accesscontrollist`
+* `/share/mosquitto/accesscontrollist` with contents:
 ```
 topic readwrite #
 user DVES_USER
