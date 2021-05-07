@@ -1,7 +1,7 @@
 <<: !include common/treatlife_ss01s_fan.yaml
 
 substitutions:
-  device_name: "guest bathroom_fan"
+  device_name: "guest_bathroom_fan"
   pretty_name: "Guest Bathroom Exhaust Fan"
   ui_name: "Guest Bathroom Exhaust Fan"
   icon: "mdi:fan"
