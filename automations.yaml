@@ -118,7 +118,8 @@
   action:
   - service: light.turn_off
     data: {}
-    entity_id: light.guest_bathroom_lightswitch
+    target:
+      entity_id: light.guest_bathroom_light
   mode: single
 - id: '1608391724492'
   alias: Guest Bathroom light  on
@@ -130,7 +131,8 @@
   action:
   - service: light.turn_on
     data: {}
-    entity_id: light.guest_bathroom_lightswitch
+    target:
+      entity_id: light.guest_bathroom_light
   mode: single
 - id: '1609537594303'
   alias: Stir Plate On
@@ -398,13 +400,15 @@
   alias: Bathroom light timer
   trigger:
   - platform: state
-    entity_id: light.bathroom_lightswitch
+    entity_id: light.bathroom_light
     to: 'on'
-    for:
-      minutes: 90
+    for: 0:90:00
   action:
   - service: light.turn_off
-    entity_id: light.bathroom_lightswitch
+    data: {}
+    target:
+      entity_id: light.bathroom_light
+  mode: single
 - id: '1619831685297'
   alias: Bathroom shower light timer
   trigger:
@@ -420,13 +424,15 @@
   alias: Bathroom fan timer
   trigger:
   - platform: state
-    entity_id: switch.master_bathroom_fan
+    entity_id: switch.bathroom_exhaust_fan
     to: 'on'
-    for:
-      minutes: 60
+    for: 0:60:00
   action:
   - service: switch.turn_off
-    entity_id: switch.bathroom_fan
+    data: {}
+    target:
+      entity_id: switch.bathroom_exhaust_fan
+  mode: single
 - id: '1620189066928'
   alias: Garage door failed to close notification
   description: ''

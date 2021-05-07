@@ -259,7 +259,7 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "light.bathroom_lightswitch",
+                                            "entity": "light.bathroom_light",
                                             "icon": "mdi:lightbulb",
                                             "name": "Lights"
                                         },
@@ -268,7 +268,7 @@
                                             "name": "Shower Light"
                                         },
                                         {
-                                            "entity": "switch.bathroom_fan",
+                                            "entity": "switch.bathroom_exhaust_fan",
                                             "icon": "mdi:fan",
                                             "name": "Exhaust Fan",
                                             "state_color": true
@@ -301,12 +301,12 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "light.guest_bathroom_lightswitch",
+                                            "entity": "light.guest_bathroom_light",
                                             "icon": "mdi:lightbulb",
                                             "name": "Lights"
                                         },
                                         {
-                                            "entity": "switch.guest_bathroom_fan_switch",
+                                            "entity": "switch.guest_bathroom_exhaust_fan",
                                             "icon": "mdi:fan",
                                             "name": "Exhaust Fan",
                                             "state_color": true

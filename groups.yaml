@@ -3,7 +3,7 @@ bedtime_lights:
   entities:
     - light.basement_lightswitch
     - light.basement_stairs_top_lightswitch
-    - light.bathroom_lightswitch
+    - light.bathroom_light
     - light.bathroom_shower_lightswitch
     - light.bedroom_lightswitch
     - light.closet_lightswitch
@@ -15,7 +15,7 @@ bedtime_lights:
     - light.foyer_downstairs_lightswitch
     - light.front_porch_light
     - light.garage_light
-    - light.guest_bathroom_lightswitch
+    - light.guest_bahtroom_light
     - light.guest_bedroom_lightswitch
     - light.gym_lightswitch
     - light.kitchen_under_cabinet_lights_dimmer
@@ -35,8 +35,8 @@ bedtime_lights:
     - light.patio_wled
     - light.kitchen_wled
     - switch.powder_room_fan
-    - switch.bathroom_fan
-    - switch.guest_bathroom_fan_switch
+    - switch.bathroom_exhaust_fan
+    - switch.guest_bathroom_exhaust_fan
     - light.workbench_lights
     - light.bedroom_lamp
     - light.salt_lamp
