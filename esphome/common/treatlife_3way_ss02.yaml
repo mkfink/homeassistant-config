@@ -11,7 +11,7 @@ status_led:
 binary_sensor:
   - platform: gpio
     id: button
-    name: ${pretty_name} Button
+    name: "${pretty_name} Button"
     pin:
       number: GPIO13
       mode: INPUT_PULLUP
@@ -50,8 +50,8 @@ switch:
     pin: GPIO12
   - platform: template
     id: the_switch
-    name: ${ui_name}
-    icon: ${icon}
+    name: "${ui_name}"
+    icon: "${icon}"
     lambda: |-
       if (id(power_sensor).state) {
         return true;
