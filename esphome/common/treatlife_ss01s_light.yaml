@@ -27,19 +27,6 @@ switch:
       inverted: False
     internal: True
 
-  # - name: "${switch_ui_name}"
-  #   id: relay_1
-  #   icon: "${icon}"
-  #   platform: gpio
-  #   pin:
-  #     number: 12
-  #     inverted: False
-  #   restore_mode: RESTORE_DEFAULT_OFF
-  #   on_turn_on:
-  #     - switch.turn_on: power_led
-  #   on_turn_off:
-  #     - switch.turn_off: power_led
-
 output:
   - platform: gpio
     pin:
