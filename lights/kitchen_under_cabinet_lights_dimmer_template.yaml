@@ -32,4 +32,4 @@
         service: light.turn_on
         data_template:
           entity_id: light.kitchen_under_cabinet_lights_dimmer
-          brightness: "{{ ( 0.85 * brightness | float + 38.25 ) | int }}"          
+          brightness: "{{ ( 0.85 * brightness | float + 38.25 ) | int }}"
