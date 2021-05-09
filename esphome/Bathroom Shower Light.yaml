@@ -1,0 +1,7 @@
+<<: !include common/treatlife_ds01_dimmer.yaml
+
+substitutions:
+  device_name: "bathroom_shower_light"
+  pretty_name: "Bathroom Shower Light"
+  ui_name: "Bathroom Shower Light"
+  icon: "mdi:lghtbulb"

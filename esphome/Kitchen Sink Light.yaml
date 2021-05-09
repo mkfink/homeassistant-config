@@ -1,0 +1,7 @@
+<<: !include common/treatlife_ds01_dimmer.yaml
+
+substitutions:
+  device_name: "kitchen_sink_light"
+  pretty_name: "Kitchen Sink Light"
+  ui_name: "Kitchen Sink Light"
+  icon: "mdi:lghtbulb"

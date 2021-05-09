@@ -1,0 +1,7 @@
+<<: !include common/treatlife_ds01_dimmer.yaml
+
+substitutions:
+  device_name: "kitchen_ceiling_lights"
+  pretty_name: "Kitchen Ceiling Lights"
+  ui_name: "Kitchen Ceiling Lights"
+  icon: "mdi:lghtbulb"

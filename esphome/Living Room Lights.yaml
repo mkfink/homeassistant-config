@@ -1,0 +1,7 @@
+<<: !include common/treatlife_ds01_dimmer.yaml
+
+substitutions:
+  device_name: "living_room_lights"
+  pretty_name: "Living Room Lights"
+  ui_name: "Living Room Lights"
+  icon: "mdi:lghtbulb"

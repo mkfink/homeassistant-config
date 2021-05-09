@@ -80,7 +80,7 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.living_room_lightswitch",
+                                    "entity": "light.living_room_lights_ui",
                                     "name": "Lights"
                                 },
                                 {
@@ -108,16 +108,17 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.kitchen_lightswitch",
+                                    "entity": "light.kitchen_ceiling_lights_ui",
                                     "name": "Ceiling Lights"
                                 },
                                 {
-                                    "entity": "light.kitchen_sink_lightswitch",
+                                    "entity": "light.kitchen_sink_light_ui",
                                     "name": "Sink Light"
                                 },
                                 {
-                                    "entity": "light.kitchen_under_cabinet_lights_dimmer",
-                                    "name": "Under Cabinet Lights"
+                                    "entity": "light.kitchen_under_cabinet_lights_dimmer_ui",
+                                    "name": "Under Cabinet Lights",
+                                    "state_color": true
                                 },
                                 {
                                     "entity": "light.dining_room_light",
@@ -264,7 +265,7 @@
                                             "name": "Lights"
                                         },
                                         {
-                                            "entity": "light.bathroom_shower_lightswitch",
+                                            "entity": "light.bathroom_shower_light_ui",
                                             "name": "Shower Light"
                                         },
                                         {
