@@ -1,3 +1,8 @@
+# The dimmer slider for this light will have a quirk in the Home Assistant UI
+# where the slider doesn't go below the min_value. To fix this, there's a
+# Template Light based on this entity with remapped brightness values.
+# See '../lights/kitchen_under_cabinet_lights_dimmer_template.yaml'
+
 <<: !include common/treatlife_ds01_dimmer.yaml
 
 substitutions:

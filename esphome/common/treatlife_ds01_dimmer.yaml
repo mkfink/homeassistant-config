@@ -19,5 +19,5 @@ light:
     dimmer_datapoint: 2
     min_value_datapoint: 3
     switch_datapoint: 1
-    min_value: 100
+    min_value: 150
     max_value: 1000
