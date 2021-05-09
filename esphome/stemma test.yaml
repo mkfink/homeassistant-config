@@ -39,3 +39,5 @@ sensor:
           window_size: 10
           send_every: 10
           send_first_at: 10
+  - !include ./common/wifi_signal.yaml
+  - !include ./common/uptime.yaml
