@@ -2,3 +2,4 @@ esphome:
   name: "${device_name}"
   platform: ESP8266
   board: d1_mini
+  build_path: "./build/${device_name}"
