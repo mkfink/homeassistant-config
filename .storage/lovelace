@@ -122,7 +122,8 @@
                                 },
                                 {
                                     "entity": "light.dining_room_light",
-                                    "name": "Dining Room Light"
+                                    "name": "Dining Room Light",
+                                    "state_color": true
                                 },
                                 {
                                     "entity": "light.pantry_light",

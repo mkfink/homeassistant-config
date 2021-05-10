@@ -407,52 +407,78 @@
 - id: '1619831695314'
   alias: Closet light timer
   trigger:
-  - platform: state
+  - platform: device
+    type: turned_on
+    device_id: da5ee33d92f0a23d1d287e178976695d
     entity_id: light.closet_light
-    to: 'on'
-    for: 0:15:00
+    domain: light
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+      milliseconds: 0
   action:
-  - service: light.turn_off
-    data: {}
-    target:
-      entity_id: light.closet_light
+  - type: turn_off
+    device_id: da5ee33d92f0a23d1d287e178976695d
+    entity_id: light.closet_light
+    domain: light
   mode: single
 - id: '1619831632648'
   alias: Bathroom light timer
   trigger:
-  - platform: state
+  - platform: device
+    type: turned_on
+    device_id: c8ae982a520cbfe26c2754fdbcb8112d
     entity_id: light.bathroom_light
-    to: 'on'
-    for: 0:90:00
+    domain: light
+    for:
+      hours: 1
+      minutes: 30
+      seconds: 0
+      milliseconds: 0
   action:
-  - service: light.turn_off
-    data: {}
-    target:
-      entity_id: light.bathroom_light
+  - type: turn_off
+    device_id: c8ae982a520cbfe26c2754fdbcb8112d
+    entity_id: light.bathroom_light
+    domain: light
   mode: single
 - id: '1619831685297'
   alias: Bathroom shower light timer
   trigger:
-  - platform: state
-    entity_id: light.bathroom_shower_lightswitch
-    to: 'on'
+  - platform: device
+    type: turned_on
+    device_id: b9583d307ba0e749fc335f44fb6ffb23
+    entity_id: light.bathroom_shower_light_dimmer
+    domain: light
     for:
-      minutes: 60
+      hours: 1
+      minutes: 0
+      seconds: 0
+      milliseconds: 0
   action:
-  - service: light.turn_off
-    entity_id: light.bathroom_shower_lightswitch
+  - type: turn_off
+    device_id: b9583d307ba0e749fc335f44fb6ffb23
+    entity_id: light.bathroom_shower_light_dimmer
+    domain: light
+  mode: single
 - id: '1619831641257'
   alias: Bathroom fan timer
   trigger:
-  - platform: state
+  - platform: device
+    type: turned_on
+    device_id: 8c03fb3350e3fad8e24440cbce7aca0f
     entity_id: switch.bathroom_exhaust_fan
-    to: 'on'
-    for: 0:60:00
+    domain: switch
+    for:
+      hours: 1
+      minutes: 0
+      seconds: 0
+      milliseconds: 0
   action:
-  - service: switch.turn_off
-    data: {}
-    target:
-      entity_id: switch.bathroom_exhaust_fan
+  - type: turn_off
+    device_id: 8c03fb3350e3fad8e24440cbce7aca0f
+    entity_id: switch.bathroom_exhaust_fan
+    domain: switch
   mode: single
 - id: '1620189066928'
   alias: Garage door failed to close notification
