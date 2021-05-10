@@ -16,10 +16,12 @@
     bathroom_shower_light_ui:
       friendly_name: "Bathroom Shower Light"
       level_template: >
-        {% if state_attr('light.bathroom_shower_light_dimmer', 'brightness') <= 39 %}
+        {% if state_attr('light.bathroom_shower_light_dimmer', 'brightness') == None %}
+        0
+        {% elif state_attr('light.bathroom_shower_light_dimmer', 'brightness') <= 39 %}
         1
         {% else %}
-        {{ 1.17647 * (state_attr('light.bathroom_shower_light_dimmer', 'brightness') | float - 38.25) | int }}
+        {{ ( ( (state_attr('light.kitchen_under_cabinet_lights_dimmer', 'brightness') | float - 38.25) | float * 1.17647 ) | round ) | int }}
         {% endif %}
       value_template: "{{states('light.bathroom_shower_light_dimmer')}}"
       turn_on:
@@ -32,4 +34,4 @@
         service: light.turn_on
         data_template:
           entity_id: light.bathroom_shower_light_dimmer
-          brightness: "{{ ( 0.85 * brightness | float + 38.25 ) | int }}"
+          brightness: "{{ ( ( brightness | float * 0.85 ) | float + 38.25 ) | int }}"

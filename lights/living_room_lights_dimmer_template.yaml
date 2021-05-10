@@ -16,7 +16,9 @@
     living_room_lights_ui:
       friendly_name: "Living Room Lights"
       level_template: >
-        {% if state_attr('light.living_room_lights_dimmer', 'brightness') <= 39 %}
+        {% if state_attr('light.living_room_lights_dimmer', 'brightness') == None %}
+        0
+        {% elif state_attr('light.living_room_lights_dimmer', 'brightness') <= 39 %}
         1
         {% else %}
         {{ 1.17647 * (state_attr('light.living_room_lights_dimmer', 'brightness') | float - 38.25) | int }}
@@ -32,4 +34,4 @@
         service: light.turn_on
         data_template:
           entity_id: light.living_room_lights_dimmer
-          brightness: "{{ ( 0.85 * brightness | float + 38.25 ) | int }}"
+          brightness: "{{ ( ( brightness | float * 0.85 ) | float + 38.25 ) | int }}"
