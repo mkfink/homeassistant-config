@@ -2,22 +2,22 @@ bedtime_lights:
   name: Things to turn off at bedtime
   entities:
     - light.basement_light
-    - light.basement_stairs_top_lightswitch
+    - switch.basement_stairs_light
     - light.bathroom_light
     - light.bathroom_shower_light_dimmer
-    - light.bedroom_lightswitch
-    - light.closet_lightswitch
-    - light.dance_studio_lightswitch
+    - light.bedroom_light
+    - light.closet_light
+    - light.dance_studio_light
     - light.dining_room_light
-    - light.dog_room_north_lightswitch
+    - switch.dog_room_light
     - light.driveway_light
     - light.first_floor_hall_light
-    - light.foyer_downstairs_lightswitch
+    - switch.foyer_light
     - light.front_porch_light
     - light.garage_light
     - light.guest_bahtroom_light
-    - light.guest_bedroom_lightswitch
-    - light.gym_lightswitch
+    - light.guest_bedroom_light
+    - light.gym_light
     - light.kitchen_under_cabinet_lights_dimmer
     - light.kitchen_ceiling_lights_dimmer
     - light.kitchen_sink_light_dimmer
@@ -28,10 +28,10 @@ bedtime_lights:
     - light.living_room_lights_dimmer
     - switch.mud_room_light
     - light.office_light
-    - light.pantry_lightswitch
+    - light.pantry_light
     - light.patio_lights
     - light.powder_room_light
-    - light.upstairs_hall_east_lightswitch
+    - switch.upstairs_hall_light
     - light.patio_wled
     - light.kitchen_wled
     - switch.powder_room_fan
@@ -40,7 +40,7 @@ bedtime_lights:
     - light.workbench_lights
     - light.bedroom_lamp
     - light.salt_lamp
-    - switch.blue_desk_lamp
+    - light.blue_desk_lamp
     - light.bedroom_corner_lamp
     - light.guest_bedroom_lamp
     - light.dance_studio_spotlights

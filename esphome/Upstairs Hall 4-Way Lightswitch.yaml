@@ -1,0 +1,59 @@
+# Pared down version of Treatlife 3-way SS02
+<<: !include common/wifi.yaml
+<<: !include common/board_esp01_1m.yaml
+
+substitutions:
+  device_name: "upstairs_hall_4_way_switch"
+  pretty_name: "Upstairs Hall 4-Way Switch"
+  ui_name: "Upstairs Hall 4-Way Switch"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+ota:
+
+web_server:
+  port: 80
+
+api:
+  services:
+    - service: led_on
+      then:
+        - light.turn_on:
+            id: white_led
+    - service: led_off
+      then:
+        - light.turn_off:
+            id: white_led
+
+status_led:
+  pin:
+    number: GPIO5  # Red LED
+    inverted: True
+
+binary_sensor:
+  - platform: gpio
+    id: button
+    name: "Upstairs Hall 4-way Switch Button"
+    pin:
+      number: GPIO13
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - homeassistant.service:
+          service: esphome.upstairs_hall_east_lightswitch_toggle_light
+
+output:
+  - platform: gpio
+    id: white_led_output
+    pin:
+      number: GPIO4
+      inverted: True
+
+light:
+  - platform: binary
+    id: white_led
+    output: white_led_output
+    restore_mode: RESTORE_DEFAULT_ON

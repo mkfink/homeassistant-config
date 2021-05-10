@@ -1,0 +1,98 @@
+# Modified Treatlife SS02 config
+# Adds API services for interacting with a pseudo-4-way switch
+<<: !include common/wifi.yaml
+<<: !include common/board_esp01_1m.yaml
+
+substitutions:
+  device_name: "upstairs_hall_east_lightswitch"
+  pretty_name: "Upstairs Hall East Lightswitch"
+  ui_name: "Upstairs Hall Light"
+  icon: "mdi:lghtbulb"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+ota:
+
+web_server:
+  port: 80
+
+status_led:
+  pin:
+    number: GPIO5  # Red LED
+    inverted: True
+
+output:
+  - platform: gpio
+    id: white_led_output
+    pin:
+      number: GPIO4
+      inverted: True
+
+light:
+  - platform: binary
+    id: white_led
+    output: white_led_output
+    restore_mode: RESTORE_DEFAULT_ON
+
+switch:
+  - platform: gpio
+    id: relay
+    pin: GPIO12
+  - platform: template
+    id: the_switch
+    name: "${ui_name}"
+    icon: "${icon}"
+    lambda: |-
+      if (id(power_sensor).state) {
+        return true;
+      } else {
+        return false;
+      }
+    turn_on_action:
+      - if:
+          condition:
+            binary_sensor.is_off: power_sensor
+          then:
+            - switch.toggle: relay
+    turn_off_action:
+      - if:
+          condition:
+            binary_sensor.is_on: power_sensor
+          then:
+            - switch.toggle: relay
+
+api:
+  services:
+    - service: toggle_light
+      then:
+        - switch.toggle: the_switch
+
+binary_sensor:
+  - platform: gpio
+    id: button
+    name: "${pretty_name} Button"
+    pin:
+      number: GPIO13
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - switch.toggle: relay
+
+  - platform: gpio
+    id: power_sensor
+    pin:
+      number: GPIO14
+      inverted: True
+    filters:
+      - delayed_off: 50ms
+    on_press:
+      - light.turn_off: white_led
+      - homeassistant.service:
+          service: esphome.upstairs_hall_4_way_switch_led_off
+    on_release:
+      - light.turn_on: white_led
+      - homeassistant.service:
+          service: esphome.upstairs_hall_4_way_switch_led_on

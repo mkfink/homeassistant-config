@@ -1,0 +1,7 @@
+<<: !include common/treatlife_3way_ss02.yaml
+
+substitutions:
+  device_name: "dog_room_north_lightswitch"
+  pretty_name: "Dog Room North Lightswitch"
+  ui_name: "Dog Room Light"
+  icon: "mdi:lghtbulb"

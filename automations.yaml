@@ -389,13 +389,15 @@
   alias: Closet light timer
   trigger:
   - platform: state
-    entity_id: light.closet_lightswitch
+    entity_id: light.closet_light
     to: 'on'
-    for:
-      minutes: 15
+    for: 0:15:00
   action:
   - service: light.turn_off
-    entity_id: light.closet_lightswitch
+    data: {}
+    target:
+      entity_id: light.closet_light
+  mode: single
 - id: '1619831632648'
   alias: Bathroom light timer
   trigger:

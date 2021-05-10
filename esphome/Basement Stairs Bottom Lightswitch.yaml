@@ -1,0 +1,7 @@
+<<: !include common/treatlife_3way_ss02.yaml
+
+substitutions:
+  device_name: "basement_stairs_bottom_lightswitch"
+  pretty_name: "Basement Stairs Bottom Lightswitch"
+  ui_name: "Basement Stairs Bottom Lightswitch"
+  icon: "mdi:lghtbulb"

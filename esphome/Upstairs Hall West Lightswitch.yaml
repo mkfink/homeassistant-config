@@ -1,0 +1,7 @@
+<<: !include common/treatlife_3way_ss02.yaml
+
+substitutions:
+  device_name: "upstairs_hall_west_lightswitch"
+  pretty_name: "Upstairs Hall West Lightswitch"
+  ui_name: "Upstairs Hall West Lightswitch"
+  icon: "mdi:lghtbulb"

@@ -1,0 +1,7 @@
+<<: !include common/treatlife_3way_ss02.yaml
+
+substitutions:
+  device_name: "foyer_upstairs_lightswitch"
+  pretty_name: "Foyer Upstairs Lightswitch"
+  ui_name: "Foyer Upstairs Lightswitch"
+  icon: "mdi:lghtbulb"

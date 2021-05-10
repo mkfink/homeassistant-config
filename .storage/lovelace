@@ -146,7 +146,7 @@
                                     "state_color": true
                                 },
                                 {
-                                    "entity": "switch.blue_desk_lamp",
+                                    "entity": "light.blue_desk_lamp",
                                     "icon": "mdi:desk-lamp",
                                     "state_color": true
                                 },
@@ -162,7 +162,7 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.foyer_downstairs_lightswitch",
+                                    "entity": "switch.foyer_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Foyer Light"
                                 },
@@ -177,7 +177,7 @@
                                     "name": "Mud Room Lights"
                                 },
                                 {
-                                    "entity": "light.dog_room_north_lightswitch",
+                                    "entity": "switch.dog_room_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Dog Room Lights"
                                 },
@@ -225,19 +225,15 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "light.bedroom_lightswitch",
+                                            "entity": "light.bedroom_light",
                                             "icon": "mdi:lightbulb",
                                             "name": "Lights"
                                         },
                                         {
-                                            "entity": "switch.bedroom_fan",
+                                            "entity": "switch.bedroom_ceiling_fan",
                                             "icon": "mdi:fan",
                                             "name": "Ceiling Fan",
                                             "state_color": true
-                                        },
-                                        {
-                                            "entity": "light.closet_lightswitch",
-                                            "name": "Closet Lights"
                                         },
                                         {
                                             "entity": "light.salt_lamp",
@@ -252,6 +248,10 @@
                                             "entity": "light.bedroom_corner_lamp",
                                             "name": "Corner Lamp",
                                             "icon": "mdi:lamp"
+                                        },
+                                        {
+                                            "entity": "light.closet_light",
+                                            "name": "Closet Lights"
                                         }
                                     ],
                                     "title": "Bedroom",
@@ -286,7 +286,7 @@
                                 {
                                     "entities": [
                                         {
-                                            "entity": "light.guest_bedroom_lightswitch",
+                                            "entity": "light.guest_bedroom_light",
                                             "icon": "mdi:lightbulb",
                                             "name": "Light"
                                         },
@@ -322,12 +322,12 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.foyer_downstairs_lightswitch",
+                                    "entity": "switch.foyer_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Foyer Light"
                                 },
                                 {
-                                    "entity": "light.upstairs_hall_east_lightswitch",
+                                    "entity": "switch.upstairs_hall_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Upstairs Hall Light"
                                 }
@@ -338,12 +338,12 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.gym_lightswitch",
+                                    "entity": "light.gym_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Light"
                                 },
                                 {
-                                    "entity": "switch.gym_ceiling_fan_switch",
+                                    "entity": "switch.gym_ceiling_fan",
                                     "icon": "mdi:fan",
                                     "name": "Ceiling Fan",
                                     "state_color": true
@@ -355,7 +355,7 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.dance_studio_lightswitch",
+                                    "entity": "light.dance_studio_light",
                                     "name": "Light"
                                 },
                                 {
@@ -440,7 +440,7 @@
                         {
                             "entities": [
                                 {
-                                    "entity": "light.basement_stairs_top_lightswitch",
+                                    "entity": "switch.basement_stairs_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Stairs Light"
                                 },
