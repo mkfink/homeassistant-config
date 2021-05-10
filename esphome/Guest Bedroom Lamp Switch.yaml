@@ -1,0 +1,6 @@
+<<: !include common/treatlife_ss01s_no_relay.yaml
+
+substitutions:
+  device_name: "guest_bedroom_lamp_switch"
+  pretty_name: "Guest Bedroom Lamp Switch"
+  ui_name: "Guest Bedroom Lamp Switch"

@@ -51,3 +51,10 @@ living_room_accent_lamps:
   entities:
     - light.living_room_accent_lamp_01
     - light.living_room_accent_lamp_02
+
+kitchen_task_lights:
+  name: Kitchen Task Lights
+  icon: mdi:lightbulb
+  entities:
+    - light.kitchen_under_cabinet_lights_dimmer
+    - light.kitchen_sink_light_dimmer

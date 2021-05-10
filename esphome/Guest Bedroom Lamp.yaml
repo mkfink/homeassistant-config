@@ -1,0 +1,7 @@
+<<: !include common/sonoff_s31_light.yaml
+
+substitutions:
+  device_name: "guest_bedroom_lamp"
+  pretty_name: "Guest Bedroom Lamp"
+  ui_name: "Guest Bedroom Lamp"
+  icon: "mdi:lamp"

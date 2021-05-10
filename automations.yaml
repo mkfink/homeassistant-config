@@ -271,8 +271,8 @@
       sequence:
       - type: turn_on
         device_id: 3d499e898d453aa4e993adf5b46bd955
-        entity_id: switch.blue_desk_lamp
-        domain: switch
+        entity_id: light.blue_desk_lamp
+        domain: light
     - conditions:
       - condition: device
         type: is_off
@@ -282,8 +282,8 @@
       sequence:
       - type: turn_off
         device_id: 3d499e898d453aa4e993adf5b46bd955
-        entity_id: switch.blue_desk_lamp
-        domain: switch
+        entity_id: light.blue_desk_lamp
+        domain: light
     default: []
   mode: single
 - id: '1619838054001'
@@ -341,38 +341,57 @@
   alias: Kitchen Task Lights Button
   description: Switch kitchen task lghts with remote button
   trigger:
-  - platform: mqtt
-    topic: stat/kitchen/alt-switch/pressed
+  - type: turned_on
+    platform: device
+    device_id: 4cc524fbec3b232ae9761fbe9a9e9201
+    entity_id: binary_sensor.kitchen_extra_switch_button
+    domain: binary_sensor
   action:
   - choose:
     - conditions:
       - condition: or
         conditions:
-        - condition: state
-          entity_id: light.kitchen_sink_lightswitch
-          state: 'off'
-        - condition: state
+        - condition: device
+          type: is_off
+          device_id: 582b914cefacf15319e295aa3212535c
+          entity_id: light.kitchen_sink_light_dimmer
+          domain: light
+        - condition: device
+          type: is_off
+          device_id: c3e43eeb2165593bce23f1c3291e28cd
           entity_id: light.kitchen_under_cabinet_lights_dimmer
-          state: 'off'
+          domain: light
       sequence:
-      - service: light.turn_on
-        entity_id:
-        - light.kitchen_sink_lightswitch
-        - light.kitchen_under_cabinet_lights_dimmer
+      - type: turn_on
+        device_id: 582b914cefacf15319e295aa3212535c
+        entity_id: light.kitchen_sink_light_dimmer
+        domain: light
+      - type: turn_on
+        device_id: c3e43eeb2165593bce23f1c3291e28cd
+        entity_id: light.kitchen_under_cabinet_lights_dimmer
+        domain: light
     - conditions:
-      - condition: or
+      - condition: and
         conditions:
-        - condition: state
-          entity_id: light.kitchen_sink_lightswitch
-          state: 'on'
-        - condition: state
+        - condition: device
+          type: is_on
+          device_id: 582b914cefacf15319e295aa3212535c
+          entity_id: light.kitchen_sink_light_dimmer
+          domain: light
+        - condition: device
+          type: is_on
+          device_id: c3e43eeb2165593bce23f1c3291e28cd
           entity_id: light.kitchen_under_cabinet_lights_dimmer
-          state: 'on'
+          domain: light
       sequence:
-      - service: light.turn_off
-        entity_id:
-        - light.kitchen_sink_lightswitch
-        - light.kitchen_under_cabinet_lights_dimmer
+      - type: turn_off
+        device_id: 582b914cefacf15319e295aa3212535c
+        entity_id: light.kitchen_sink_light_dimmer
+        domain: light
+      - type: turn_off
+        device_id: c3e43eeb2165593bce23f1c3291e28cd
+        entity_id: light.kitchen_under_cabinet_lights_dimmer
+        domain: light
   mode: single
 - id: '1619831682485'
   alias: Pantry light timer
@@ -449,4 +468,76 @@
     data:
       title: Garage door alert
       message: Looks like the garage door failed to close
+  mode: single
+- id: '1620669762626'
+  alias: Guest Bedroom Lamp Switch
+  description: Turn on and off lamp with spare light switch
+  trigger:
+  - type: turned_on
+    platform: device
+    device_id: 93c6ef95680cc99d052786082d61133e
+    entity_id: binary_sensor.guest_bedroom_lamp_switch_button
+    domain: binary_sensor
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: device
+        type: is_off
+        device_id: f262375ae55c7c584aaa9d72dffc6fe1
+        entity_id: light.guest_bedroom_lamp
+        domain: light
+      sequence:
+      - type: turn_on
+        device_id: f262375ae55c7c584aaa9d72dffc6fe1
+        entity_id: light.guest_bedroom_lamp
+        domain: light
+      - type: turn_on
+        device_id: 93c6ef95680cc99d052786082d61133e
+        entity_id: switch.guest_bedroom_lamp_switch_led
+        domain: switch
+    - conditions:
+      - condition: device
+        type: is_on
+        device_id: f262375ae55c7c584aaa9d72dffc6fe1
+        entity_id: light.guest_bedroom_lamp
+        domain: light
+      sequence:
+      - type: turn_off
+        device_id: f262375ae55c7c584aaa9d72dffc6fe1
+        entity_id: light.guest_bedroom_lamp
+        domain: light
+      - type: turn_off
+        device_id: 93c6ef95680cc99d052786082d61133e
+        entity_id: switch.guest_bedroom_lamp_switch_led
+        domain: switch
+    default: []
+  mode: single
+- id: '1620671665827'
+  alias: Kitchen task lights button LED off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: group.kitchen_task_lights
+    to: 'off'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 4cc524fbec3b232ae9761fbe9a9e9201
+    entity_id: switch.kitchen_extra_switch_led
+    domain: switch
+  mode: single
+- id: '1620672171200'
+  alias: Kitchen task lights button LED on
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: group.kitchen_task_lights
+    to: 'on'
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 4cc524fbec3b232ae9761fbe9a9e9201
+    entity_id: switch.kitchen_extra_switch_led
+    domain: switch
   mode: single
