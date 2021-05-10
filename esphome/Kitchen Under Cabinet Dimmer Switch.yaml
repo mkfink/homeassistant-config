@@ -4,6 +4,7 @@
 # See '../lights/kitchen_under_cabinet_lights_dimmer_template.yaml'
 
 <<: !include common/treatlife_ds01_dimmer.yaml
+<<: !include common/api.yaml
 
 substitutions:
   device_name: "kitchen_under_cabinet_lightswitch"

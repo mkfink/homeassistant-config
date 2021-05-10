@@ -1,4 +1,5 @@
 <<: !include common/treatlife_ss01s_no_relay.yaml
+<<: !include common/api.yaml
 
 substitutions:
   device_name: "kitchen_extra_switch"

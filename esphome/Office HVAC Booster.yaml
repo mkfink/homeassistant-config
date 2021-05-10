@@ -1,4 +1,5 @@
 <<: !include common/sonoff_s31_switch.yaml
+<<: !include common/api.yaml
 
 substitutions:
   device_name: "office_hvac_booster"

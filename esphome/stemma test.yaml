@@ -4,6 +4,7 @@
 
 <<: !include common/wifi.yaml
 <<: !include common/esp_home_components.yaml
+<<: !include common/api.yaml
 
 esphome:
   name: "stemma_test"
