@@ -1,0 +1,44 @@
+# Based on SS01s_no_relay
+<<: !include common/wifi.yaml
+<<: !include common/esp_home_components.yaml
+<<: !include common/board_esp01_1m.yaml
+
+substitutions:
+  device_name: "dance_studio_spotlight_switch"
+  pretty_name: "Dance Studio Spotlight Switch"
+  ui_name: "Dance Studio Spotlight Switch"
+
+api:
+  services:
+    - service: led_on
+      then:
+        - switch.turn_on:
+            id: power_led
+    - service: led_off
+      then:
+        - switch.turn_off:
+            id: power_led
+
+status_led:
+  pin:
+    number: 5
+    inverted: True
+
+binary_sensor:
+  - name: "${pretty_name} Button"
+    platform: gpio
+    pin:
+      number: 13
+      mode: INPUT_PULLUP
+      inverted: True
+    on_press:
+      - homeassistant.service:
+          service: esphome.dance_studio_spotlights_power_toggle
+
+switch:
+  - name: "${pretty_name} LED"
+    id: power_led
+    platform: gpio
+    pin:
+      number: 4
+      inverted: False
