@@ -22,9 +22,9 @@
     living_room_hvac_active_state:
       friendly_name: 'HVAC Active State'
       value_template: '{{ states.climate.living_room.attributes.hvac_action }}'
-    living_room_hvac_preset:
-      friendly_name: 'HVAC Preset'
-      value_template: '{{ states.climate.living_room.attributes.hvac_preset }}'
+    living_room_preset_mode:
+      friendly_name: 'HVAC Preset Mode'
+      value_template: '{{ states.climate.living_room.attributes.preset_mode }}'
     living_room_hvac_heating:
       friendly_name: 'HVAC Heating State'
       value_template: >-
