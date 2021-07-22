@@ -28,8 +28,11 @@ This repo mainly consists of my personal Home Assistant and ESPHome configuratio
 ## Home Assitant Add-on Config
 Here are notable changes to add-on settings. For the rest, the default settings seem to generally suffice.
 ### ESPHome
-* `leave_front_door_open: true` - for VS Code integration
+* `leave_front_door_open: true` - for VS Code integration & webserial flashing
 * Enable port 6052
+* Enable SSL
+* Set up a self-signed cert (Run this in the /ssl directory `openssl req -newkey rsa:2048 -nodes -keyout key.pem -x509 -days 365 -out cert.pem`. Make sure to use the hostname or IP you use to connect to Home Assistant as the 'Common Name' when filling in the fields it asks for.)
+* With SSL enabled, bring up the ESPHome dashboard via `https://yourHassOShostnameOrIP:6052` and now you can flash devices over serial from your web browser (see https://esphome.io/guides/getting_started_hassio.html#webserial)
 ### SSH & Web Terminal
 I like to have a specific bash/tmux environment set up. Each time this add-on is started most of the directory structure including the home directory is reset. `/config` and `/data` are persistent, so we can use `/data` to store things like `.bashrc` and `.tmux.conf` and a start-up script to properly apply them.
 * Put your ssh key in `/data/.ssh`
