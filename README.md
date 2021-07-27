@@ -21,6 +21,7 @@ This repo mainly consists of my personal Home Assistant and ESPHome configuratio
   * InfluxDB - DB for logging
   * Grafana - Data visualization
   * ArgonOne Active Cooling - Manages the fan hat
+  * Google Drive Backup for HA snapshots (https://github.com/sabeechen/hassio-google-drive-backup)
 * VS Code installed on PC
   * Home Assistant Config Helper add-on
   * ESPHome add-on
