@@ -1,0 +1,35 @@
+# Uses SparkFun WiFi IR Blaster
+# https://www.sparkfun.com/products/15031
+
+<<: !include common/wifi.yaml
+<<: !include common/esp_home_components.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "gym_tv_remote"
+  pretty_name: "Gym TV Remote"
+  ui_name: "Gym TV Remote"
+
+esphome:
+  name: "${device_name}"
+  platform: ESP8266
+  board: esp12e
+  build_path: "./build/${device_name}"
+
+remote_transmitter:
+  pin: 4
+  carrier_duty_percent: 50%
+
+switch:
+  - platform: template
+    name: "Gym TV Off"
+    turn_on_action:
+      remote_transmitter.transmit_lg:
+        data: 0x20DFA35C
+        nbits: 32
+  - platform: template
+    name: "Gym TV On"
+    turn_on_action:
+      remote_transmitter.transmit_lg:
+        data: 0x20DF23DC
+        nbits: 32

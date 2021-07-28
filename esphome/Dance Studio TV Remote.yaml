@@ -1,0 +1,40 @@
+# Uses SparkFun WiFi IR Blaster
+# https://www.sparkfun.com/products/15031
+
+# IR codes correspond to an Insignia TV (manufactured ~2011)
+# Codes came from this post http://www.remotecentral.com/cgi-bin/forums/viewpost.cgi?1167735
+# and then were converted from hex to raw coes with IrScrutinizer https://github.com/bengtmartensson/IrScrutinizer/releases
+# following instructions from https://github.com/Arduino-IRremote/Arduino-IRremote/issues/263#issuecomment-195486942
+
+<<: !include common/wifi.yaml
+<<: !include common/esp_home_components.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "dance_studio_tv_remote"
+  pretty_name: "Dance Studio TV Remote"
+  ui_name: "Dance Studio TV Remote"
+
+esphome:
+  name: "${device_name}"
+  platform: ESP8266
+  board: esp12e
+  build_path: "./build/${device_name}"
+
+remote_transmitter:
+  pin: 4
+  carrier_duty_percent: 50%
+
+switch:
+  - platform: template
+    name: "Dance Studio TV On"
+    turn_on_action:
+      remote_transmitter.transmit_raw:
+        code: [9019,-4523,552,-579,552,-1709,552,-1709,552,-579,552,-579,552,-579,552,-579,552,-1709,552,-1709,552,-579,552,-1709,552,-579,552,-579,552,-579,552,-579,552,-579,552,-1709,552,-579,552,-579,552,-579,552,-579,552,-1709,552,-1709,552,-579,552,-579,552,-1709,552,-1709,552,-1709,552,-1709,552,-579,552,-579,552,-1709,552,-43993]
+        carrier_frequency: 38029Hz
+  - platform: template
+    name: "Dance Studio TV Off"
+    turn_on_action:
+      remote_transmitter.transmit_raw:
+        code: [9019,-4523,552,-579,552,-1709,552,-1709,552,-579,552,-579,552,-579,552,-579,552,-1709,552,-1709,552,-579,552,-1709,552,-579,552,-579,552,-579,552,-579,552,-579,552,-579,552,-579,552,-579,552,-579,552,-579,552,-1709,552,-1709,552,-579,552,-1709,552,-1709,552,-1709,552,-1709,552,-1709,552,-579,552,-579,552,-1709,552,-43993]
+        carrier_frequency: 38029Hz

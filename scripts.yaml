@@ -20,18 +20,10 @@ bedtime:
   - service: cover.close_cover
     data:
       entity_id: cover.garage_door
-turn_off_tvs:
-  sequence:
-  - service: mqtt.publish
-    data:
-      topic: cmnd/gym/ir-remote/irsend
-      payload: '{"Protocol":"NEC","Bits":32,"Data":0x20DFA35C}'
-turn_on_gym_tv:
-  sequence:
-  - service: mqtt.publish
-    data:
-      topic: cmnd/gym/ir-remote/irsend
-      payload: '{"Protocol":"NEC","Bits":32,"Data":0x20DF23DC}'
+  - service: script.turn_on
+    target:
+      entity_id: script.turn_off_tvs
+  mode: single
 leaving:
   sequence:
   - service: homeassistant.turn_off
@@ -40,6 +32,10 @@ leaving:
   - service: media_player.turn_off
     data:
       entity_id: media_player.living_room_tv
+  - service: script.turn_on
+    target:
+      entity_id: script.turn_off_tvs
+  mode: single
 run_greenhouse_fan:
   alias: run greenhouse fan
   sequence:
@@ -50,4 +46,13 @@ run_greenhouse_fan:
   - service: switch.turn_off
     data: {}
     entity_id: switch.greenhouse_fan
+  mode: single
+turn_off_tvs:
+  alias: Turn off TVs
+  sequence:
+  - service: switch.turn_on
+    target:
+      entity_id:
+      - switch.dance_studio_tv_off
+      - switch.gym_tv_off
   mode: single
