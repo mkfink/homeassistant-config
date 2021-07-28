@@ -1,0 +1,8 @@
+<<: !include common/sonoff_s31_switch.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "dryer"
+  pretty_name: "Dryer"
+  ui_name: "Dryer"
+  icon: "mdi:tumble-dryer"

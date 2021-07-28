@@ -1,0 +1,8 @@
+<<: !include common/sonoff_s31_switch.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "greenhouse_mister"
+  pretty_name: "Greenhouse Mister"
+  ui_name: "${pretty_name}"
+  icon: "mdi:air-humidifier"

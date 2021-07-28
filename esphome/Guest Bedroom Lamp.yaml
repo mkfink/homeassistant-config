@@ -4,5 +4,27 @@
 substitutions:
   device_name: "guest_bedroom_lamp"
   pretty_name: "Guest Bedroom Lamp"
-  ui_name: "Guest Bedroom Lamp"
+  ui_name: "${pretty_name}"
   icon: "mdi:lamp"
+  switch_name: "guest_bedroom_lamp_switch"
+
+api:
+  services:
+    - service: power_toggle
+      then:
+        - light.toggle:
+            id: light_1
+
+# overwriting the light in common/sonoff_s31_light.yaml
+light:
+  - platform: binary
+    name: "${ui_name}"
+    id: light_1
+    output: relay_1
+    restore_mode: RESTORE_DEFAULT_OFF
+    on_turn_on:
+      - homeassistant.service:
+          service: "esphome.${switch_name}_led_on"
+    on_turn_off:
+      - homeassistant.service:
+          service: "esphome.${switch_name}_led_off"

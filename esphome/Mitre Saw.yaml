@@ -1,0 +1,8 @@
+<<: !include common/sonoff_s31_switch.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "mitre_saw"
+  pretty_name: "Mitre Saw"
+  ui_name: "${pretty_name}"
+  icon: "mdi:saw-blade"

@@ -11,3 +11,5 @@ esphome/common/secrets.yaml
 esphome/.vscode
 blueprints/
 .vscode
+esphome/test*.yaml
+glances

@@ -1,12 +1,11 @@
 # Based on SS01s_no_relay
-<<: !include common/wifi.yaml
-<<: !include common/esp_home_components.yaml
-<<: !include common/board_esp01_1m.yaml
+<<: !include common/treatlife_ss01s_no_relay.yaml
 
 substitutions:
   device_name: "dance_studio_spotlight_switch"
   pretty_name: "Dance Studio Spotlight Switch"
   ui_name: "Dance Studio Spotlight Switch"
+  target_name: "dance_studio_spotlights"
 
 api:
   services:
@@ -19,11 +18,7 @@ api:
         - switch.turn_off:
             id: power_led
 
-status_led:
-  pin:
-    number: 5
-    inverted: True
-
+# overriding common/treatlife_ss01s_no_relay.yaml
 binary_sensor:
   - name: "${pretty_name} Button"
     platform: gpio
@@ -33,12 +28,4 @@ binary_sensor:
       inverted: True
     on_press:
       - homeassistant.service:
-          service: esphome.dance_studio_spotlights_power_toggle
-
-switch:
-  - name: "${pretty_name} LED"
-    id: power_led
-    platform: gpio
-    pin:
-      number: 4
-      inverted: False
+          service: "esphome.${target_name}_power_toggle"

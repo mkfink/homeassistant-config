@@ -1,0 +1,8 @@
+<<: !include common/sonoff_s31_switch.yaml
+<<: !include common/api.yaml
+
+substitutions:
+  device_name: "mike_pc"
+  pretty_name: "Mike PC"
+  ui_name: "${pretty_name}"
+  icon: "mdi:desktop-tower"
