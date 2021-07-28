@@ -215,6 +215,22 @@
                         {
                             "type": "thermostat",
                             "entity": "climate.living_room"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "vacuum.tachyon"
+                                },
+                                {
+                                    "entity": "sensor.tachyon_battery_level",
+                                    "name": "Battery"
+                                },
+                                {
+                                    "entity": "binary_sensor.tachyon_bin_full",
+                                    "name": "Bin full"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -348,6 +364,14 @@
                                     "icon": "mdi:fan",
                                     "name": "Ceiling Fan",
                                     "state_color": true
+                                },
+                                {
+                                    "entity": "switch.gym_tv_off",
+                                    "name": "TV Off"
+                                },
+                                {
+                                    "entity": "switch.gym_tv_on",
+                                    "name": "TV On"
                                 }
                             ],
                             "title": "Gym",
@@ -363,6 +387,12 @@
                                     "entity": "light.dance_studio_spotlights",
                                     "name": "Spotlights",
                                     "icon": "mdi:spotlight"
+                                },
+                                {
+                                    "entity": "switch.dance_studio_tv_off"
+                                },
+                                {
+                                    "entity": "switch.dance_studio_tv_on"
                                 }
                             ],
                             "title": "Dance Studio",
@@ -370,6 +400,91 @@
                         }
                     ],
                     "icon": "mdi:home-floor-2"
+                },
+                {
+                    "icon": "mdi:home-floor-b",
+                    "title": "Basement",
+                    "badges": [],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "switch.basement_stairs_light",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Stairs Light",
+                                    "state_color": true
+                                },
+                                {
+                                    "entity": "light.basement_light",
+                                    "icon": "mdi:lightbulb",
+                                    "name": "Basement Light"
+                                },
+                                {
+                                    "entity": "light.workbench_lights"
+                                },
+                                {
+                                    "entity": "light.basement_light_001",
+                                    "name": "Light 001"
+                                },
+                                {
+                                    "entity": "light.basement_light_002",
+                                    "name": "Light 002"
+                                },
+                                {
+                                    "entity": "light.basement_light_003",
+                                    "name": "Light 003"
+                                },
+                                {
+                                    "entity": "light.basement_light_004",
+                                    "name": "Light 004"
+                                },
+                                {
+                                    "entity": "light.basement_light_005",
+                                    "name": "Light 005"
+                                },
+                                {
+                                    "entity": "light.basement_light_006",
+                                    "name": "Light 006"
+                                },
+                                {
+                                    "entity": "light.basement_light_007",
+                                    "name": "Light 007"
+                                }
+                            ],
+                            "title": "Lights",
+                            "type": "entities"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.gluino_waste_drawer",
+                                    "name": "Waste drawer"
+                                },
+                                {
+                                    "entity": "vacuum.gluino_litter_box",
+                                    "name": "State"
+                                },
+                                {
+                                    "entity": "switch.gluino_night_light_mode",
+                                    "name": "Nightlight"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Gluino",
+                            "state_color": false
+                        },
+                        {
+                            "type": "entities",
+                            "state_color": true,
+                            "entities": [
+                                {
+                                    "entity": "switch.shop_vac",
+                                    "icon": "mdi:weather-hurricane"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "icon": "mdi:garage",
@@ -430,70 +545,6 @@
                             ],
                             "show_header_toggle": false,
                             "type": "entities"
-                        }
-                    ]
-                },
-                {
-                    "icon": "mdi:home-floor-b",
-                    "title": "Basement",
-                    "badges": [],
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "switch.basement_stairs_light",
-                                    "icon": "mdi:lightbulb",
-                                    "name": "Stairs Light"
-                                },
-                                {
-                                    "entity": "light.basement_light",
-                                    "icon": "mdi:lightbulb",
-                                    "name": "Basement Light"
-                                },
-                                {
-                                    "entity": "light.workbench_lights"
-                                },
-                                {
-                                    "entity": "light.basement_light_001",
-                                    "name": "Light 001"
-                                },
-                                {
-                                    "entity": "light.basement_light_002",
-                                    "name": "Light 002"
-                                },
-                                {
-                                    "entity": "light.basement_light_003",
-                                    "name": "Light 003"
-                                },
-                                {
-                                    "entity": "light.basement_light_004",
-                                    "name": "Light 004"
-                                },
-                                {
-                                    "entity": "light.basement_light_005",
-                                    "name": "Light 005"
-                                },
-                                {
-                                    "entity": "light.basement_light_006",
-                                    "name": "Light 006"
-                                },
-                                {
-                                    "entity": "light.basement_light_007",
-                                    "name": "Light 007"
-                                }
-                            ],
-                            "title": "Lights",
-                            "type": "entities"
-                        },
-                        {
-                            "type": "entities",
-                            "state_color": true,
-                            "entities": [
-                                {
-                                    "entity": "switch.shop_vac",
-                                    "icon": "mdi:weather-hurricane"
-                                }
-                            ]
                         }
                     ]
                 },
@@ -922,13 +973,13 @@
                                     "entity": "sensor.odin_intel_core_i7_9700k_temperatures_cpu_package"
                                 },
                                 {
-                                    "entity": "sensor.odin_nvidia_geforce_rtx_3090_load_gpu_core"
+                                    "entity": "sensor.odin_nvidia_nvidia_geforce_rtx_3090_load_gpu_core"
                                 },
                                 {
-                                    "entity": "sensor.odin_nvidia_geforce_rtx_3090_temperatures_gpu_core"
+                                    "entity": "sensor.odin_nvidia_nvidia_geforce_rtx_3090_temperatures_gpu_core"
                                 },
                                 {
-                                    "entity": "sensor.odin_nvidia_geforce_rtx_3090_fans_gpu"
+                                    "entity": "sensor.odin_nvidia_nvidia_geforce_rtx_3090_fans_gpu"
                                 }
                             ]
                         },
