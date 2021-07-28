@@ -104,7 +104,7 @@
     entity_id: sensor.vulcan_job_percentage
     above: '99'
   action:
-  - service: notify.mobile_app_pixel_3_xl
+  - service: notify.mobile_app_pixel_5
     data:
       message: 3d print is done
   mode: single
@@ -174,7 +174,7 @@
     weekday:
     - tue
   action:
-  - service: notify.mobile_app_pixel_3_xl
+  - service: notify.mobile_app_pixel_5
     data:
       title: Trash day!
       message: Tomorrow is trash day. Did you take out the trash yet?
@@ -198,7 +198,7 @@
 
       '
   action:
-  - service: notify.mobile_app_pixel_3_xl
+  - service: notify.mobile_app_pixel_5
     data:
       title: Washer is done
       message: Washer is done
@@ -221,7 +221,7 @@
     value_template: '{{ (now() | as_timestamp) - (trigger.from_state.last_changed
       | as_timestamp) > 60 }}'
   action:
-  - service: notify.mobile_app_pixel_3_xl
+  - service: notify.mobile_app_pixel_5
     data:
       title: Dryer is done
       message: Dryer is done
@@ -316,6 +316,7 @@
     entity_id: climate.living_room
     attribute: hvac_action
     to: 'off'
+    for: 0:05:00
   condition: []
   action:
   - type: turn_off
@@ -332,7 +333,7 @@
     from: Printing
     to: Operational
   action:
-  - service: notify.mobile_app_pixel_3_xl
+  - service: notify.mobile_app_pixel_5
     data:
       title: Vulcan has finished printing.
       message: Vulcan has finished printing after an elapsed time of {{states('sensor.vulcan_time_elapsed_friendly')}}
@@ -490,7 +491,7 @@
     to: Open
   condition: []
   action:
-  - service: notify.mobile_app_pixel_3_xl
+  - service: notify.mobile_app_pixel_5
     data:
       title: Garage door alert
       message: Looks like the garage door failed to close
