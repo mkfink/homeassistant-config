@@ -23,7 +23,7 @@ binary_sensor:
     pin:
       number: 0
       mode: INPUT_PULLUP
-      inverted: False
+      inverted: True
     on_press:
       - light.toggle: light_1
   - platform: status
