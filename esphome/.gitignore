@@ -9,3 +9,4 @@
 **/platformio.ini
 /secrets.yaml
 /common/secrets.yaml
+test*.yaml

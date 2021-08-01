@@ -28,4 +28,4 @@ binary_sensor:
       inverted: True
     on_press:
       - homeassistant.service:
-        service: "esphome.${target_name}_power_toggle"
+          service: "esphome.${target_name}_power_toggle"

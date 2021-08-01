@@ -6,3 +6,15 @@ substitutions:
   pretty_name: "Dryer"
   ui_name: "Dryer"
   icon: "mdi:tumble-dryer"
+
+# overriding common/sonof_s31_switch.yaml
+switch:
+  - name: "${ui_name}"
+    id: relay_1
+    icon: "${icon}"
+    platform: gpio
+    pin:
+      number: 12
+      inverted: False
+    restore_mode: ALWAYS_ON
+    internal: True
