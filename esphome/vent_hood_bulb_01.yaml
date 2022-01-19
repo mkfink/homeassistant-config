@@ -1,0 +1,6 @@
+packages:
+  package: !include common/athom_gu10_rgb_bulb.yaml
+
+substitutions:
+  device_name: "vent-hood-bulb-01"
+  pretty_name: "Vent Hood Bulb 01"
