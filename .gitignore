@@ -13,3 +13,5 @@ blueprints/
 .vscode
 esphome/test*.yaml
 glances
+custom_components/
+home-assistant.log*
