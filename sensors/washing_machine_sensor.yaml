@@ -3,7 +3,7 @@
     washing_machine_running:
       friendly_name: "Washing Machine Running"
       value_template: >-
-        {% if states('sensor.washing_machine_power') | float >= 10.0 %}
+        {% if states('sensor.washing_machine_power') | float >= 5.0 %}
           On
         {% else %}
           Off
