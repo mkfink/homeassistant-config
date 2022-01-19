@@ -56,3 +56,26 @@ turn_off_tvs:
       - switch.dance_studio_tv_off
       - switch.gym_tv_off
   mode: single
+movie_time:
+  sequence:
+  - type: turn_off
+    device_id: 68047a573b825590694bb1b656e81eb1
+    entity_id: light.living_room_lamp
+    domain: light
+  - type: turn_off
+    device_id: 2d0dac23bb17c2e6b82d4d2bb138b84d
+    entity_id: light.dining_room_light
+    domain: light
+  - service: homeassistant.turn_on
+    target:
+      entity_id: group.living_room_accent_lamps
+  - type: turn_off
+    device_id: cd355a2e7fefcec93f3cd3cbe984a34a
+    entity_id: light.kitchen_ceiling_lights_dimmer
+    domain: light
+  - service: media_player.turn_on
+    target:
+      entity_id: media_player.living_room_tv
+  mode: single
+  alias: Movie Time
+  icon: mdi:theater
