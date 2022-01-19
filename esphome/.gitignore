@@ -11,3 +11,4 @@
 /common/secrets.yaml
 test*.yaml
 custom_components/
+build/

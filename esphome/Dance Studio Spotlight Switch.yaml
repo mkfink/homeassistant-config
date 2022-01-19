@@ -1,5 +1,6 @@
 # Based on SS01s_no_relay
-<<: !include common/treatlife_ss01s_no_relay.yaml
+packages: 
+  package: !include common/treatlife_ss01s_no_relay.yaml
 
 substitutions:
   device_name: "dance_studio_spotlight_switch"

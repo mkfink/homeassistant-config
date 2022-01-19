@@ -1,21 +1,12 @@
 # Pared down version of Treatlife 3-way SS02
-<<: !include common/wifi.yaml
-<<: !include common/board_esp01_1m.yaml
+packages: 
+  board: !include common/packages/board_esp01_1m.yaml
+  base_components: !include common/packages/esp_home_components.yaml
 
 substitutions:
   device_name: "upstairs_hall_4_way_switch"
   pretty_name: "Upstairs Hall 4-Way Switch"
   ui_name: "Upstairs Hall 4-Way Switch"
-
-captive_portal:
-
-# Enable logging
-logger:
-
-ota:
-
-web_server:
-  port: 80
 
 api:
   services:

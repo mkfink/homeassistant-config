@@ -1,5 +1,5 @@
-<<: !include common/sonoff_s31_light.yaml
-<<: !include common/api.yaml
+packages:
+  package: !include common/sonoff_s31_light.yaml
 
 substitutions:
   device_name: "salt_lamp"

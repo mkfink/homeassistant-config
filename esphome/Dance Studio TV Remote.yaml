@@ -6,9 +6,8 @@
 # and then were converted from hex to raw coes with IrScrutinizer https://github.com/bengtmartensson/IrScrutinizer/releases
 # following instructions from https://github.com/Arduino-IRremote/Arduino-IRremote/issues/263#issuecomment-195486942
 
-<<: !include common/wifi.yaml
-<<: !include common/esp_home_components.yaml
-<<: !include common/api.yaml
+packages: 
+  base: !include common/packages/esp_home_components.yaml
 
 substitutions:
   device_name: "dance_studio_tv_remote"

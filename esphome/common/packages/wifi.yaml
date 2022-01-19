@@ -12,7 +12,3 @@ text_sensor:
       name: "${pretty_name} Connected BSSID"
     mac_address:
       name: "${pretty_name} Mac Wifi Address"
-
-sensor:
-  - !include wifi_signal.yaml
-  - !include uptime.yaml

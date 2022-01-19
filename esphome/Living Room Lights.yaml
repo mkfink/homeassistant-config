@@ -1,5 +1,5 @@
-<<: !include common/treatlife_ds01_dimmer.yaml
-<<: !include common/api.yaml
+packages:
+  package: !include common/treatlife_ds01_dimmer.yaml
 
 substitutions:
   device_name: "living_room_lights"

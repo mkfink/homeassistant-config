@@ -1,20 +1,8 @@
-<<: !include common/sonoff_s31_switch.yaml
-<<: !include common/api.yaml
+packages:
+  package: !include common/sonoff_s31_switch_always_on.yaml
 
 substitutions:
   device_name: "washing_machine"
   pretty_name: "Washing Machine"
   ui_name: "${pretty_name}"
   icon: "mdi:washing-machine"
-
-# overriding common/sonof_s31_switch.yaml
-switch:
-  - name: "${ui_name}"
-    id: relay_1
-    icon: "${icon}"
-    platform: gpio
-    pin:
-      number: 12
-      inverted: False
-    restore_mode: ALWAYS_ON
-    internal: True

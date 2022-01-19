@@ -1,9 +1,8 @@
 # Uses SparkFun WiFi IR Blaster
 # https://www.sparkfun.com/products/15031
 
-<<: !include common/wifi.yaml
-<<: !include common/esp_home_components.yaml
-<<: !include common/api.yaml
+packages: 
+  base: !include common/packages/esp_home_components.yaml
 
 substitutions:
   device_name: "gym_tv_remote"

@@ -1,5 +1,5 @@
-<<: !include common/treatlife_ss01s_fan.yaml
-<<: !include common/api.yaml
+packages:
+  package: !include common/treatlife_ss01s_fan.yaml
 
 substitutions:
   device_name: "guest_bathroom_fan"
