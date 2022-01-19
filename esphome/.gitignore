@@ -10,3 +10,4 @@
 /secrets.yaml
 /common/secrets.yaml
 test*.yaml
+custom_components/

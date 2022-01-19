@@ -3,7 +3,7 @@
 default_config:
 
 mqtt:
-  broker: 192.168.1.107
+  broker: 192.168.0.107
   birth_message:
     topic: "tele/sirius/hass/LWT"
     payload: "Online"
@@ -26,7 +26,7 @@ switch: !include_dir_merge_list switches
 fan: !include_dir_merge_list fans
 
 influxdb:
-  host: 192.168.1.107
+  host: 192.168.0.107
   port: 8086
   database: homeassistant
   username: homeassistant
@@ -37,7 +37,7 @@ influxdb:
 wake_on_lan:
 
 webostv:
-  host: 192.168.1.234
+  host: 192.168.0.229
   name: Living Room TV
   turn_on_action:
     service: wake_on_lan.send_magic_packet
@@ -54,13 +54,6 @@ webostv:
       - Hulu
       - Youtube
 
-octoprint:
-  host: 192.168.1.14
-  api_key: E87E789808B4415CA3BD8E34BBDAC4FA
-  name: Vulcan
-  number_of_tools: 1
-  bed: True
-
 camera:
   - platform: mjpeg
     name: OctoPrint
@@ -72,3 +65,10 @@ nest:
   client_secret: !secret nest_client_secret
   project_id: !secret nest_project_id
   subscriber_id: !secret nest_subscriber_id
+
+# android_ip_webcam:
+#   - name: pixel_1_webcam
+#     host: 192.168.1.28
+#     port: 8080
+#     username: !secret android_ip_webcam_username
+#     password: !secret android_ip_webcam_password

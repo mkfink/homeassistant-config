@@ -1,5 +1,6 @@
 {
     "version": 1,
+    "minor_version": 1,
     "key": "lovelace",
     "data": {
         "config": {
@@ -7,8 +8,8 @@
             "views": [
                 {
                     "icon": "mdi:home-floor-1",
-                    "path": "default_view",
-                    "title": "First Floor",
+                    "path": "first_floor",
+                    "title": "First floor",
                     "badges": [],
                     "cards": [
                         {
@@ -25,7 +26,8 @@
                                     "tap_action": {
                                         "action": "call-service",
                                         "service": "media_player.toggle",
-                                        "service_data": {
+                                        "service_data": {},
+                                        "target": {
                                             "entity_id": "media_player.living_room_tv"
                                         }
                                     },
@@ -44,8 +46,10 @@
                                         "action": "call-service",
                                         "service": "media_player.select_source",
                                         "service_data": {
-                                            "entity_id": "media_player.living_room_tv",
                                             "source": "HDMI 2"
+                                        },
+                                        "target": {
+                                            "entity_id": "media_player.living_room_tv"
                                         }
                                     },
                                     "type": "entity-button"
@@ -63,8 +67,10 @@
                                         "action": "call-service",
                                         "service": "media_player.select_source",
                                         "service_data": {
-                                            "entity_id": "media_player.living_room_tv",
                                             "source": "Chromecast"
+                                        },
+                                        "target": {
+                                            "entity_id": "media_player.living_room_tv"
                                         }
                                     },
                                     "type": "entity-button"
@@ -90,10 +96,6 @@
                                 },
                                 {
                                     "entity": "group.living_room_accent_lamps"
-                                },
-                                {
-                                    "entity": "fan.living_room_fan_remote_fan",
-                                    "name": "Ceiling Fan"
                                 },
                                 {
                                     "entity": "light.living_room_fan_remote_light",
@@ -133,6 +135,11 @@
                                 {
                                     "entity": "light.kitchen_wled",
                                     "name": "Cabinet Accent Lights"
+                                },
+                                {
+                                    "entity": "group.kitchen_vent_hood_lights",
+                                    "icon": "mdi:lightbulb",
+                                    "state_color": true
                                 }
                             ],
                             "title": "Kitchen",
@@ -154,11 +161,16 @@
                                 {
                                     "entity": "light.vulcan_lamp",
                                     "icon": "mdi:desk-lamp"
+                                },
+                                {
+                                    "entity": "fan.positron",
+                                    "name": "Air Purifier"
                                 }
                             ],
                             "title": "Office",
                             "type": "entities",
-                            "show_header_toggle": true
+                            "show_header_toggle": true,
+                            "state_color": true
                         },
                         {
                             "entities": [
@@ -193,7 +205,7 @@
                         },
                         {
                             "type": "media-control",
-                            "entity": "media_player.living_room_kodi"
+                            "entity": "media_player.kodi"
                         },
                         {
                             "entities": [
@@ -217,24 +229,39 @@
                             "entity": "climate.living_room"
                         },
                         {
-                            "type": "entities",
-                            "entities": [
+                            "type": "custom:purifier-card",
+                            "entity": "fan.positron",
+                            "show_state": true,
+                            "compact_view": true,
+                            "show_toolbar": true,
+                            "shortcuts": [
                                 {
-                                    "entity": "vacuum.tachyon"
+                                    "name": "33%",
+                                    "icon": "mdi:fan-speed-1",
+                                    "percentage": 33
                                 },
                                 {
-                                    "entity": "sensor.tachyon_battery_level",
-                                    "name": "Battery"
+                                    "name": "67%",
+                                    "icon": "mdi:fan-speed-2",
+                                    "percentage": 66
                                 },
                                 {
-                                    "entity": "binary_sensor.tachyon_bin_full",
-                                    "name": "Bin full"
+                                    "name": "100%",
+                                    "icon": "mdi:fan-speed-3",
+                                    "percentage": 100
                                 }
-                            ]
+                            ],
+                            "aqi": {
+                                "attribute": "air_quality",
+                                "unit": "ug/m\u00b3"
+                            }
                         }
                     ]
                 },
                 {
+                    "icon": "mdi:home-floor-2",
+                    "path": "upstairs",
+                    "title": "Upstairs",
                     "badges": [],
                     "cards": [
                         {
@@ -397,13 +424,29 @@
                             ],
                             "title": "Dance Studio",
                             "type": "entities"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "vacuum.tachino"
+                                },
+                                {
+                                    "entity": "sensor.tachino_battery_level",
+                                    "name": "Battery"
+                                },
+                                {
+                                    "entity": "binary_sensor.tachino_bin_full",
+                                    "name": "Bin full"
+                                }
+                            ]
                         }
-                    ],
-                    "icon": "mdi:home-floor-2"
+                    ]
                 },
                 {
                     "icon": "mdi:home-floor-b",
                     "title": "Basement",
+                    "path": "basement",
                     "badges": [],
                     "cards": [
                         {
@@ -468,10 +511,42 @@
                                 {
                                     "entity": "switch.gluino_night_light_mode",
                                     "name": "Nightlight"
+                                },
+                                {
+                                    "type": "attribute",
+                                    "entity": "vacuum.gluino_litter_box",
+                                    "attribute": "status",
+                                    "name": "Status"
                                 }
                             ],
                             "show_header_toggle": false,
                             "title": "Gluino",
+                            "state_color": false
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.gluon_waste_drawer",
+                                    "name": "Waste drawer"
+                                },
+                                {
+                                    "entity": "vacuum.gluon_litter_box",
+                                    "name": "State"
+                                },
+                                {
+                                    "entity": "switch.gluon_night_light_mode",
+                                    "name": "Nightlight"
+                                },
+                                {
+                                    "type": "attribute",
+                                    "entity": "vacuum.gluino_litter_box",
+                                    "attribute": "status",
+                                    "name": "Status"
+                                }
+                            ],
+                            "show_header_toggle": false,
+                            "title": "Gluon",
                             "state_color": false
                         },
                         {
@@ -483,12 +558,23 @@
                                     "icon": "mdi:weather-hurricane"
                                 }
                             ]
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.gluino_status"
+                                }
+                            ],
+                            "refresh_interval": 0,
+                            "hours_to_show": 1
                         }
                     ]
                 },
                 {
                     "icon": "mdi:garage",
                     "title": "Outside",
+                    "path": "outside",
                     "badges": [],
                     "cards": [
                         {
@@ -549,8 +635,198 @@
                     ]
                 },
                 {
+                    "title": "Settings",
+                    "icon": "mdi:cog",
+                    "path": "misc",
+                    "badges": [
+                        {
+                            "entity": "sensor.current_energy_usage"
+                        },
+                        {
+                            "entity": "sensor.raspberry_pi_temperature"
+                        },
+                        {
+                            "entity": "sensor.argon_one_addon_fan_speed"
+                        }
+                    ],
+                    "cards": [
+                        {
+                            "entities": [
+                                {
+                                    "entity": "group.bedtime_lights",
+                                    "name": "Any Lights"
+                                },
+                                {
+                                    "entity": "cover.garage_door"
+                                }
+                            ],
+                            "title": "Ready for bed?",
+                            "type": "glance"
+                        },
+                        {
+                            "entity": "script.bedtime",
+                            "name": "Bedtime - Turn everything off",
+                            "tap_action": {
+                                "action": "call-service",
+                                "service": "script.turn_on",
+                                "service_data": {
+                                    "entity_id": "script.bedtime"
+                                }
+                            },
+                            "type": "entity-button",
+                            "icon": "mdi:bed"
+                        },
+                        {
+                            "entities": [
+                                {
+                                    "entity": "light.vulcan_lamp",
+                                    "name": "Light"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_current_state",
+                                    "name": "State"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_job_percentage",
+                                    "name": "Job Percentage"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_time_elapsed_friendly",
+                                    "name": "Time Elapsed"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_time_remaining_friendly",
+                                    "name": "Time Remaining"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_actual_bed_temp",
+                                    "name": "Bed Temp"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_target_bed_temp",
+                                    "name": "Bed Target"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_actual_tool0_temp",
+                                    "name": "Extruder Temp"
+                                },
+                                {
+                                    "entity": "sensor.vulcan_target_tool0_temp",
+                                    "name": "Extruder Target"
+                                },
+                                {
+                                    "entity": "binary_sensor.vulcan_printing_error",
+                                    "name": "Printing Error?"
+                                },
+                                {
+                                    "entity": "binary_sensor.vulcan_printing"
+                                }
+                            ],
+                            "type": "entities",
+                            "title": "Vulcan"
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.mike_pc_power_draw"
+                                }
+                            ],
+                            "hours_to_show": 24,
+                            "refresh_interval": 0
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.odin_12th_gen_intel_core_i9_12900k_load_cpu_total"
+                                },
+                                {
+                                    "entity": "sensor.odin_12th_gen_intel_core_i9_12900k_powers_cpu_package"
+                                },
+                                {
+                                    "entity": "sensor.odin_12th_gen_intel_core_i9_12900k_temperatures_cpu_package"
+                                },
+                                {
+                                    "entity": "sensor.odin_nvidia_nvidia_geforce_rtx_3090_load_gpu_core"
+                                },
+                                {
+                                    "entity": "sensor.odin_nvidia_nvidia_geforce_rtx_3090_temperatures_gpu_core"
+                                },
+                                {
+                                    "entity": "sensor.odin_nvidia_nvidia_geforce_rtx_3090_fans_gpu"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "history-graph",
+                            "entities": [
+                                {
+                                    "entity": "sensor.living_room_temperature"
+                                },
+                                {
+                                    "entity": "sensor.living_room_hvac_active_state"
+                                }
+                            ],
+                            "hours_to_show": 24,
+                            "refresh_interval": 0
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "sensor.washing_machine_current"
+                                },
+                                {
+                                    "entity": "sensor.washing_machine_power"
+                                },
+                                {
+                                    "entity": "sensor.washing_machine_running"
+                                },
+                                {
+                                    "entity": "sensor.dryer_current"
+                                },
+                                {
+                                    "entity": "sensor.dryer_power"
+                                },
+                                {
+                                    "entity": "sensor.dryer_running"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "entity",
+                            "entity": "switch.office_hvac_booster"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "vacuum.tachyon"
+                                },
+                                {
+                                    "entity": "vacuum.tachino"
+                                }
+                            ],
+                            "title": "Roombas"
+                        },
+                        {
+                            "type": "entity",
+                            "entity": "fan.test_dimmer"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                "fan.test_dimmer"
+                            ],
+                            "title": "test-dimmer"
+                        }
+                    ]
+                },
+                {
                     "icon": "mdi:mushroom",
                     "title": "Mushrooms",
+                    "path": "mushrooms",
                     "badges": [],
                     "cards": [
                         {
@@ -836,192 +1112,6 @@
                             "hours_to_show": 24,
                             "refresh_interval": 0,
                             "title": "Stir Plate"
-                        }
-                    ]
-                },
-                {
-                    "title": "Settings",
-                    "icon": "mdi:cog",
-                    "badges": [
-                        {
-                            "entity": "sensor.current_energy_usage"
-                        },
-                        {
-                            "entity": "sensor.raspberry_pi_temperature"
-                        }
-                    ],
-                    "cards": [
-                        {
-                            "entities": [
-                                {
-                                    "entity": "group.bedtime_lights",
-                                    "name": "Any Lights"
-                                },
-                                {
-                                    "entity": "cover.garage_door"
-                                }
-                            ],
-                            "title": "Ready for bed?",
-                            "type": "glance"
-                        },
-                        {
-                            "entity": "script.bedtime",
-                            "name": "Bedtime - Turn everything off",
-                            "tap_action": {
-                                "action": "call-service",
-                                "service": "script.turn_on",
-                                "service_data": {
-                                    "entity_id": "script.bedtime"
-                                }
-                            },
-                            "type": "entity-button",
-                            "icon": "mdi:bed"
-                        },
-                        {
-                            "entities": [
-                                {
-                                    "entity": "light.vulcan_lamp",
-                                    "name": "Light"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_current_state",
-                                    "name": "State"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_job_percentage",
-                                    "name": "Job Percentage"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_time_elapsed_friendly",
-                                    "name": "Time Elapsed"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_time_remaining_friendly",
-                                    "name": "Time Remaining"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_actual_bed_temp",
-                                    "name": "Bed Temp"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_target_bed_temp",
-                                    "name": "Bed Target"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_actual_tool0_temp",
-                                    "name": "Extruder Temp"
-                                },
-                                {
-                                    "entity": "sensor.vulcan_target_tool0_temp",
-                                    "name": "Extruder Target"
-                                },
-                                {
-                                    "entity": "binary_sensor.vulcan_printing_error",
-                                    "name": "Printing Error?"
-                                },
-                                {
-                                    "entity": "binary_sensor.vulcan_printing"
-                                }
-                            ],
-                            "type": "entities",
-                            "title": "Vulcan"
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "sensor.google_wifi_local_ip"
-                                },
-                                {
-                                    "entity": "sensor.google_wifi_uptime"
-                                },
-                                {
-                                    "entity": "sensor.google_wifi_last_restart"
-                                },
-                                {
-                                    "entity": "sensor.google_wifi_status"
-                                },
-                                {
-                                    "entity": "sensor.google_wifi_new_version"
-                                },
-                                {
-                                    "entity": "sensor.google_wifi_current_version"
-                                }
-                            ],
-                            "title": "Google Wifi"
-                        },
-                        {
-                            "type": "history-graph",
-                            "entities": [
-                                {
-                                    "entity": "sensor.mike_pc_power_draw"
-                                }
-                            ],
-                            "hours_to_show": 24,
-                            "refresh_interval": 0
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "sensor.odin_intel_core_i7_9700k_load_cpu_total"
-                                },
-                                {
-                                    "entity": "sensor.odin_intel_core_i7_9700k_powers_cpu_package"
-                                },
-                                {
-                                    "entity": "sensor.odin_intel_core_i7_9700k_temperatures_cpu_package"
-                                },
-                                {
-                                    "entity": "sensor.odin_nvidia_nvidia_geforce_rtx_3090_load_gpu_core"
-                                },
-                                {
-                                    "entity": "sensor.odin_nvidia_nvidia_geforce_rtx_3090_temperatures_gpu_core"
-                                },
-                                {
-                                    "entity": "sensor.odin_nvidia_nvidia_geforce_rtx_3090_fans_gpu"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "history-graph",
-                            "entities": [
-                                {
-                                    "entity": "sensor.living_room_temperature"
-                                },
-                                {
-                                    "entity": "sensor.living_room_hvac_active_state"
-                                }
-                            ],
-                            "hours_to_show": 24,
-                            "refresh_interval": 0
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "sensor.washing_machine_current"
-                                },
-                                {
-                                    "entity": "sensor.washing_machine_power_draw"
-                                },
-                                {
-                                    "entity": "sensor.washing_machine_running"
-                                },
-                                {
-                                    "entity": "sensor.dryer_current"
-                                },
-                                {
-                                    "entity": "sensor.dryer_power_draw"
-                                },
-                                {
-                                    "entity": "sensor.dryer_running"
-                                }
-                            ]
-                        },
-                        {
-                            "type": "entity",
-                            "entity": "switch.office_hvac_booster"
                         }
                     ]
                 }

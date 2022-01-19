@@ -56,30 +56,6 @@
     data: {}
     entity_id: light.patio_lights
   mode: single
-- id: '1606788686752'
-  alias: Grow light on
-  description: ''
-  trigger:
-  - platform: time
-    at: 06:00:00
-  condition: []
-  action:
-  - service: light.turn_on
-    data: {}
-    entity_id: light.grow_light
-  mode: single
-- id: '1606788869716'
-  alias: Grow light off
-  description: ''
-  trigger:
-  - platform: time
-    at: '18:00:00'
-  condition: []
-  action:
-  - service: light.turn_off
-    data: {}
-    entity_id: light.grow_light
-  mode: single
 - id: '1607113688393'
   alias: mushroom fan timer
   description: ''
@@ -174,11 +150,11 @@
     weekday:
     - tue
   action:
-  - service: notify.mobile_app_pixel_5
+  - service: notify.mobile_app_pixel_6_pro
     data:
-      title: Trash day!
       message: Tomorrow is trash day. Did you take out the trash yet?
-  - service: notify.mobile_app_pixel_3
+      title: Trash day!
+  - service: notify.mobile_app_sm_g991u1
     data:
       title: Trash day!
       message: Tomorrow is trash day. Did you take out the trash yet?
@@ -190,7 +166,7 @@
     entity_id: sensor.washing_machine_running
     from: 'On'
     to: 'Off'
-    for: 0:00:10
+    for: 0:00:05
   condition:
   - condition: template
     value_template: '{{ (now() | as_timestamp) - (trigger.from_state.last_changed
@@ -198,14 +174,14 @@
 
       '
   action:
-  - service: notify.mobile_app_pixel_5
+  - service: notify.mobile_app_pixel_6_pro
     data:
-      title: Washer is done
       message: Washer is done
-  - service: notify.mobile_app_pixel_3
+      title: home assistant
+  - service: notify.mobile_app_sm_g991u1
     data:
-      title: Washer is done
       message: Washer is done
+      title: home assistant
   mode: single
 - id: '1617829455735'
   alias: Dryer Notification
@@ -221,17 +197,17 @@
     value_template: '{{ (now() | as_timestamp) - (trigger.from_state.last_changed
       | as_timestamp) > 60 }}'
   action:
-  - service: notify.mobile_app_pixel_5
+  - service: notify.mobile_app_pixel_6_pro
     data:
-      title: Dryer is done
+      title: home assistant
       message: Dryer is done
-  - service: notify.mobile_app_pixel_3
+  - service: notify.mobile_app_sm_g991u1
     data:
-      title: Dryer is done
+      title: home assistant
       message: Dryer is done
   mode: single
 - id: '1761284125831'
-  alias: Work Bench Lights Auto On/Off
+  alias: Basement Lights Auto On/Off
   description: Switch workbench lights with basement lights
   trigger:
   - platform: state
@@ -397,14 +373,22 @@
 - id: '1619831682485'
   alias: Pantry light timer
   trigger:
-  - platform: state
+  - platform: device
+    type: turned_on
+    device_id: 1548c29b645a6b6719bf6bc214f19b16
     entity_id: light.pantry_light
-    to: 'on'
+    domain: light
     for:
-      minutes: 10
+      hours: 0
+      minutes: 15
+      seconds: 0
+      milliseconds: 0
   action:
-  - service: light.turn_off
+  - type: turn_off
+    device_id: 1548c29b645a6b6719bf6bc214f19b16
     entity_id: light.pantry_light
+    domain: light
+  mode: single
 - id: '1619831695314'
   alias: Closet light timer
   trigger:
@@ -567,4 +551,96 @@
     device_id: 4cc524fbec3b232ae9761fbe9a9e9201
     entity_id: switch.kitchen_extra_switch_led
     domain: switch
+  mode: single
+- id: '1630516839163'
+  alias: litter robot snapshot
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: vacuum.gluino_litter_box
+    attribute: status_code
+    to: CST
+  condition: []
+  action:
+  - service: camera.snapshot
+    target:
+      entity_id: camera.pixel_1_webcam
+    data:
+      filename: /config/www/snapshots/litter_robot_{{as_timestamp(now()) | timestamp_custom("%Y%m%d_%H%M",
+        true)}}.jpg
+  - service: notify.mobile_app_pixel_5
+    data:
+      message: Litter robot triggered
+      data:
+        image: /local/snapshots/litter_robot_{{as_timestamp(now()) | timestamp_custom("%Y%m%d_%H%M",
+          true)}}.jpg
+  - service: notify.mobile_app_pixel_3
+    data:
+      message: Litter robot triggered
+      data:
+        image: /local/snapshots/litter_robot_{{as_timestamp(now()) | timestamp_custom("%Y%m%d_%H%M",
+          true)}}.jpg
+  mode: single
+- id: '1630946271045'
+  alias: Powder room fan timeout
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: 888cb4dfde9c546b3d734370a838c3a9
+    entity_id: switch.powder_room_fan
+    domain: switch
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+      milliseconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 888cb4dfde9c546b3d734370a838c3a9
+    entity_id: switch.powder_room_fan
+    domain: switch
+  mode: single
+- id: '1642445634836'
+  alias: Air filter on high
+  description: ''
+  trigger:
+  - platform: time
+    at: 08:00:00
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: fan.set_speed
+    target:
+      entity_id: fan.positron
+    data:
+      speed: high
+  mode: single
+- id: '1642445702315'
+  alias: Air filter on low
+  description: ''
+  trigger:
+  - platform: time
+    at: '16:00:00'
+  condition:
+  - condition: time
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+  action:
+  - service: fan.set_speed
+    target:
+      entity_id: fan.positron
+    data:
+      speed: low
   mode: single

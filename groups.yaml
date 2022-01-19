@@ -58,3 +58,12 @@ kitchen_task_lights:
   entities:
     - light.kitchen_under_cabinet_lights_dimmer
     - light.kitchen_sink_light_dimmer
+
+kitchen_vent_hood_lights:
+  name: Vent Hood Light
+  icon: mdi:bulb
+  entities:
+    - light.vent_hood_bulb_01
+    - light.vent_hood_bulb_02
+    - light.vent_hood_bulb_03
+    - light.vent_hood_bulb_04
