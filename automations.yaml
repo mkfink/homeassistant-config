@@ -144,7 +144,7 @@
   description: ''
   trigger:
   - platform: time
-    at: '21:00'
+    at: '21:00:00'
   condition:
   - condition: time
     weekday:
@@ -154,9 +154,8 @@
     data:
       message: Tomorrow is trash day. Did you take out the trash yet?
       title: Trash day!
-  - service: notify.mobile_app_sm_g991u1
+  - service: notify.mobile_app_pixel_6
     data:
-      title: Trash day!
       message: Tomorrow is trash day. Did you take out the trash yet?
   mode: single
 - id: '1617828682585'
@@ -178,10 +177,9 @@
     data:
       message: Washer is done
       title: home assistant
-  - service: notify.mobile_app_sm_g991u1
+  - service: notify.mobile_app_pixel_6
     data:
       message: Washer is done
-      title: home assistant
   mode: single
 - id: '1617829455735'
   alias: Dryer Notification
@@ -201,9 +199,8 @@
     data:
       title: home assistant
       message: Dryer is done
-  - service: notify.mobile_app_sm_g991u1
+  - service: notify.mobile_app_pixel_6
     data:
-      title: home assistant
       message: Dryer is done
   mode: single
 - id: '1761284125831'
@@ -643,4 +640,54 @@
       entity_id: fan.positron
     data:
       speed: low
+  mode: single
+- id: '1644784952274'
+  alias: Litter box reminder - gluon
+  description: ''
+  trigger:
+  - platform: time
+    at: '18:00:00'
+  - platform: time
+    at: 06:00:00
+  condition:
+  - type: is_value
+    condition: device
+    device_id: 9ca7e6a2735aa701637904097dda9b47
+    entity_id: sensor.gluon_waste_drawer
+    domain: sensor
+    above: 99
+  action:
+  - device_id: a001678e7bd6913675cd0c370d4d951d
+    domain: mobile_app
+    type: notify
+    message: Gluon is full
+  - device_id: bcc7f4c8ea3221c380823d265b068e9d
+    domain: mobile_app
+    type: notify
+    message: Gluino is full
+  mode: single
+- id: '1644785339622'
+  alias: Litter box reminder - gluino
+  description: ''
+  trigger:
+  - platform: time
+    at: '18:00:00'
+  - platform: time
+    at: 06:00:00
+  condition:
+  - type: is_value
+    condition: device
+    device_id: 3610485e55af1eebfb485813722599ff
+    entity_id: sensor.gluino_waste_drawer
+    domain: sensor
+    above: 99
+  action:
+  - device_id: a001678e7bd6913675cd0c370d4d951d
+    domain: mobile_app
+    type: notify
+    message: Gluino is full
+  - device_id: bcc7f4c8ea3221c380823d265b068e9d
+    domain: mobile_app
+    type: notify
+    message: Gluino is full
   mode: single
