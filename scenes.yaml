@@ -1,0 +1,120 @@
+- id: '1648685488524'
+  name: Diet Bedtime
+  entities:
+    switch.bathroom_exhaust_fan:
+      icon: mdi:fan
+      friendly_name: Bathroom Exhaust Fan
+      state: 'off'
+    light.bathroom_light:
+      supported_color_modes:
+      - onoff
+      friendly_name: Bathroom Light
+      supported_features: 8
+      state: 'off'
+    light.bathroom_shower_light_dimmer:
+      supported_color_modes:
+      - brightness
+      friendly_name: Bathroom Shower Light Dimmer
+      supported_features: 40
+      state: 'off'
+    light.bedroom_corner_lamp:
+      supported_color_modes:
+      - onoff
+      friendly_name: Bedroom Corner Lamp
+      supported_features: 8
+      state: 'off'
+    light.bedroom_lamp:
+      supported_color_modes:
+      - onoff
+      friendly_name: Bedroom Lamp
+      supported_features: 8
+      state: 'off'
+    light.salt_lamp:
+      supported_color_modes:
+      - onoff
+      friendly_name: Salt Lamp
+      supported_features: 8
+      state: unavailable
+    light.bedroom_light:
+      supported_color_modes:
+      - onoff
+      friendly_name: Bedroom Light
+      supported_features: 8
+      state: 'off'
+    light.closet_light:
+      supported_color_modes:
+      - onoff
+      friendly_name: Closet Light
+      supported_features: 8
+      state: 'off'
+    light.dance_studio_light:
+      supported_color_modes:
+      - onoff
+      friendly_name: Dance Studio Light
+      supported_features: 8
+      state: 'off'
+    switch.foyer_light:
+      icon: mdi:lghtbulb
+      friendly_name: Foyer Light
+      state: 'off'
+    light.guest_bedroom_lamp:
+      supported_color_modes:
+      - onoff
+      friendly_name: Guest Bedroom Lamp
+      supported_features: 8
+      state: 'off'
+    light.guest_bedroom_light:
+      supported_color_modes:
+      - onoff
+      friendly_name: Guest Bedroom Light
+      supported_features: 8
+      state: 'off'
+    light.gym_light:
+      supported_color_modes:
+      - onoff
+      friendly_name: Gym Light
+      supported_features: 8
+      state: 'off'
+    switch.upstairs_hall_light:
+      icon: mdi:lghtbulb
+      friendly_name: Upstairs Hall Light
+      state: 'off'
+  icon: mdi:bed-outline
+- id: '1648687222448'
+  name: New Scene
+  entities:
+    light.dining_room_light:
+      supported_color_modes:
+      - onoff
+      color_mode: onoff
+      friendly_name: Dining Room Light
+      supported_features: 8
+      state: 'on'
+    group.living_room_accent_lamps:
+      entity_id:
+      - light.living_room_accent_lamp_01
+      - light.living_room_accent_lamp_02
+      order: 1
+      icon: mdi:floor-lamp
+      friendly_name: Accent Lamps
+      state: 'on'
+- id: '1648687250934'
+  name: New Scene
+  entities:
+    light.dining_room_light:
+      supported_color_modes:
+      - onoff
+      color_mode: onoff
+      friendly_name: Dining Room Light
+      supported_features: 8
+      state: 'on'
+- id: '1648687254837'
+  name: New Scene (Duplicate)
+  entities:
+    light.dining_room_light:
+      supported_color_modes:
+      - onoff
+      color_mode: onoff
+      friendly_name: Dining Room Light
+      supported_features: 8
+      state: 'on'

@@ -79,3 +79,29 @@ movie_time:
   mode: single
   alias: Movie Time
   icon: mdi:theater
+upstairs_lights_off:
+  sequence:
+  - service: light.turn_off
+    data: {}
+    target:
+      area_id:
+      - bathroom
+      - bedroom
+      - dance_studio
+      - guest_bathroom
+      - guest_room
+      - gym
+  - service: switch.turn_off
+    data: {}
+    target:
+      device_id:
+      - 8c03fb3350e3fad8e24440cbce7aca0f
+      - 91dbda4fdaf08fd12b6186fd8eaeb853
+      - 76b959124ae360af882bb7bf68082c0c
+      - 81eafd5f4d46bea5256bec1c4f00b82a
+      - 93c6ef95680cc99d052786082d61133e
+      - 6b0ee07dcb61ef57793b3b11ba78de9f
+      - 637b3b7a5b584d623147475d8fcc7d0c
+  mode: single
+  alias: Upstairs lights off
+  icon: mdi:home-floor-2
