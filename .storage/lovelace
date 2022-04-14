@@ -190,7 +190,7 @@
                                     "name": "Mud Room Lights"
                                 },
                                 {
-                                    "entity": "switch.dog_room_light",
+                                    "entity": "switch.dog_room_south_lightswitch",
                                     "icon": "mdi:lightbulb",
                                     "name": "Dog Room Lights"
                                 },
@@ -255,6 +255,10 @@
                                 "attribute": "air_quality",
                                 "unit": "ug/m\u00b3"
                             }
+                        },
+                        {
+                            "type": "media-control",
+                            "entity": "media_player.living_room_tv"
                         }
                     ]
                 },
@@ -820,6 +824,39 @@
                                 "fan.test_dimmer"
                             ],
                             "title": "test-dimmer"
+                        },
+                        {
+                            "type": "thermostat",
+                            "entity": "climate.test_thermostat",
+                            "name": "Test Thermostat"
+                        },
+                        {
+                            "type": "entity",
+                            "entity": "light.welding_helmet_lights",
+                            "state_color": true
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "binary_sensor.test_sensor_board_motion"
+                                },
+                                {
+                                    "entity": "sensor.test_sensor_board_humidity"
+                                },
+                                {
+                                    "entity": "sensor.test_sensor_board_temperature"
+                                },
+                                {
+                                    "entity": "sensor.test_sensor_board_pressure"
+                                },
+                                {
+                                    "entity": "sensor.test_sensor_board_wifi_signal_strength"
+                                },
+                                {
+                                    "entity": "sensor.test_thermostat_wifi_signal_strength"
+                                }
+                            ]
                         }
                     ]
                 },

@@ -1,7 +1,7 @@
 home-assistant_v2.db*
 home-assistant.log
 .cloud/
-.storage/
+.storage/*
 !.storage/lovelace
 secrets.yaml
 *.token
@@ -15,3 +15,4 @@ esphome/test*.yaml
 glances
 custom_components/
 home-assistant.log*
+nest/*
