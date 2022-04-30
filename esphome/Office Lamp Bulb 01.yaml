@@ -1,0 +1,8 @@
+packages:
+  package: !include common/athom-rgbct-bulb.yaml
+
+substitutions:
+  device_name: "office-lamp-bulb-01"
+  pretty_name: "Office Lamp Bulb 01"
+  light_restore_mode: RESTORE_DEFAULT_ON
+  color_interlock: 'true'
