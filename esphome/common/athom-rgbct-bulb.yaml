@@ -27,6 +27,7 @@ output:
 
 light:
   - platform: rgbct
+    id: light_1
     name: "${pretty_name}"
     restore_mode: ${light_restore_mode}
     red: red_output
