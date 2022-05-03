@@ -12,5 +12,5 @@ esphome:
     then:
       - light.control:
           id: light_1
-          brightness: 90%
-          color_temperature: 460 mireds
+          brightness: 80%
+          color_temperature: 440 mireds
