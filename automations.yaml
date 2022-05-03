@@ -664,7 +664,7 @@
   - device_id: bcc7f4c8ea3221c380823d265b068e9d
     domain: mobile_app
     type: notify
-    message: Gluino is full
+    message: Gluon is full
   mode: single
 - id: '1644785339622'
   alias: Litter box reminder - gluino
