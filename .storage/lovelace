@@ -15,7 +15,6 @@
                         {
                             "cards": [
                                 {
-                                    "entity": "media_player.living_room_tv",
                                     "hold_action": {
                                         "action": "more-info"
                                     },
@@ -31,7 +30,8 @@
                                             "entity_id": "media_player.living_room_tv"
                                         }
                                     },
-                                    "type": "entity-button"
+                                    "type": "entity-button",
+                                    "entity": "media_player.living_room_tv"
                                 },
                                 {
                                     "entity": "media_player.living_room_tv",
@@ -165,6 +165,9 @@
                                 {
                                     "entity": "fan.positron",
                                     "name": "Air Purifier"
+                                },
+                                {
+                                    "entity": "light.office_lamp"
                                 }
                             ],
                             "title": "Office",
@@ -198,10 +201,14 @@
                                     "entity": "light.first_floor_hall_light",
                                     "icon": "mdi:lightbulb",
                                     "name": "Downstairs Hall Light"
+                                },
+                                {
+                                    "entity": "light.foyer_light"
                                 }
                             ],
                             "title": "Hall",
-                            "type": "entities"
+                            "type": "entities",
+                            "state_color": true
                         },
                         {
                             "type": "media-control",
