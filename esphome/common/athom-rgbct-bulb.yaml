@@ -38,3 +38,41 @@ light:
     cold_white_color_temperature: 153 mireds
     warm_white_color_temperature: 500 mireds
     color_interlock: ${color_interlock}
+    effects:
+      - lambda:
+          name: Rainbowy
+          update_interval: 4s
+          lambda: |-
+            static int state = 0;
+            auto call = id(light_1).turn_on();
+            call.set_transition_length(4000);
+            if (state == 0) {
+              call.set_rgb(1.0, 0.0, 0.0);
+            } else if (state == 1) {
+              call.set_rgb(1.0, 1.0, 0.0);
+            } else if (state == 2) {
+              call.set_rgb(0.0, 1.0, 0.0);
+            } else if (state == 3) {
+              call.set_rgb(0.0, 1.0, 1.0);
+            } else if (state == 4) {
+              call.set_rgb(0.0, 0.0, 1.0);
+            } else if (state == 5) {
+              call.set_rgb(1.0, 0.0, 1.0);
+            }
+            call.perform();
+            state += 1;
+            if (state == 6)
+              state = 0;
+      - flicker:
+      - flicker:
+          name: Flicker 2
+          alpha: 85%
+          intensity: 5.0%
+      - flicker:
+          name: Low Alpha
+          alpha: 60%
+          intensity: 1.5%
+      - flicker:
+          name: High Intensity
+          alpha: 95%
+          intensity: 20.0%

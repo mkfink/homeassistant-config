@@ -1,8 +1,16 @@
 packages:
-  package: !include common/sonoff_s31_light.yaml
+  package: !include common/athom-rgbct-bulb.yaml
 
 substitutions:
-  device_name: "bedroom_corner_lamp"
+  device_name: "bedroom-corner-lamp"
   pretty_name: "Bedroom Corner Lamp"
-  ui_name: "${pretty_name}"
-  icon: "mdi:lamp"
+  light_restore_mode: RESTORE_DEFAULT_ON
+  color_interlock: 'true'
+
+esphome:
+  on_boot:
+    then:
+      - light.control:
+          id: light_1
+          brightness: 80%
+          color_temperature: 440 mireds
