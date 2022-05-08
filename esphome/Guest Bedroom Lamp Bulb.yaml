@@ -1,0 +1,16 @@
+packages:
+  package: !include common/athom-rgbct-bulb.yaml
+
+substitutions:
+  device_name: "guest-bedroom-lamp-bulb"
+  pretty_name: "Guest Bedroom Lamp Bulb"
+  light_restore_mode: RESTORE_DEFAULT_ON
+  color_interlock: 'true'
+
+esphome:
+  on_boot:
+    then:
+      - light.control:
+          id: light_1
+          brightness: 80%
+          color_temperature: 440 mireds
