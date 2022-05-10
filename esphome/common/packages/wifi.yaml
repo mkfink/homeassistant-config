@@ -1,6 +1,8 @@
 wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_pass
+  networks:
+    - ssid: !secret wifi_ssid
+      password: !secret wifi_pass
+      priority: 1.0
 
 text_sensor:
   - platform: wifi_info
