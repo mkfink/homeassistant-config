@@ -76,3 +76,4 @@ light:
           name: High Intensity
           alpha: 95%
           intensity: 20.0%
+      - random:
