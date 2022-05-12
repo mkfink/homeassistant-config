@@ -45,7 +45,7 @@ light:
           lambda: |-
             static int state = 0;
             auto call = id(light_1).turn_on();
-            call.set_transition_length(4000);
+            call.set_transition_length(3000);
             if (state == 0) {
               call.set_rgb(1.0, 0.0, 0.0);
             } else if (state == 1) {
