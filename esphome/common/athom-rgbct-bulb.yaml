@@ -82,7 +82,7 @@ light:
           update_interval: 1s
           lambda: |-
             static int state = 0;
-            auto call = id(my_light).turn_on();
+            auto call = id(light_1).turn_on();
             // Transition of 1000ms = 1s
             call.set_transition_length(1000);
             if (state == 0) {
