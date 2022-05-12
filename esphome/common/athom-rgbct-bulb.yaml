@@ -41,7 +41,7 @@ light:
     effects:
       - lambda:
           name: Rainbowy
-          update_interval: 4s
+          # update_interval: 4s
           lambda: |-
             static int state = 0;
             auto call = id(light_1).turn_on();
