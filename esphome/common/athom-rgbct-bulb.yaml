@@ -41,27 +41,21 @@ light:
     effects:
       - lambda:
           name: Rainbowy
-          update_interval: 5s
+          update_interval: 9s
           lambda: |-
             static int state = 0;
             auto call = id(light_1).turn_on();
-            call.set_transition_length(3000);
+            call.set_transition_length(9000);
             if (state == 0) {
               call.set_rgb(1.0, 0.0, 0.0);
             } else if (state == 1) {
-              call.set_rgb(1.0, 1.0, 0.0);
-            } else if (state == 2) {
               call.set_rgb(0.0, 1.0, 0.0);
-            } else if (state == 3) {
-              call.set_rgb(0.0, 1.0, 1.0);
-            } else if (state == 4) {
+            } else if (state == 2) {
               call.set_rgb(0.0, 0.0, 1.0);
-            } else if (state == 5) {
-              call.set_rgb(1.0, 0.0, 1.0);
             }
             call.perform();
             state += 1;
-            if (state == 6)
+            if (state == 3)
               state = 0;
       - flicker:
       - flicker:
@@ -77,24 +71,3 @@ light:
           alpha: 95%
           intensity: 20.0%
       - random:
-      - lambda:
-          name: My Custom Effect
-          update_interval: 1s
-          lambda: |-
-            static int state = 0;
-            auto call = id(light_1).turn_on();
-            // Transition of 1000ms = 1s
-            call.set_transition_length(1000);
-            if (state == 0) {
-              call.set_rgb(1.0, 1.0, 1.0);
-            } else if (state == 1) {
-              call.set_rgb(1.0, 0.0, 1.0);
-            } else if (state == 2) {
-              call.set_rgb(0.0, 0.0, 1.0);
-            } else {
-              call.set_rgb(1.0, 0.0, 0.0);
-            }
-            call.perform();
-            state += 1;
-            if (state == 4)
-              state = 0;
