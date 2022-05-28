@@ -2,8 +2,8 @@ packages:
   package: !include common/magichome_rgbw.yaml
 
 substitutions:
-  device_name: "living-room-accent-lamp-01"
-  pretty_name: "Living Room Accent Lamp 01"
+  device_name: "living-room-accent-lamp-02"
+  pretty_name: "Living Room Accent Lamp 02"
   light_restore_mode: RESTORE_DEFAULT_ON
 
 # esphome:

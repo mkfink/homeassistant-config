@@ -1,6 +1,7 @@
 packages:
   package: !include common/athom-rgbct-bulb.yaml
-
+  den: !include common/packages/den_wifi.yaml
+  
 substitutions:
   device_name: "guest-bedroom-lamp-bulb"
   pretty_name: "Guest Bedroom Lamp Bulb"
