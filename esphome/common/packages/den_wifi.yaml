@@ -2,4 +2,4 @@ wifi:
   networks:
     - ssid: !secret den_wifi_ssid
       password: !secret den_wifi_pass
-      priority: 10.0
+      priority: 5.0
