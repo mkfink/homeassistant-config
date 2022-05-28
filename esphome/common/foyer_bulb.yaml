@@ -1,6 +1,6 @@
 packages:
   package: !include athom-rgbct-bulb.yaml
-  den: !include common/packages/den_wifi.yaml
+  den: !include packages/den_wifi.yaml
 
 substitutions:
   device_name: "foyer-bulb-${num}"
