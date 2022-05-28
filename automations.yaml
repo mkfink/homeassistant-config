@@ -691,3 +691,17 @@
     type: notify
     message: Gluino is full
   mode: single
+- id: '1651594810022'
+  alias: Living Room TV On
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 82f3cbd9985d01334dfd916f8271b17f
+    domain: webostv
+    type: webostv.turn_on
+  condition: []
+  action:
+  - service: wake_on_lan.send_magic_packet
+    data:
+      mac: a8-23-fe-06-02-e7
+  mode: single

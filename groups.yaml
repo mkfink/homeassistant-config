@@ -41,7 +41,7 @@ bedtime_lights:
     - light.bedroom_lamp
     - light.salt_lamp
     - light.blue_desk_lamp
-    - light.bedroom_corner_lamp
+   # - light.bedroom_corner_lamp
     - light.guest_bedroom_lamp
     - light.dance_studio_spotlights
 
