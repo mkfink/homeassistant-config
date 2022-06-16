@@ -1,0 +1,46 @@
+packages:
+  board: !include common/packages/board_d1_mini.yaml
+  base_components: !include common/packages/esp_home_components.yaml
+  den: !include common/packages/den_wifi.yaml
+
+substitutions:
+  device_name: "aurora-dome-buttons"
+  pretty_name: "Aurora Dome Buttons"
+
+binary_sensor:
+  - name: "${pretty_name} Button 1"
+    platform: gpio
+    pin:
+      number: 13
+      mode: INPUT_PULLUP
+      inverted: True
+  - name: "${pretty_name} Button 2"
+    platform: gpio
+    pin:
+      number: 12
+      mode: INPUT_PULLUP
+      inverted: True
+  - name: "${pretty_name} Button 3"
+    platform: gpio
+    pin:
+      number: 14
+      mode: INPUT_PULLUP
+      inverted: True
+  - name: "${pretty_name} Button 4"
+    platform: gpio
+    pin:
+      number: 5
+      mode: INPUT_PULLUP
+      inverted: True
+  - name: "${pretty_name} Button 5"
+    platform: gpio
+    pin:
+      number: 4
+      mode: INPUT_PULLUP
+      inverted: True
+  - name: "${pretty_name} Button 6"
+    platform: gpio
+    pin:
+      number: 2
+      mode: INPUT_PULLUP
+      inverted: True
