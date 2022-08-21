@@ -1,8 +1,8 @@
 packages:
-  package: !include common/sonoff_s31_switch.yaml
+  package: !include common/robotdyn_ac_dimmer_vent_fan.yaml
 
 substitutions:
-  device_name: "office_hvac_booster"
+  device_name: "office-hvac-booster"
   pretty_name: "Office HVAC Booster"
   ui_name: "Office HVAC Booster"
   icon: "mdi:fan"

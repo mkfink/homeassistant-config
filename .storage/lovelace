@@ -24,10 +24,10 @@
                                     "show_name": true,
                                     "tap_action": {
                                         "action": "call-service",
-                                        "service": "media_player.toggle",
+                                        "service": "script.turn_on",
                                         "service_data": {},
                                         "target": {
-                                            "entity_id": "media_player.living_room_tv"
+                                            "entity_id": "script.living_room_tv_toggle"
                                         }
                                     },
                                     "type": "entity-button",
@@ -96,10 +96,6 @@
                                 },
                                 {
                                     "entity": "group.living_room_accent_lamps"
-                                },
-                                {
-                                    "entity": "light.living_room_fan_remote_light",
-                                    "name": "Ceiling Fan Light"
                                 }
                             ],
                             "show_header_toggle": true,
@@ -167,13 +163,8 @@
                                     "name": "Air Purifier"
                                 },
                                 {
-                                    "entity": "light.office_lamp"
-                                },
-                                {
-                                    "entity": "light.office_lamp_bulb_02"
-                                },
-                                {
-                                    "entity": "light.office_lamp_bulb_03"
+                                    "entity": "light.office_lamp",
+                                    "name": "Office Lamp RGB"
                                 }
                             ],
                             "title": "Office",
@@ -272,6 +263,20 @@
                         {
                             "type": "media-control",
                             "entity": "media_player.living_room_tv"
+                        },
+                        {
+                            "type": "entities",
+                            "entities": [
+                                {
+                                    "entity": "vacuum.tachyon"
+                                },
+                                {
+                                    "entity": "sensor.tachyon_battery_level"
+                                },
+                                {
+                                    "entity": "binary_sensor.tachyon_bin_full"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -557,7 +562,7 @@
                                 },
                                 {
                                     "type": "attribute",
-                                    "entity": "vacuum.gluino_litter_box",
+                                    "entity": "vacuum.gluon_litter_box",
                                     "attribute": "status",
                                     "name": "Status"
                                 }
@@ -575,16 +580,6 @@
                                     "icon": "mdi:weather-hurricane"
                                 }
                             ]
-                        },
-                        {
-                            "type": "history-graph",
-                            "entities": [
-                                {
-                                    "entity": "sensor.gluino_status"
-                                }
-                            ],
-                            "refresh_interval": 0,
-                            "hours_to_show": 1
                         }
                     ]
                 },
@@ -816,18 +811,6 @@
                             "entity": "switch.office_hvac_booster"
                         },
                         {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "vacuum.tachyon"
-                                },
-                                {
-                                    "entity": "vacuum.tachino"
-                                }
-                            ],
-                            "title": "Roombas"
-                        },
-                        {
                             "type": "entity",
                             "entity": "fan.test_dimmer"
                         },
@@ -837,39 +820,6 @@
                                 "fan.test_dimmer"
                             ],
                             "title": "test-dimmer"
-                        },
-                        {
-                            "type": "thermostat",
-                            "entity": "climate.test_thermostat",
-                            "name": "Test Thermostat"
-                        },
-                        {
-                            "type": "entity",
-                            "entity": "light.welding_helmet_lights",
-                            "state_color": true
-                        },
-                        {
-                            "type": "entities",
-                            "entities": [
-                                {
-                                    "entity": "binary_sensor.test_sensor_board_motion"
-                                },
-                                {
-                                    "entity": "sensor.test_sensor_board_humidity"
-                                },
-                                {
-                                    "entity": "sensor.test_sensor_board_temperature"
-                                },
-                                {
-                                    "entity": "sensor.test_sensor_board_pressure"
-                                },
-                                {
-                                    "entity": "sensor.test_sensor_board_wifi_signal_strength"
-                                },
-                                {
-                                    "entity": "sensor.test_thermostat_wifi_signal_strength"
-                                }
-                            ]
                         },
                         {
                             "type": "entities",

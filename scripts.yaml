@@ -15,14 +15,16 @@ bedtime:
     data:
       entity_id: group.bedtime_lights
   - service: media_player.turn_off
-    data:
-      entity_id: media_player.living_room_tv
+    data: {}
+    target:
+      device_id: 82f3cbd9985d01334dfd916f8271b17f
   - service: cover.close_cover
     data:
       entity_id: cover.garage_door
   - service: script.turn_on
     target:
       entity_id: script.turn_off_tvs
+    data: {}
   mode: single
 leaving:
   sequence:
@@ -30,11 +32,13 @@ leaving:
     data:
       entity_id: group.bedtime_lights
   - service: media_player.turn_off
-    data:
-      entity_id: media_player.living_room_tv
+    data: {}
+    target:
+      device_id: 82f3cbd9985d01334dfd916f8271b17f
   - service: script.turn_on
     target:
       entity_id: script.turn_off_tvs
+    data: {}
   mode: single
 run_greenhouse_fan:
   alias: run greenhouse fan
@@ -69,13 +73,14 @@ movie_time:
   - service: homeassistant.turn_on
     target:
       entity_id: group.living_room_accent_lamps
+    data: {}
   - type: turn_off
     device_id: cd355a2e7fefcec93f3cd3cbe984a34a
     entity_id: light.kitchen_ceiling_lights_dimmer
     domain: light
-  - service: media_player.turn_on
-    target:
-      entity_id: media_player.living_room_tv
+  - service: wake_on_lan.send_magic_packet
+    data:
+      mac: a8:23:fe:06:02:e7
   mode: single
   alias: Movie Time
   icon: mdi:theater
@@ -105,3 +110,31 @@ upstairs_lights_off:
   mode: single
   alias: Upstairs lights off
   icon: mdi:home-floor-2
+living_room_tv_toggle:
+  sequence:
+  - choose:
+    - conditions:
+      - condition: device
+        device_id: 82f3cbd9985d01334dfd916f8271b17f
+        domain: media_player
+        entity_id: media_player.living_room_tv
+        type: is_off
+      sequence:
+      - service: wake_on_lan.send_magic_packet
+        data:
+          mac: a8:23:fe:06:02:e7
+    - conditions:
+      - condition: device
+        device_id: 82f3cbd9985d01334dfd916f8271b17f
+        domain: media_player
+        entity_id: media_player.living_room_tv
+        type: is_on
+      sequence:
+      - service: media_player.turn_off
+        data: {}
+        target:
+          device_id: 82f3cbd9985d01334dfd916f8271b17f
+    default: []
+  mode: single
+  alias: Living room TV toggle
+  icon: mdi:television

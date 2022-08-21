@@ -650,12 +650,10 @@
   - platform: time
     at: 06:00:00
   condition:
-  - type: is_value
-    condition: device
-    device_id: 9ca7e6a2735aa701637904097dda9b47
-    entity_id: sensor.gluon_waste_drawer
-    domain: sensor
-    above: 99
+  - condition: state
+    entity_id: vacuum.gluon_litter_box
+    attribute: status
+    state: Drawer Full
   action:
   - device_id: a001678e7bd6913675cd0c370d4d951d
     domain: mobile_app
@@ -675,12 +673,10 @@
   - platform: time
     at: 06:00:00
   condition:
-  - type: is_value
-    condition: device
-    device_id: 3610485e55af1eebfb485813722599ff
-    entity_id: sensor.gluino_waste_drawer
-    domain: sensor
-    above: 99
+  - condition: state
+    entity_id: vacuum.gluino_litter_box
+    attribute: status
+    state: Drawer Full
   action:
   - device_id: a001678e7bd6913675cd0c370d4d951d
     domain: mobile_app
