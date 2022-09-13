@@ -6,7 +6,7 @@ substitutions:
   device_name: "guest_bedroom_lamp_switch"
   pretty_name: "Guest Bedroom Lamp Switch"
   ui_name: "Guest Bedroom Lamp Switch"
-  target_name: "guest_bedroom_lamp"
+  target_name: "guest_bedroom_lamp_bulb"
 
 api:
   services:

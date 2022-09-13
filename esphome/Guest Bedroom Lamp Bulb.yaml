@@ -1,17 +1,79 @@
-packages:
-  package: !include common/athom-rgbct-bulb.yaml
-  den: !include common/packages/den_wifi.yaml
-  
+<<: !include common/athom-rgbct-bulb.yaml
+
 substitutions:
   device_name: "guest-bedroom-lamp-bulb"
   pretty_name: "Guest Bedroom Lamp Bulb"
   light_restore_mode: RESTORE_DEFAULT_ON
   color_interlock: 'true'
+  switch_name: "guest_bedroom_lamp_switch"
+
+api:
+  services:
+    - service: power_toggle
+      then:
+        - light.toggle:
+            id: light_1
 
 esphome:
+  name: "${device_name}"
+  platform: ESP8266
+  board: esp8285
+  #build_path: "./build/${device_name}"
   on_boot:
     then:
       - light.control:
           id: light_1
           brightness: 80%
           color_temperature: 440 mireds
+light:
+  - platform: rgbct
+    id: light_1
+    name: "${pretty_name}"
+    restore_mode: ${light_restore_mode}
+    red: red_output
+    green: green_output
+    blue: blue_output
+    white_brightness: white_output
+    color_temperature: ct_output
+    cold_white_color_temperature: 153 mireds
+    warm_white_color_temperature: 500 mireds
+    color_interlock: ${color_interlock}
+    effects:
+      - lambda:
+          name: Rainbowy
+          update_interval: 9s
+          lambda: |-
+            static int state = 0;
+            auto call = id(light_1).turn_on();
+            call.set_transition_length(9000);
+            if (state == 0) {
+              call.set_rgb(1.0, 0.0, 0.0);
+            } else if (state == 1) {
+              call.set_rgb(0.0, 1.0, 0.0);
+            } else if (state == 2) {
+              call.set_rgb(0.0, 0.0, 1.0);
+            }
+            call.perform();
+            state += 1;
+            if (state == 3)
+              state = 0;
+      - flicker:
+      - flicker:
+          name: Flicker 2
+          alpha: 85%
+          intensity: 5.0%
+      - flicker:
+          name: Low Alpha
+          alpha: 60%
+          intensity: 1.5%
+      - flicker:
+          name: High Intensity
+          alpha: 95%
+          intensity: 20.0%
+      - random:
+    on_turn_on:
+      - homeassistant.service:
+          service: "esphome.${switch_name}_led_on"
+    on_turn_off:
+      - homeassistant.service:
+          service: "esphome.${switch_name}_led_off"
