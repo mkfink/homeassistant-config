@@ -1,4 +1,4 @@
-packages: 
+packages:
   board: !include packages/board_esp01_1m.yaml
   base_components: !include packages/esp_home_components.yaml
 
@@ -26,6 +26,11 @@ binary_sensor:
       inverted: True
     on_press:
       - switch.toggle: relay_1
+    on_click:
+      - min_length: 10s
+        max_length: 15s
+        then:
+          - switch.turn_on: restart_switch
   - platform: status
     name: "${pretty_name} Status"
 

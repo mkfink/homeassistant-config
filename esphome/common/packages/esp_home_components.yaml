@@ -17,4 +17,5 @@ packages:
 
 switch:
   - platform: restart
+    id: restart_switch
     name: "${pretty_name} Restart"

@@ -1,4 +1,4 @@
-packages: 
+packages:
   package: !include packages/treatlife_ss01s_base.yaml
 
 binary_sensor:
@@ -8,3 +8,8 @@ binary_sensor:
       number: 13
       mode: INPUT_PULLUP
       inverted: True
+    on_click:
+      - min_length: 10s
+        max_length: 15s
+        then:
+          - switch.turn_on: restart_switch

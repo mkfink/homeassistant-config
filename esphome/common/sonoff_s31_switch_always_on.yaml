@@ -11,3 +11,8 @@ switch:
       number: 12
       inverted: False
     restore_mode: ALWAYS_ON
+    on_click:
+      - min_length: 10s
+        max_length: 15s
+        then:
+          - switch.turn_on: restart_switch
