@@ -1,6 +1,6 @@
-# Modified Treatlife SS02 config
+# Modified Treatlife ss01 config
 # Adds API services for interacting with a pseudo-4-way switch
-packages: 
+packages:
   board: !include packages/board_esp01_1m.yaml
   base_components: !include packages/esp_home_components.yaml
 

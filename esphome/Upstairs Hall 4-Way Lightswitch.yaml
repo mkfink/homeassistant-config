@@ -1,5 +1,5 @@
-# Pared down version of Treatlife 3-way SS02
-packages: 
+# Pared down version of Treatlife 3-way ss01
+packages:
   board: !include common/packages/board_esp01_1m.yaml
   base_components: !include common/packages/esp_home_components.yaml
 
