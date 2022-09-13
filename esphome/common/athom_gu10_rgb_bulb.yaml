@@ -5,7 +5,7 @@ esphome:
   name: "${device_name}"
   platform: ESP8266
   board: esp8285
-  build_path: "./build/${device_name}"
+  #build_path: "./build/${device_name}"
   on_boot:
     then:
       - light.control:
