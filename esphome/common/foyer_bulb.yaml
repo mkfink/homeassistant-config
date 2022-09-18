@@ -13,5 +13,6 @@ esphome:
     then:
       - light.control:
           id: light_1
-          brightness: 80%
-          color_temperature: 440 mireds
+          effect: Rainbowy
+          # brightness: 80%
+          # color_temperature: 440 mireds
